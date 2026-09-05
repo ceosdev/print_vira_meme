@@ -79,6 +79,17 @@ export default function HomeScreen() {
           <HeroButton onPress={() => openPhoto('/templates')} />
         </View>
 
+        {__DEV__ ? (
+          <View style={[styles.padded, styles.devRow]}>
+            <Pressable onPress={() => router.push('/dev-canvas')} accessibilityRole="button" testID="dev-canvas">
+              <Text style={[typography.label, styles.devLink]}>QA dos layouts →</Text>
+            </Pressable>
+            <Pressable onPress={() => router.push('/dev-doctor')} accessibilityRole="button" testID="dev-doctor">
+              <Text style={[typography.label, styles.devLink]}>🩺 Diagnóstico →</Text>
+            </Pressable>
+          </View>
+        ) : null}
+
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
           {catalog.categories.map((c) => (
             <Chip key={c.id} label={c.name} emoji={c.emoji} onPress={() => openCategory(c.id)} testID={`chip-${c.id}`} />
@@ -103,11 +114,6 @@ export default function HomeScreen() {
           </View>
         ) : null}
 
-        {__DEV__ ? (
-          <Pressable onPress={() => router.push('/dev-canvas')} style={styles.padded} accessibilityRole="button">
-            <Text style={[typography.label, { color: colors.primary }]}>QA dos layouts →</Text>
-          </Pressable>
-        ) : null}
       </ScrollView>
 
       <PhotoSheet open={sheetOpen || wantsPhoto} onClose={closeSheet} onPicked={onPicked} />
@@ -122,5 +128,6 @@ const styles = StyleSheet.create({
   padded: { paddingHorizontal: spacing.lg },
   chips: { paddingHorizontal: spacing.lg, gap: spacing.sm },
   section: { gap: spacing.md },
+  devLink: { color: colors.primary },
   devRow: { flexDirection: 'row', justifyContent: 'space-between' },
 });
