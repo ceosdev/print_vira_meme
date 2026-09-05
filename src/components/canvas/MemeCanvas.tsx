@@ -3,12 +3,12 @@ import { View } from 'react-native';
 import type { ImageTransform } from '@/types/creation';
 import type { ResolvedLayout } from '@/utils/templateEngine';
 import { CanvasBrand } from './elements/CanvasBrand';
-import { CanvasImage, type CanvasImageSource } from './elements/CanvasImage';
+import { CanvasImage, type AnimatedImageTransform, type CanvasImageSource } from './elements/CanvasImage';
 import { CanvasRect } from './elements/CanvasRect';
 import { CanvasText } from './elements/CanvasText';
 
 export { RENDER_SCALE, fitScale } from './canvasScale';
-export type { CanvasImageSource };
+export type { AnimatedImageTransform, CanvasImageSource };
 
 export interface MemeCanvasProps {
   resolved: ResolvedLayout;
@@ -20,6 +20,8 @@ export interface MemeCanvasProps {
   onTextPress?: (elementId: string) => void;
   /** conteúdo sobreposto ao slot de imagem (camada de gestos do editor) */
   imageOverlay?: ReactNode;
+  /** valores compartilhados dos gestos (editor) */
+  imageAnimated?: AnimatedImageTransform;
   testID?: string;
 }
 
@@ -28,7 +30,7 @@ export interface MemeCanvasProps {
  * só muda `scale`. `ref` aponta para o nó que o view-shot captura.
  */
 export const MemeCanvas = forwardRef<View, MemeCanvasProps>(function MemeCanvas(
-  { resolved, image, imageTransform, scale, onImageLoad, onImageError, onTextPress, imageOverlay, testID },
+  { resolved, image, imageTransform, scale, onImageLoad, onImageError, onTextPress, imageOverlay, imageAnimated, testID },
   ref,
 ) {
   return (
@@ -51,11 +53,12 @@ export const MemeCanvas = forwardRef<View, MemeCanvasProps>(function MemeCanvas(
                 onLoad={onImageLoad}
                 onError={onImageError}
                 overlay={imageOverlay}
+                animated={imageAnimated}
                 testID={testID ? `${testID}-image` : undefined}
               />
             );
           case 'text':
-            return <CanvasText key={el.id} el={el} scale={scale} onPress={onTextPress} />;
+            return <CanvasText key={el.id} el={el} scale={scale} onPress={el.slotIds.length > 0 ? onTextPress : undefined} />;
           case 'rect':
             return <CanvasRect key={el.id} el={el} scale={scale} />;
           case 'brand':

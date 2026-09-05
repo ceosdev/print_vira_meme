@@ -104,6 +104,8 @@ export interface ResolvedImage extends ResolvedBase {
 export interface ResolvedText extends ResolvedBase {
   kind: 'text';
   text: string;
+  /** slots que este texto edita (vazio = texto fixo do layout) */
+  slotIds: string[];
   fontFamily: string;
   fontSize: number;
   minFontSize: number;
@@ -193,6 +195,7 @@ export function resolveLayout(input: ResolveInput): ResolvedLayout {
           x: pos?.x ?? el.x,
           y: pos?.y ?? el.y,
           text,
+          slotIds: tokens,
           fontFamily: FONTS[effectiveFont(el, style)].family,
           fontSize: el.fontSize,
           minFontSize: el.minFontSize ?? Math.round(el.fontSize * 0.6),
@@ -215,6 +218,7 @@ export function resolveLayout(input: ResolveInput): ResolvedLayout {
     elements.push({
       kind: 'text',
       id: extra.id,
+      slotIds: [],
       x: extra.x,
       y: extra.y,
       width: EXTRA_TEXT.width,
