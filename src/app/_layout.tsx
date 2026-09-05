@@ -74,6 +74,7 @@ function AppShell() {
             <Stack.Screen name="result" />
             <Stack.Screen name="settings" />
             <Stack.Screen name="dev-canvas" />
+            <Stack.Screen name="dev-doctor" />
             <Stack.Screen name="pro" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
           </Stack>
           <ExportHost />

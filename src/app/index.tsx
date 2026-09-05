@@ -122,4 +122,5 @@ const styles = StyleSheet.create({
   padded: { paddingHorizontal: spacing.lg },
   chips: { paddingHorizontal: spacing.lg, gap: spacing.sm },
   section: { gap: spacing.md },
+  devRow: { flexDirection: 'row', justifyContent: 'space-between' },
 });

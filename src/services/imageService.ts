@@ -89,7 +89,9 @@ export function createImageService(): ImageService {
         const asset = res.assets[0];
         if (!asset) return { status: 'error' };
         return { status: 'ok', image: await importImage(asset.uri, asset.width, asset.height, source) };
-      } catch {
+      } catch (e) {
+        // O usuário vê a mensagem amigável; o motivo real vai para o log/crash.
+        if (typeof __DEV__ !== 'undefined' && __DEV__) console.warn('[imageService.pick]', e);
         return { status: 'error' };
       }
     },
