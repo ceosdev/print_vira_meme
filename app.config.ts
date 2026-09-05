@@ -28,6 +28,7 @@ const config: ExpoConfig = {
   orientation: 'portrait',
   userInterfaceStyle: 'dark',
   icon: './assets/icon.png',
+  assetBundlePatterns: ['**/*'],
   android: {
     package: 'com.cartech.printvirameme',
     adaptiveIcon: {
@@ -35,11 +36,21 @@ const config: ExpoConfig = {
       monochromeImage: './assets/android-icon-monochrome.png',
       backgroundColor: '#FFD60A',
     },
+    // Não pedimos leitura da galeria: o Photo Picker do sistema dispensa (política de fotos/vídeos da Play).
+    blockedPermissions: [
+      'android.permission.READ_MEDIA_IMAGES',
+      'android.permission.READ_MEDIA_VIDEO',
+      'android.permission.READ_EXTERNAL_STORAGE',
+      'android.permission.ACCESS_MEDIA_LOCATION',
+    ],
   },
   plugins: [
     'expo-router',
     ['expo-splash-screen', { image: './assets/splash-icon.png', backgroundColor: '#0F0F14', imageWidth: 200 }],
     ['expo-font', { fonts: FONT_FILES }],
+    ['expo-image-picker', { cameraPermission: 'O Print Vira Meme usa a câmera só para tirar a foto do seu meme.' }],
+    // Receber imagens pelo "Compartilhar" do Android (só vale em dev build/produção; o Expo Go ignora).
+    ['expo-sharing', { android: { enabled: true, singleShareMimeTypes: ['image/*'] } }],
   ],
 };
 
