@@ -8,11 +8,13 @@ import * as MediaLibrary from 'expo-media-library/legacy';
 import * as Sharing from 'expo-sharing';
 import { useState } from 'react';
 import { PixelRatio, Platform, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
+import { PhotoSheet } from '@/components/PhotoSheet';
 import { Button } from '@/components/ui/Button';
 import { Header } from '@/components/ui/Header';
 import { Screen } from '@/components/ui/Screen';
 import { catalog } from '@/content';
 import { services } from '@/services';
+import { useCreationStore } from '@/store/creationStore';
 import { EXPORTS_DIR } from '@/services/exportService';
 import { IMAGES_DIR } from '@/services/imageService';
 import { FONTS, FONT_FACES } from '@/types/catalog';
@@ -48,6 +50,8 @@ export default function DevDoctorScreen() {
   const router = useRouter();
   const [steps, setSteps] = useState<Step[]>([]);
   const [running, setRunning] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [sheetLog, setSheetLog] = useState('sheet nunca aberta');
 
   const push = (step: Step) => setSteps((prev) => [...prev, step]);
 
@@ -194,6 +198,21 @@ export default function DevDoctorScreen() {
       <Header title="Diagnóstico" onBack={() => router.back()} />
       <ScrollView contentContainerStyle={styles.body}>
         <Button label={running ? 'Rodando…' : 'Rodar diagnóstico'} loading={running} onPress={() => void runAll()} testID="run-doctor" />
+        <Button
+          label="Teste: abrir sheet de foto"
+          variant="secondary"
+          testID="open-sheet"
+          onPress={() => {
+            setSheetLog('sheet aberta (open=true) — ela apareceu na tela?');
+            setSheetOpen(true);
+          }}
+        />
+        <View style={styles.step}>
+          <Text style={[typography.label, { color: colors.text }]}>Sheet de foto</Text>
+          <Text style={[typography.caption, { color: colors.textMuted }]} selectable>
+            {sheetLog}
+          </Text>
+        </View>
         {steps.map((step) => (
           <View key={step.name} style={styles.step}>
             <Text style={[typography.label, { color: step.ok ? colors.success : colors.danger }]}>
@@ -208,6 +227,19 @@ export default function DevDoctorScreen() {
           <Button label="Compartilhar log" variant="secondary" onPress={() => void Share.share({ message: log })} />
         ) : null}
       </ScrollView>
+
+      <PhotoSheet
+        open={sheetOpen}
+        onClose={() => {
+          setSheetOpen(false);
+          setSheetLog((prev) => `${prev} · fechada sem foto`);
+        }}
+        onPicked={() => {
+          setSheetOpen(false);
+          const picked = useCreationStore.getState().image;
+          setSheetLog(picked ? `foto escolhida: ${picked.width}×${picked.height}` : 'onPicked sem imagem no store (!)');
+        }}
+      />
     </Screen>
   );
 }
