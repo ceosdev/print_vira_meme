@@ -59,7 +59,8 @@
     "test:watch": "jest --watch",
     "lint": "expo lint",
     "validate:catalog": "tsx tools/validate-catalog.ts",
-    "fonts": "bash tools/download-fonts.sh"
+    "fonts": "bash tools/download-fonts.sh",
+    "sample-photo": "node tools/make-sample-photo.js"
   },
   "private": true
 }

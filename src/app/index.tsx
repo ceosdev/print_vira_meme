@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { Text, View } from 'react-native';
 import { catalog } from '@/content';
 import { strings } from '@/i18n/strings';
@@ -16,6 +17,11 @@ export default function HomeScreen() {
       <Text style={[typography.label, { color: colors.textMuted, marginTop: spacing.md }]}>
         {`${catalog.layouts.length} layouts · ${catalog.presets.length} templates · ${catalog.phrases.length} frases`}
       </Text>
+      {__DEV__ ? (
+        <Link href="/dev-canvas" style={[typography.label, { color: colors.primary, marginTop: spacing.xl }]}>
+          QA dos layouts →
+        </Link>
+      ) : null}
     </View>
   );
 }
