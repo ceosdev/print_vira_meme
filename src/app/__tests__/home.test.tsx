@@ -7,10 +7,15 @@ import { useCreationStore } from '@/store/creationStore';
 import { useEntitlementStore } from '@/store/entitlementStore';
 
 const mockPush = jest.fn();
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, replace: jest.fn(), back: jest.fn() }) }));
+const mockParams: { pick?: string } = {};
+jest.mock('expo-router', () => ({
+  useRouter: () => ({ push: mockPush, replace: jest.fn(), back: jest.fn() }),
+  useLocalSearchParams: () => mockParams,
+}));
 
 beforeEach(() => {
   mockPush.mockClear();
+  delete mockParams.pick;
   useCreationStore.getState().reset();
   useEntitlementStore.getState().setEntitlements({ isPro: false, packIds: [] });
   configureServices({ image: createMockImageService(), analytics: createMockAnalyticsService() });
@@ -51,6 +56,12 @@ describe('Home', () => {
     await fireEvent.press(screen.getByTestId('pick-gallery'));
     expect(screen.getByText('Sem acesso à galeria. Você pode liberar em Configurações.')).toBeTruthy();
     expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('vindo de "Criar outro meme" (?pick=1) já abre a sheet', async () => {
+    mockParams.pick = '1';
+    await render(<HomeScreen />);
+    expect(screen.getByText('De onde vem a foto?')).toBeTruthy();
   });
 
   it('chip de categoria navega com o parâmetro', async () => {

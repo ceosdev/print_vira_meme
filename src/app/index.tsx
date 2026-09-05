@@ -1,6 +1,6 @@
 import { Settings as SettingsIcon } from 'lucide-react-native';
-import { useRouter } from 'expo-router';
-import { useCallback, useMemo, useState } from 'react';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { PhotoSheet } from '@/components/PhotoSheet';
 import { ProPill } from '@/components/ProPill';
@@ -20,6 +20,7 @@ import type { CategoryId, Preset } from '@/types/catalog';
 
 export default function HomeScreen() {
   const router = useRouter();
+  const params = useLocalSearchParams<{ pick?: string }>();
   const { isPro, isUnlocked } = useEntitlements();
   const image = useCreationStore((s) => s.image);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -28,6 +29,11 @@ export default function HomeScreen() {
   const popular = useMemo(() => catalog.popularPresets(), []);
   const news = useMemo(() => catalog.newPresets(), []);
   const [wordA, wordB, wordC] = strings.app.wordmark;
+
+  // Vindo de "Criar outro meme": já abre o seletor de foto.
+  useEffect(() => {
+    if (params.pick === '1') setSheetOpen(true);
+  }, [params.pick]);
 
   const openPhoto = useCallback((route: '/templates' | '/editor') => {
     setPendingRoute(route);

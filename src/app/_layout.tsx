@@ -8,7 +8,12 @@ import { useEffect, useState } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ExportHost } from '@/components/canvas/ExportHost';
+import { ProLiteSheet } from '@/components/ProLiteSheet';
 import { ToastHost } from '@/components/ui/Toast';
+import { CACHE_MAX_AGE_MS } from '@/config/app';
+import { useEntitlementSync } from '@/hooks/useEntitlementSync';
+import { useIncomingImage } from '@/hooks/useIncomingImage';
+import { services } from '@/services';
 import { waitForHydration } from '@/store/hydration';
 import { FONT_ASSETS } from '@/theme/fontAssets';
 import { colors } from '@/theme/tokens';
@@ -37,7 +42,19 @@ export default function RootLayout() {
     if (ready) SplashScreen.hideAsync().catch(() => {});
   }, [ready]);
 
+  useEffect(() => {
+    if (ready) void services.image.cleanupCache(CACHE_MAX_AGE_MS).catch(() => {});
+  }, [ready]);
+
   if (!ready) return null;
+
+  return <AppShell />;
+}
+
+/** Só monta depois de hidratar/carregar fontes: os hooks abaixo já podem navegar. */
+function AppShell() {
+  useEntitlementSync();
+  useIncomingImage();
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -60,6 +77,7 @@ export default function RootLayout() {
             <Stack.Screen name="pro" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
           </Stack>
           <ExportHost />
+          <ProLiteSheet />
           <ToastHost />
         </BottomSheetModalProvider>
       </SafeAreaProvider>
