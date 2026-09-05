@@ -1,0 +1,67 @@
+{
+  "id": "placar",
+  "name": "Placar",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350, "heightWithoutBrand": 1286 },
+  "background": "#0B1B2B",
+  "premium": false,
+  "slots": [
+    { "id": "name-a", "label": "Time da esquerda", "type": "name", "maxChars": 14, "maxLines": 2, "multiline": false, "placeholder": "EU" },
+    { "id": "score-a", "label": "Gols da esquerda", "type": "score", "maxChars": 2, "maxLines": 1, "multiline": false, "placeholder": "0" },
+    { "id": "name-b", "label": "Time da direita", "type": "name", "maxChars": 14, "maxLines": 2, "multiline": false, "placeholder": "SEGUNDA" },
+    { "id": "score-b", "label": "Gols da direita", "type": "score", "maxChars": 2, "maxLines": 1, "multiline": false, "placeholder": "7" },
+    { "id": "stat-1", "label": "Estatística 1", "type": "stat", "maxChars": 30, "maxLines": 1, "multiline": false, "placeholder": "Sonecas: 5" },
+    { "id": "stat-2", "label": "Estatística 2", "type": "stat", "maxChars": 30, "maxLines": 1, "multiline": false, "placeholder": "Cafés: 8", "optional": true },
+    { "id": "stat-3", "label": "Estatística 3", "type": "stat", "maxChars": 30, "maxLines": 1, "multiline": false, "placeholder": "Vontade de trabalhar: 0", "optional": true }
+  ],
+  "elements": [
+    {
+      "id": "final-label", "type": "text", "content": "FINAL",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 48, "color": "#9FB3C8",
+      "align": "center", "valign": "middle", "letterSpacing": 8,
+      "x": 0, "y": 40, "width": 1080, "height": 60
+    },
+    { "id": "photo", "type": "image", "x": 40, "y": 120, "width": 1000, "height": 500, "radius": 16, "defaultFit": "cover" },
+    { "id": "score-bg", "type": "rect", "x": 40, "y": 660, "width": 1000, "height": 160, "fill": "#132B43", "radius": 16 },
+    {
+      "id": "name-a-text", "type": "text", "content": "{{name-a}}",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 64, "minFontSize": 40, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "uppercase": true,
+      "x": 60, "y": 660, "width": 300, "height": 160
+    },
+    {
+      "id": "score-text", "type": "text", "content": "{{score-a}} × {{score-b}}",
+      "fontRole": "fixed", "font": "anton", "fontSize": 96, "color": "#FFD60A",
+      "align": "center", "valign": "middle",
+      "x": 360, "y": 660, "width": 360, "height": 160
+    },
+    {
+      "id": "name-b-text", "type": "text", "content": "{{name-b}}",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 64, "minFontSize": 40, "color": "#FFFFFF",
+      "align": "right", "valign": "middle", "uppercase": true,
+      "x": 720, "y": 660, "width": 300, "height": 160
+    },
+    { "id": "stat-1-bg", "type": "rect", "x": 40, "y": 860, "width": 1000, "height": 80, "fill": "rgba(255,255,255,0.06)", "radius": 12 },
+    {
+      "id": "stat-1-text", "type": "text", "content": "{{stat-1}}",
+      "fontRole": "fixed", "font": "oswald-medium", "fontSize": 44, "minFontSize": 30, "color": "#FFFFFF",
+      "align": "left", "valign": "middle",
+      "x": 64, "y": 860, "width": 952, "height": 80
+    },
+    { "id": "stat-2-bg", "type": "rect", "x": 40, "y": 960, "width": 1000, "height": 80, "fill": "rgba(255,255,255,0.06)", "radius": 12, "showIf": "stat-2" },
+    {
+      "id": "stat-2-text", "type": "text", "content": "{{stat-2}}",
+      "fontRole": "fixed", "font": "oswald-medium", "fontSize": 44, "minFontSize": 30, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "hideWhenEmpty": true,
+      "x": 64, "y": 960, "width": 952, "height": 80
+    },
+    { "id": "stat-3-bg", "type": "rect", "x": 40, "y": 1060, "width": 1000, "height": 80, "fill": "rgba(255,255,255,0.06)", "radius": 12, "showIf": "stat-3" },
+    {
+      "id": "stat-3-text", "type": "text", "content": "{{stat-3}}",
+      "fontRole": "fixed", "font": "oswald-medium", "fontSize": 44, "minFontSize": 30, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "hideWhenEmpty": true,
+      "x": 64, "y": 1060, "width": 952, "height": 80
+    },
+    { "id": "brand", "type": "brand", "variant": "footer", "x": 0, "y": 1286, "width": 1080, "height": 64 }
+  ]
+}

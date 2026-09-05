@@ -1,0 +1,10 @@
+[
+  { "id": "humor", "name": "Humor", "emoji": "😂", "order": 1 },
+  { "id": "trabalho", "name": "Trabalho", "emoji": "💼", "order": 2 },
+  { "id": "relacionamento", "name": "Relacionamento", "emoji": "❤️", "order": 3 },
+  { "id": "dinheiro", "name": "Dinheiro", "emoji": "💸", "order": 4 },
+  { "id": "futebol", "name": "Futebol", "emoji": "⚽", "order": 5 },
+  { "id": "familia", "name": "Família", "emoji": "👨‍👩‍👧", "order": 6 },
+  { "id": "faculdade", "name": "Faculdade", "emoji": "🎓", "order": 7 },
+  { "id": "role", "name": "Rolê", "emoji": "🍺", "order": 8 }
+]

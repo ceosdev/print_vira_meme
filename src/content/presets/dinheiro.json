@@ -1,0 +1,17 @@
+[
+  { "id": "din-salario-caiu", "layoutId": "placar", "name": "Salário × Boletos", "category": "dinheiro",
+    "values": { "name-a": "SALÁRIO", "score-a": "1", "name-b": "BOLETOS", "score-b": "9", "stat-1": "Tempo na conta: 4 horas", "stat-2": "Parcelas: 12", "stat-3": "Saldo: emocional" },
+    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
+  { "id": "din-fatura", "layoutId": "legenda", "name": "Vendo a fatura", "category": "dinheiro", "tags": ["humor"],
+    "values": { "caption": "Eu vendo o valor da fatura do cartão" },
+    "premium": false, "addedAt": "2026-09-05", "order": 2 },
+  { "id": "din-boleto-amanha", "layoutId": "alerta", "name": "Boleto vence amanhã", "category": "dinheiro",
+    "values": { "title": "BOLETO VENCE AMANHÃ", "description": "Vítima descobriu enquanto estava 'só dando uma olhadinha' nas compras." },
+    "premium": false, "addedAt": "2026-09-05", "order": 3 },
+  { "id": "din-grafico-mes", "layoutId": "grafico", "name": "Meu dinheiro no mês", "category": "dinheiro",
+    "values": { "title": "Meu desespero ao longo do mês", "legend": "Boletos vencendo", "l-1": "Dia 5", "l-2": "Dia 15", "l-3": "Dia 25", "l-4": "Dia 30" },
+    "premium": true, "addedAt": "2026-09-05", "order": 4 },
+  { "id": "din-nota-economizar", "layoutId": "nota", "name": "Esse mês eu economizo", "category": "dinheiro",
+    "values": { "note": "Lembrete: esse mês eu vou economizar. (escrito pela 14ª vez)" },
+    "premium": true, "addedAt": "2026-09-05", "order": 5 }
+]

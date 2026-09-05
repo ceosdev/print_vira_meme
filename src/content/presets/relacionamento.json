@@ -1,0 +1,23 @@
+[
+  { "id": "rel-nao-estou-brava", "layoutId": "classic", "name": "Não estou brava", "category": "relacionamento",
+    "values": { "top": "ELA: NÃO ESTOU BRAVA", "bottom": "TAMBÉM ELA:" },
+    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
+  { "id": "rel-respondeu-ok", "layoutId": "alerta", "name": "Respondeu só 'ok'", "category": "relacionamento",
+    "values": { "title": "ELA RESPONDEU APENAS 'OK'", "description": "Especialistas recomendam pedir desculpas imediatamente, mesmo sem saber o motivo." },
+    "premium": false, "addedAt": "2026-09-05", "order": 2 },
+  { "id": "rel-explicando", "layoutId": "legenda", "name": "Tentando explicar", "category": "relacionamento", "tags": ["humor"],
+    "values": { "caption": "Eu tentando explicar uma coisa que claramente fiz errado" },
+    "premium": false, "addedAt": "2026-09-05", "order": 3 },
+  { "id": "rel-conversa-jantar", "layoutId": "conversa", "name": "Onde você quer jantar", "category": "relacionamento",
+    "values": { "contact": "Amor", "m1": "Onde você quer jantar?", "m2": "Tanto faz, você escolhe", "m3": "Não, aí não." },
+    "premium": false, "addedAt": "2026-09-05", "order": 4 },
+  { "id": "rel-podio-briga", "layoutId": "podio", "name": "Motivos da briga", "category": "relacionamento",
+    "values": { "title": "MOTIVOS DA ÚLTIMA BRIGA", "name-1": "O tom de voz", "name-2": "Aquele 'ok'", "name-3": "Ninguém lembra" },
+    "premium": true, "addedAt": "2026-09-05", "order": 5 },
+  { "id": "rel-certificado-namorado", "layoutId": "certificado", "name": "Namorado do ano", "category": "relacionamento",
+    "values": { "name": "Namorado do ano", "reason": "por lembrar da data do aniversário de namoro (com ajuda do lembrete do celular)", "signature": "Ela", "date": "Por enquanto" },
+    "premium": true, "addedAt": "2026-09-05", "order": 6 },
+  { "id": "rel-balao-tanto-faz", "layoutId": "balao", "name": "Tanto faz", "category": "relacionamento",
+    "values": { "speech": "TANTO FAZ, VOCÊ ESCOLHE", "caption": "TRADUÇÃO: ESCOLHE ERRADO E VÊ" },
+    "premium": true, "addedAt": "2026-09-05", "order": 7 }
+]

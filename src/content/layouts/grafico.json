@@ -1,0 +1,62 @@
+{
+  "id": "grafico",
+  "name": "Gráfico",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350, "heightWithoutBrand": 1286 },
+  "background": "#FFFFFF",
+  "premium": true,
+  "slots": [
+    { "id": "title", "label": "Título", "type": "title", "maxChars": 70, "maxLines": 4, "multiline": true, "placeholder": "Minha produtividade na segunda-feira" },
+    { "id": "legend", "label": "O que o gráfico mede", "type": "label", "maxChars": 40, "maxLines": 1, "multiline": false, "placeholder": "Vontade de ir embora" },
+    { "id": "l-1", "label": "Barra 1", "type": "label", "maxChars": 12, "maxLines": 2, "multiline": false, "placeholder": "8h" },
+    { "id": "l-2", "label": "Barra 2", "type": "label", "maxChars": 12, "maxLines": 2, "multiline": false, "placeholder": "10h" },
+    { "id": "l-3", "label": "Barra 3", "type": "label", "maxChars": 12, "maxLines": 2, "multiline": false, "placeholder": "14h" },
+    { "id": "l-4", "label": "Barra 4", "type": "label", "maxChars": 12, "maxLines": 2, "multiline": false, "placeholder": "17h58" }
+  ],
+  "elements": [
+    {
+      "id": "title-text", "type": "text", "content": "{{title}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 60, "minFontSize": 36,
+      "color": "#111111", "align": "left", "valign": "top",
+      "x": 40, "y": 40, "width": 680, "height": 240
+    },
+    { "id": "photo", "type": "image", "x": 760, "y": 40, "width": 280, "height": 280, "radius": 140, "defaultFit": "cover" },
+    {
+      "id": "legend-text", "type": "text", "content": "{{legend}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 30, "color": "#111111",
+      "align": "left", "valign": "middle",
+      "x": 120, "y": 300, "width": 880, "height": 50
+    },
+    { "id": "y-axis", "type": "rect", "x": 100, "y": 360, "width": 4, "height": 700, "fill": "#111111" },
+    { "id": "bar-1", "type": "rect", "x": 160, "y": 936, "width": 160, "height": 120, "fill": "#FFD60A", "radius": 4 },
+    { "id": "bar-2", "type": "rect", "x": 380, "y": 756, "width": 160, "height": 300, "fill": "#FFD60A", "radius": 4 },
+    { "id": "bar-3", "type": "rect", "x": 600, "y": 536, "width": 160, "height": 520, "fill": "#FFD60A", "radius": 4 },
+    { "id": "bar-4", "type": "rect", "x": 820, "y": 376, "width": 160, "height": 680, "fill": "#D7263D", "radius": 4 },
+    { "id": "x-axis", "type": "rect", "x": 100, "y": 1056, "width": 900, "height": 4, "fill": "#111111" },
+    {
+      "id": "l-1-text", "type": "text", "content": "{{l-1}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 26, "minFontSize": 20, "color": "#111111",
+      "align": "center", "valign": "top",
+      "x": 150, "y": 1070, "width": 180, "height": 80
+    },
+    {
+      "id": "l-2-text", "type": "text", "content": "{{l-2}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 26, "minFontSize": 20, "color": "#111111",
+      "align": "center", "valign": "top",
+      "x": 370, "y": 1070, "width": 180, "height": 80
+    },
+    {
+      "id": "l-3-text", "type": "text", "content": "{{l-3}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 26, "minFontSize": 20, "color": "#111111",
+      "align": "center", "valign": "top",
+      "x": 590, "y": 1070, "width": 180, "height": 80
+    },
+    {
+      "id": "l-4-text", "type": "text", "content": "{{l-4}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 26, "minFontSize": 20, "color": "#111111",
+      "align": "center", "valign": "top",
+      "x": 810, "y": 1070, "width": 180, "height": 80
+    },
+    { "id": "brand", "type": "brand", "variant": "footer", "x": 0, "y": 1286, "width": 1080, "height": 64 }
+  ]
+}

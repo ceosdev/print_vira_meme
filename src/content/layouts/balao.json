@@ -1,0 +1,33 @@
+{
+  "id": "balao",
+  "name": "Balão de fala",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#FFFFFF",
+  "premium": true,
+  "slots": [
+    { "id": "speech", "label": "Fala", "type": "free", "maxChars": 100, "maxLines": 4, "multiline": true, "placeholder": "É RAPIDINHO, JURO" },
+    { "id": "caption", "label": "Legenda de rodapé", "type": "caption", "maxChars": 40, "maxLines": 1, "multiline": false, "placeholder": "ENQUANTO ISSO, NA REUNIÃO", "optional": true }
+  ],
+  "elements": [
+    { "id": "photo", "type": "image", "x": 0, "y": 0, "width": 1080, "height": 1350, "defaultFit": "cover" },
+    { "id": "tail", "type": "rect", "x": 300, "y": 300, "width": 90, "height": 90, "fill": "#FFFFFF", "rotation": 45, "border": { "color": "#111111", "width": 8 } },
+    { "id": "balloon", "type": "rect", "x": 60, "y": 60, "width": 960, "height": 300, "fill": "#FFFFFF", "radius": 40, "border": { "color": "#111111", "width": 8 } },
+    { "id": "tail-patch", "type": "rect", "x": 306, "y": 350, "width": 78, "height": 12, "fill": "#FFFFFF" },
+    {
+      "id": "speech-text", "type": "text", "content": "{{speech}}",
+      "fontRole": "display", "font": "bangers", "fontSize": 64, "minFontSize": 40,
+      "color": "#111111", "align": "center", "valign": "middle", "draggable": true,
+      "x": 100, "y": 80, "width": 880, "height": 260
+    },
+    { "id": "caption-bg", "type": "rect", "x": 40, "y": 1150, "width": 1000, "height": 100, "fill": "#FFD60A", "border": { "color": "#111111", "width": 6 }, "showIf": "caption" },
+    {
+      "id": "caption-text", "type": "text", "content": "{{caption}}",
+      "fontRole": "fixed", "font": "bangers", "fontSize": 44, "minFontSize": 30,
+      "color": "#111111", "align": "center", "valign": "middle", "uppercase": true,
+      "showIf": "caption", "hideWhenEmpty": true,
+      "x": 60, "y": 1150, "width": 960, "height": 100
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

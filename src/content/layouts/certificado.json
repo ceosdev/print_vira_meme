@@ -1,0 +1,72 @@
+{
+  "id": "certificado",
+  "name": "Certificado",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#FBF7EC",
+  "premium": true,
+  "slots": [
+    { "id": "name", "label": "Nome", "type": "name", "maxChars": 30, "maxLines": 1, "multiline": false, "placeholder": "Carlos" },
+    { "id": "reason", "label": "Motivo", "type": "description", "maxChars": 140, "maxLines": 4, "multiline": true, "placeholder": "por chegar atrasado em 100% dos compromissos de 2026" },
+    { "id": "signature", "label": "Assinatura", "type": "label", "maxChars": 20, "maxLines": 1, "multiline": false, "placeholder": "A gerência", "optional": true },
+    { "id": "date", "label": "Data", "type": "label", "maxChars": 20, "maxLines": 1, "multiline": false, "placeholder": "Toda segunda", "optional": true }
+  ],
+  "elements": [
+    { "id": "outer-border", "type": "rect", "x": 40, "y": 40, "width": 1000, "height": 1206, "fill": "transparent", "radius": 4, "border": { "color": "#B8860B", "width": 8 } },
+    { "id": "inner-border", "type": "rect", "x": 64, "y": 64, "width": 952, "height": 1158, "fill": "transparent", "radius": 2, "border": { "color": "#B8860B", "width": 2 } },
+    {
+      "id": "heading", "type": "text", "content": "CERTIFICADO",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 96, "color": "#B8860B",
+      "align": "center", "valign": "middle", "letterSpacing": 12,
+      "x": 40, "y": 110, "width": 1000, "height": 110
+    },
+    {
+      "id": "sub", "type": "text", "content": "Concedido a",
+      "fontRole": "fixed", "font": "rubik", "fontSize": 32, "color": "#555555",
+      "align": "center", "valign": "middle",
+      "x": 40, "y": 240, "width": 1000, "height": 50
+    },
+    { "id": "photo-ring", "type": "rect", "x": 380, "y": 300, "width": 320, "height": 320, "fill": "#B8860B", "radius": 160 },
+    { "id": "photo", "type": "image", "x": 390, "y": 310, "width": 300, "height": 300, "radius": 150, "defaultFit": "cover" },
+    {
+      "id": "name-text", "type": "text", "content": "{{name}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 72, "minFontSize": 44,
+      "color": "#111111", "align": "center", "valign": "middle",
+      "x": 80, "y": 640, "width": 920, "height": 100
+    },
+    { "id": "underline", "type": "rect", "x": 340, "y": 750, "width": 400, "height": 4, "fill": "#B8860B" },
+    {
+      "id": "reason-text", "type": "text", "content": "{{reason}}",
+      "fontRole": "body", "font": "rubik-medium", "fontSize": 38, "minFontSize": 26,
+      "color": "#333333", "align": "center", "valign": "top",
+      "x": 120, "y": 790, "width": 840, "height": 240
+    },
+    {
+      "id": "signature-text", "type": "text", "content": "{{signature}}",
+      "fontRole": "fixed", "font": "marker", "fontSize": 40, "color": "#111111",
+      "align": "center", "valign": "bottom", "hideWhenEmpty": true,
+      "x": 140, "y": 1070, "width": 360, "height": 70
+    },
+    { "id": "signature-line", "type": "rect", "x": 140, "y": 1146, "width": 360, "height": 3, "fill": "#111111", "showIf": "signature" },
+    {
+      "id": "signature-label", "type": "text", "content": "Assinatura",
+      "fontRole": "fixed", "font": "rubik", "fontSize": 24, "color": "#777777",
+      "align": "center", "valign": "middle", "showIf": "signature",
+      "x": 140, "y": 1156, "width": 360, "height": 40
+    },
+    {
+      "id": "date-text", "type": "text", "content": "{{date}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 32, "color": "#111111",
+      "align": "center", "valign": "bottom", "hideWhenEmpty": true,
+      "x": 580, "y": 1070, "width": 360, "height": 70
+    },
+    { "id": "date-line", "type": "rect", "x": 580, "y": 1146, "width": 360, "height": 3, "fill": "#111111", "showIf": "date" },
+    {
+      "id": "date-label", "type": "text", "content": "Data",
+      "fontRole": "fixed", "font": "rubik", "fontSize": 24, "color": "#777777",
+      "align": "center", "valign": "middle", "showIf": "date",
+      "x": 580, "y": 1156, "width": 360, "height": 40
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

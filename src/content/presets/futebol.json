@@ -1,0 +1,17 @@
+[
+  { "id": "fut-placar-pelada", "layoutId": "placar", "name": "Placar da pelada", "category": "futebol",
+    "values": { "name-a": "EU", "score-a": "3", "name-b": "MEU CUNHADO", "score-b": "1", "stat-1": "Atrasos: 5", "stat-2": "Desculpas: 8", "stat-3": "Gols perdidos: 12" },
+    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
+  { "id": "fut-noticia-artilheiro", "layoutId": "noticia", "name": "Artilheiro da pelada", "category": "futebol",
+    "values": { "title": "Artilheiro da pelada é visto falhando gol embaixo da trave", "description": "Testemunhas afirmam que 'até a minha vó fazia'.", "source": "Fonte: o grupo da pelada" },
+    "premium": false, "addedAt": "2026-09-05", "order": 2 },
+  { "id": "fut-pov-segunda", "layoutId": "pov", "name": "Time perdeu, é segunda", "category": "futebol", "tags": ["trabalho"],
+    "values": { "pov": "seu time perde e você tem que ir trabalhar segunda" },
+    "premium": false, "addedAt": "2026-09-05", "order": 3 },
+  { "id": "fut-podio-pelada", "layoutId": "podio", "name": "Pódio da pelada", "category": "futebol",
+    "values": { "title": "PÓDIO DA PELADA", "name-1": "Quem levou a bola", "name-2": "Quem marcou o horário", "name-3": "Quem jogou bem" },
+    "premium": true, "addedAt": "2026-09-05", "order": 4 },
+  { "id": "fut-certificado-cunhado", "layoutId": "certificado", "name": "Cunhado técnico", "category": "futebol", "tags": ["familia"],
+    "values": { "name": "Cunhado", "reason": "por entender mais de futebol que o técnico, a comissão e a diretoria juntos", "signature": "O sofá", "date": "Todo domingo" },
+    "premium": true, "addedAt": "2026-09-05", "order": 5 }
+]

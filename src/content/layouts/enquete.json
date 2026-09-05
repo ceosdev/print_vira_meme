@@ -1,0 +1,76 @@
+{
+  "id": "enquete",
+  "name": "Enquete",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#1A1A22",
+  "premium": false,
+  "slots": [
+    { "id": "question", "label": "Pergunta", "type": "title", "maxChars": 90, "maxLines": 3, "multiline": true, "placeholder": "Quem vai pagar a conta?" },
+    { "id": "opt1", "label": "Opção vencedora", "type": "option", "maxChars": 40, "maxLines": 2, "multiline": false, "placeholder": "Ele, óbvio" },
+    { "id": "opt2", "label": "Opção 2", "type": "option", "maxChars": 40, "maxLines": 2, "multiline": false, "placeholder": "Dividir" },
+    { "id": "opt3", "label": "Opção 3", "type": "option", "maxChars": 40, "maxLines": 2, "multiline": false, "placeholder": "Sair correndo", "optional": true }
+  ],
+  "elements": [
+    {
+      "id": "question-text", "type": "text", "content": "{{question}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 56, "minFontSize": 36,
+      "color": "#FFFFFF", "align": "left", "valign": "top",
+      "x": 40, "y": 40, "width": 1000, "height": 180
+    },
+    { "id": "photo", "type": "image", "x": 40, "y": 240, "width": 1000, "height": 480, "radius": 16, "defaultFit": "cover" },
+
+    { "id": "opt1-bg", "type": "rect", "x": 40, "y": 760, "width": 1000, "height": 96, "fill": "#26262F", "radius": 16 },
+    { "id": "opt1-bar", "type": "rect", "x": 40, "y": 760, "width": 940, "height": 96, "fill": "#FFD60A", "radius": 16 },
+    {
+      "id": "opt1-text", "type": "text", "content": "{{opt1}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "minFontSize": 26, "color": "#0F0F14",
+      "align": "left", "valign": "middle",
+      "x": 64, "y": 760, "width": 760, "height": 96
+    },
+    {
+      "id": "opt1-pct", "type": "text", "content": "94%",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "color": "#0F0F14",
+      "align": "right", "valign": "middle",
+      "x": 840, "y": 760, "width": 120, "height": 96
+    },
+
+    { "id": "opt2-bg", "type": "rect", "x": 40, "y": 880, "width": 1000, "height": 96, "fill": "#26262F", "radius": 16 },
+    { "id": "opt2-bar", "type": "rect", "x": 40, "y": 880, "width": 60, "height": 96, "fill": "#FFD60A", "radius": 16 },
+    {
+      "id": "opt2-text", "type": "text", "content": "{{opt2}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "minFontSize": 26, "color": "#FFFFFF",
+      "align": "left", "valign": "middle",
+      "x": 124, "y": 880, "width": 720, "height": 96
+    },
+    {
+      "id": "opt2-pct", "type": "text", "content": "5%",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "color": "#FFFFFF",
+      "align": "right", "valign": "middle",
+      "x": 880, "y": 880, "width": 120, "height": 96
+    },
+
+    { "id": "opt3-bg", "type": "rect", "x": 40, "y": 1000, "width": 1000, "height": 96, "fill": "#26262F", "radius": 16, "showIf": "opt3" },
+    { "id": "opt3-bar", "type": "rect", "x": 40, "y": 1000, "width": 24, "height": 96, "fill": "#FFD60A", "radius": 12, "showIf": "opt3" },
+    {
+      "id": "opt3-text", "type": "text", "content": "{{opt3}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "minFontSize": 26, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "showIf": "opt3", "hideWhenEmpty": true,
+      "x": 124, "y": 1000, "width": 720, "height": 96
+    },
+    {
+      "id": "opt3-pct", "type": "text", "content": "1%",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 38, "color": "#FFFFFF",
+      "align": "right", "valign": "middle", "showIf": "opt3",
+      "x": 880, "y": 1000, "width": 120, "height": 96
+    },
+
+    {
+      "id": "votes", "type": "text", "content": "Votos: todo mundo",
+      "fontRole": "fixed", "font": "rubik", "fontSize": 28, "color": "#A1A1AA",
+      "align": "left", "valign": "middle",
+      "x": 40, "y": 1120, "width": 1000, "height": 40
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

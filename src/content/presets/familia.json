@@ -1,0 +1,14 @@
+[
+  { "id": "fam-conversa-almoco", "layoutId": "conversa", "name": "Almoço de domingo", "category": "familia",
+    "values": { "contact": "Mãe", "m1": "Você vem almoçar domingo?", "m2": "Vou sim, tô chegando", "m3": "Isso foi às 11h. Já são 15h." },
+    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
+  { "id": "fam-bom-dia-grupo", "layoutId": "alerta", "name": "Bom dia no grupo", "category": "familia",
+    "values": { "title": "BOM DIA ENVIADO NO GRUPO DA FAMÍLIA", "description": "Mensagem tinha 14 flores, 3 corações e um áudio de 6 minutos." },
+    "premium": false, "addedAt": "2026-09-05", "order": 2 },
+  { "id": "fam-manchete-tia", "layoutId": "manchete", "name": "A tia e o namoro", "category": "familia",
+    "values": { "kicker": "PLANTÃO FAMILIAR", "title": "TIA PERGUNTA SOBRE NAMORO PELA 9ª VEZ NO MESMO ALMOÇO", "description": "Na foto, o suspeito momentos antes de mudar de assunto." },
+    "premium": false, "addedAt": "2026-09-05", "order": 3 },
+  { "id": "fam-nota-rapidinho", "layoutId": "nota", "name": "Só vou ali rapidinho", "category": "familia",
+    "values": { "note": "Mãe: 'só vou ali rapidinho'. Rapidinho: 3 horas e 4 lojas." },
+    "premium": true, "addedAt": "2026-09-05", "order": 4 }
+]

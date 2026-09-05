@@ -1,0 +1,11 @@
+[
+  { "id": "role-pov-so-uma", "layoutId": "pov", "name": "Só uma", "category": "role",
+    "values": { "pov": "você disse que ia tomar 'só uma' e já é 3 da manhã" },
+    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
+  { "id": "role-conversa-vai-hoje", "layoutId": "conversa", "name": "Vai hoje?", "category": "role",
+    "values": { "contact": "Grupo do rolê", "m1": "Vai hoje?", "m2": "Vou não, tô cansado", "m3": "Chegou 22h e ficou até fechar" },
+    "premium": false, "addedAt": "2026-09-05", "order": 2 },
+  { "id": "role-certificado-ultimo", "layoutId": "certificado", "name": "O último a sair", "category": "role",
+    "values": { "name": "Você", "reason": "por dizer 'vou embora cedo hoje' e ser o último a sair pela 27ª vez", "signature": "O bar", "date": "Sábado passado" },
+    "premium": true, "addedAt": "2026-09-05", "order": 3 }
+]

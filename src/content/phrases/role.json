@@ -1,0 +1,22 @@
+[
+  { "id": "rol-top-001", "text": "EU: HOJE VOU EMBORA CEDO", "slotTypes": ["top"], "categories": ["role"] },
+  { "id": "rol-bottom-001", "text": "EU FECHANDO O BAR:", "slotTypes": ["bottom"], "categories": ["role"] },
+  { "id": "rol-title-001", "text": "Pessoa diz que vai tomar 'só uma' e sai às 3 da manhã", "slotTypes": ["title"], "categories": ["role"] },
+  { "id": "rol-title-002", "text": "Amigo que 'não ia' chega às 22h e fica até o fim", "slotTypes": ["title"], "categories": ["role"] },
+  { "id": "rol-desc-001", "text": "Testemunhas confirmam que 'só uma' virou a noite inteira.", "slotTypes": ["description"], "categories": ["role"] },
+  { "id": "rol-pov-001", "text": "você disse que ia tomar 'só uma' e já é 3 da manhã", "slotTypes": ["pov"], "categories": ["role"] },
+  { "id": "rol-pov-002", "text": "o rolê é às 20h e você dormiu às 19h30", "slotTypes": ["pov"], "categories": ["role"] },
+  { "id": "rol-caption-001", "text": "Eu no rolê dizendo que amanhã acordo cedo", "slotTypes": ["caption"], "categories": ["role"] },
+  { "id": "rol-caption-002", "text": "Eu descobrindo o valor da conta no fim da noite", "slotTypes": ["caption"], "categories": ["role", "dinheiro"] },
+  { "id": "rol-msg-001", "text": "Vai hoje?", "slotTypes": ["message"], "categories": ["role"] },
+  { "id": "rol-msg-002", "text": "Vou não, tô cansado", "slotTypes": ["message"], "categories": ["role"] },
+  { "id": "rol-msg-003", "text": "Chegou 22h e ficou até fechar", "slotTypes": ["message"], "categories": ["role"] },
+  { "id": "rol-opt-001", "text": "Só uma", "slotTypes": ["option"], "categories": ["role"] },
+  { "id": "rol-opt-002", "text": "Até fechar", "slotTypes": ["option"], "categories": ["role"] },
+  { "id": "rol-opt-003", "text": "Dormiu", "slotTypes": ["option"], "categories": ["role"] },
+  { "id": "rol-name-001", "text": "Grupo do rolê", "slotTypes": ["name"], "categories": ["role"] },
+  { "id": "rol-name-002", "text": "O último a sair", "slotTypes": ["name"], "categories": ["role"] },
+  { "id": "rol-label-001", "text": "O bar", "slotTypes": ["label"], "categories": ["role"] },
+  { "id": "rol-label-002", "text": "Sábado passado", "slotTypes": ["label"], "categories": ["role"] },
+  { "id": "rol-free-001", "text": "SÓ UMA E VOU EMBORA", "slotTypes": ["free", "top"], "categories": ["role"] }
+]

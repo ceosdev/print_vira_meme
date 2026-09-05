@@ -1,0 +1,68 @@
+{
+  "id": "podio",
+  "name": "Pódio",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#0F0F14",
+  "premium": true,
+  "slots": [
+    { "id": "title", "label": "Título do ranking", "type": "title", "maxChars": 40, "maxLines": 2, "multiline": false, "placeholder": "RANKING DE DESCULPAS" },
+    { "id": "name-1", "label": "1º lugar (a foto)", "type": "name", "maxChars": 30, "maxLines": 3, "multiline": true, "placeholder": "Tô chegando" },
+    { "id": "name-2", "label": "2º lugar", "type": "name", "maxChars": 30, "maxLines": 3, "multiline": true, "placeholder": "Não vi a mensagem" },
+    { "id": "name-3", "label": "3º lugar", "type": "name", "maxChars": 30, "maxLines": 2, "multiline": true, "placeholder": "Meu celular morreu" }
+  ],
+  "elements": [
+    {
+      "id": "title-text", "type": "text", "content": "🏆 {{title}}",
+      "fontRole": "display", "font": "bebas", "fontSize": 72, "minFontSize": 44,
+      "color": "#FFD60A", "align": "center", "valign": "middle", "uppercase": true,
+      "x": 40, "y": 40, "width": 1000, "height": 120
+    },
+    { "id": "photo", "type": "image", "x": 390, "y": 440, "width": 300, "height": 300, "radius": 150, "defaultFit": "cover" },
+
+    { "id": "block-2", "type": "rect", "x": 60, "y": 800, "width": 300, "height": 300, "fill": "#C0C0C0", "radius": 12 },
+    {
+      "id": "num-2", "type": "text", "content": "2",
+      "fontRole": "fixed", "font": "anton", "fontSize": 96, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 60, "y": 800, "width": 300, "height": 110
+    },
+    {
+      "id": "name-2-text", "type": "text", "content": "{{name-2}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 36, "minFontSize": 26, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 70, "y": 910, "width": 280, "height": 180
+    },
+
+    { "id": "block-1", "type": "rect", "x": 390, "y": 760, "width": 300, "height": 340, "fill": "#FFD60A", "radius": 12 },
+    {
+      "id": "num-1", "type": "text", "content": "1",
+      "fontRole": "fixed", "font": "anton", "fontSize": 120, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 390, "y": 760, "width": 300, "height": 140
+    },
+    {
+      "id": "name-1-text", "type": "text", "content": "{{name-1}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 40, "minFontSize": 28, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 400, "y": 900, "width": 280, "height": 190
+    },
+
+    { "id": "block-3", "type": "rect", "x": 720, "y": 900, "width": 300, "height": 200, "fill": "#CD7F32", "radius": 12 },
+    {
+      "id": "num-3", "type": "text", "content": "3",
+      "fontRole": "fixed", "font": "anton", "fontSize": 80, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 720, "y": 900, "width": 300, "height": 90
+    },
+    {
+      "id": "name-3-text", "type": "text", "content": "{{name-3}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 32, "minFontSize": 24, "color": "#0F0F14",
+      "align": "center", "valign": "middle",
+      "x": 730, "y": 990, "width": 280, "height": 100
+    },
+
+    { "id": "floor", "type": "rect", "x": 40, "y": 1100, "width": 1000, "height": 8, "fill": "#26262F" },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

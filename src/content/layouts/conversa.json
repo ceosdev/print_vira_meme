@@ -1,0 +1,47 @@
+{
+  "id": "conversa",
+  "name": "Conversa",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#0F0F14",
+  "premium": false,
+  "slots": [
+    { "id": "contact", "label": "Contato", "type": "name", "maxChars": 20, "maxLines": 1, "multiline": false, "placeholder": "Mãe" },
+    { "id": "m1", "label": "Mensagem recebida", "type": "message", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "Você vem almoçar domingo?" },
+    { "id": "m2", "label": "Sua resposta", "type": "message", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "Vou sim, tô chegando" },
+    { "id": "m3", "label": "Resposta final", "type": "message", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "Isso foi às 11h. Já são 15h.", "optional": true }
+  ],
+  "elements": [
+    { "id": "topbar", "type": "rect", "x": 0, "y": 0, "width": 1080, "height": 100, "fill": "#1A1A22" },
+    { "id": "avatar", "type": "rect", "x": 40, "y": 22, "width": 56, "height": 56, "fill": "#FFD60A", "radius": 28 },
+    {
+      "id": "contact-text", "type": "text", "content": "{{contact}}",
+      "fontRole": "fixed", "font": "rubik-bold", "fontSize": 40, "color": "#FFFFFF",
+      "align": "left", "valign": "middle",
+      "x": 120, "y": 0, "width": 920, "height": 100
+    },
+    { "id": "b1-bg", "type": "rect", "x": 40, "y": 140, "width": 720, "height": 150, "fill": "#26262F", "radius": 28 },
+    {
+      "id": "b1-text", "type": "text", "content": "{{m1}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 40, "minFontSize": 28, "color": "#FFFFFF",
+      "align": "left", "valign": "middle",
+      "x": 70, "y": 140, "width": 660, "height": 150
+    },
+    { "id": "b2-bg", "type": "rect", "x": 320, "y": 320, "width": 720, "height": 150, "fill": "#FFD60A", "radius": 28 },
+    {
+      "id": "b2-text", "type": "text", "content": "{{m2}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 40, "minFontSize": 28, "color": "#0F0F14",
+      "align": "left", "valign": "middle",
+      "x": 350, "y": 320, "width": 660, "height": 150
+    },
+    { "id": "photo", "type": "image", "x": 320, "y": 500, "width": 720, "height": 540, "radius": 28, "defaultFit": "cover" },
+    { "id": "b3-bg", "type": "rect", "x": 40, "y": 1070, "width": 720, "height": 150, "fill": "#26262F", "radius": 28, "showIf": "m3" },
+    {
+      "id": "b3-text", "type": "text", "content": "{{m3}}",
+      "fontRole": "fixed", "font": "rubik-medium", "fontSize": 40, "minFontSize": 28, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "hideWhenEmpty": true,
+      "x": 70, "y": 1070, "width": 660, "height": 150
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

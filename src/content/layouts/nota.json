@@ -1,0 +1,24 @@
+{
+  "id": "nota",
+  "name": "Bilhete",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#1A1A22",
+  "premium": true,
+  "slots": [
+    { "id": "note", "label": "Bilhete", "type": "free", "maxChars": 160, "maxLines": 5, "multiline": true, "placeholder": "Lembrete: não responder o grupo depois das 22h" }
+  ],
+  "elements": [
+    { "id": "photo", "type": "image", "x": 0, "y": 0, "width": 1080, "height": 1350, "defaultFit": "cover" },
+    { "id": "note-shadow", "type": "rect", "x": 132, "y": 712, "width": 840, "height": 460, "fill": "rgba(0,0,0,0.35)", "radius": 4, "rotation": -3 },
+    { "id": "note-paper", "type": "rect", "x": 120, "y": 700, "width": 840, "height": 460, "fill": "#FFF176", "radius": 4, "rotation": -3 },
+    { "id": "tape", "type": "rect", "x": 460, "y": 672, "width": 160, "height": 44, "fill": "rgba(255,255,255,0.65)", "radius": 2, "rotation": 4 },
+    {
+      "id": "note-text", "type": "text", "content": "{{note}}",
+      "fontRole": "display", "font": "marker", "fontSize": 56, "minFontSize": 34,
+      "color": "#222222", "align": "left", "valign": "top", "rotation": -3,
+      "x": 160, "y": 740, "width": 760, "height": 380
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

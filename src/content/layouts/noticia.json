@@ -1,0 +1,50 @@
+{
+  "id": "noticia",
+  "name": "Notícia urgente",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350, "heightWithoutBrand": 1286 },
+  "background": "#FFFFFF",
+  "premium": false,
+  "slots": [
+    { "id": "title", "label": "Manchete", "type": "title", "maxChars": 90, "maxLines": 3, "multiline": true, "placeholder": "Brasileiro promete começar a academia na segunda-feira" },
+    { "id": "description", "label": "Descrição", "type": "description", "maxChars": 120, "maxLines": 3, "multiline": true, "placeholder": "Segundo fontes, é a 14ª segunda-feira consecutiva com a mesma promessa.", "optional": true },
+    { "id": "source", "label": "Fonte", "type": "label", "maxChars": 50, "maxLines": 1, "multiline": false, "placeholder": "Fonte: grupo da família", "optional": true }
+  ],
+  "elements": [
+    { "id": "header-bg", "type": "rect", "x": 0, "y": 0, "width": 1080, "height": 120, "fill": "#D7263D" },
+    {
+      "id": "header-text", "type": "text", "content": "🚨 URGENTE",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 64, "color": "#FFFFFF",
+      "align": "left", "valign": "middle", "letterSpacing": 4,
+      "x": 40, "y": 0, "width": 760, "height": 120
+    },
+    { "id": "live-bg", "type": "rect", "x": 860, "y": 36, "width": 180, "height": 48, "fill": "#111111", "radius": 8 },
+    {
+      "id": "live-text", "type": "text", "content": "AO VIVO",
+      "fontRole": "fixed", "font": "bebas", "fontSize": 30, "color": "#FFFFFF",
+      "align": "center", "valign": "middle", "letterSpacing": 3,
+      "x": 860, "y": 36, "width": 180, "height": 48
+    },
+    { "id": "photo", "type": "image", "x": 40, "y": 160, "width": 1000, "height": 560, "radius": 8, "defaultFit": "cover" },
+    {
+      "id": "title-text", "type": "text", "content": "{{title}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 60, "minFontSize": 36,
+      "color": "#111111", "align": "left", "valign": "top",
+      "x": 40, "y": 750, "width": 1000, "height": 220
+    },
+    {
+      "id": "description-text", "type": "text", "content": "{{description}}",
+      "fontRole": "body", "font": "rubik-medium", "fontSize": 34, "minFontSize": 24,
+      "color": "#444444", "align": "left", "valign": "top", "hideWhenEmpty": true,
+      "x": 40, "y": 990, "width": 1000, "height": 180
+    },
+    { "id": "accent", "type": "rect", "x": 40, "y": 1200, "width": 120, "height": 8, "fill": "#D7263D" },
+    {
+      "id": "source-text", "type": "text", "content": "{{source}}",
+      "fontRole": "fixed", "font": "rubik", "fontSize": 26, "color": "#888888",
+      "align": "left", "valign": "middle", "hideWhenEmpty": true,
+      "x": 40, "y": 1224, "width": 1000, "height": 44
+    },
+    { "id": "brand", "type": "brand", "variant": "footer", "x": 0, "y": 1286, "width": 1080, "height": 64 }
+  ]
+}

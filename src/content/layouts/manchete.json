@@ -1,0 +1,37 @@
+{
+  "id": "manchete",
+  "name": "Manchete",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350, "heightWithoutBrand": 1286 },
+  "background": "#F4F1EA",
+  "premium": false,
+  "slots": [
+    { "id": "kicker", "label": "Chapéu", "type": "label", "maxChars": 30, "maxLines": 1, "multiline": false, "placeholder": "ÚLTIMAS NOTÍCIAS", "optional": true },
+    { "id": "title", "label": "Manchete", "type": "title", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "HOMEM AFIRMA QUE VAI ECONOMIZAR ESTE MÊS" },
+    { "id": "description", "label": "Legenda", "type": "description", "maxChars": 120, "maxLines": 3, "multiline": true, "placeholder": "Na foto, o suspeito momentos antes de abrir o app de delivery.", "optional": true }
+  ],
+  "elements": [
+    { "id": "top-rule", "type": "rect", "x": 40, "y": 40, "width": 1000, "height": 6, "fill": "#111111" },
+    {
+      "id": "kicker-text", "type": "text", "content": "{{kicker}}",
+      "fontRole": "fixed", "font": "oswald-medium", "fontSize": 32, "color": "#8A1C1C",
+      "align": "left", "valign": "middle", "uppercase": true, "letterSpacing": 4, "hideWhenEmpty": true,
+      "x": 40, "y": 66, "width": 1000, "height": 48
+    },
+    {
+      "id": "headline", "type": "text", "content": "{{title}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 84, "minFontSize": 50,
+      "color": "#111111", "align": "left", "valign": "top", "uppercase": true,
+      "x": 40, "y": 124, "width": 1000, "height": 300
+    },
+    { "id": "mid-rule", "type": "rect", "x": 40, "y": 440, "width": 1000, "height": 4, "fill": "#111111" },
+    { "id": "photo", "type": "image", "x": 40, "y": 470, "width": 1000, "height": 620, "defaultFit": "cover" },
+    {
+      "id": "caption", "type": "text", "content": "{{description}}",
+      "fontRole": "body", "font": "rubik", "fontSize": 30, "minFontSize": 22,
+      "color": "#444444", "align": "left", "valign": "top", "hideWhenEmpty": true,
+      "x": 40, "y": 1106, "width": 1000, "height": 120
+    },
+    { "id": "brand", "type": "brand", "variant": "footer", "x": 0, "y": 1286, "width": 1080, "height": 64 }
+  ]
+}

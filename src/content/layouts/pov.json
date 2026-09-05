@@ -1,0 +1,22 @@
+{
+  "id": "pov",
+  "name": "POV",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1080 },
+  "background": "#000000",
+  "premium": false,
+  "slots": [
+    { "id": "pov", "label": "POV: …", "type": "pov", "maxChars": 90, "maxLines": 3, "multiline": true, "placeholder": "você abre a geladeira pela quinta vez" }
+  ],
+  "elements": [
+    { "id": "photo", "type": "image", "x": 0, "y": 0, "width": 1080, "height": 1080, "defaultFit": "cover" },
+    { "id": "shade", "type": "rect", "x": 0, "y": 0, "width": 1080, "height": 320, "fill": "rgba(0,0,0,0.55)" },
+    {
+      "id": "pov-text", "type": "text", "content": "POV: {{pov}}",
+      "fontRole": "display", "font": "bebas", "fontSize": 80, "minFontSize": 48,
+      "color": "#FFFFFF", "align": "left", "valign": "top", "shadow": true, "draggable": true,
+      "x": 40, "y": 40, "width": 1000, "height": 240
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1000, "width": 480, "height": 56 }
+  ]
+}

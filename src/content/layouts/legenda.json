@@ -1,0 +1,21 @@
+{
+  "id": "legenda",
+  "name": "Legenda",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "background": "#111111",
+  "premium": false,
+  "slots": [
+    { "id": "caption", "label": "Legenda", "type": "caption", "maxChars": 140, "maxLines": 4, "multiline": true, "placeholder": "Eu fingindo que entendi a reunião" }
+  ],
+  "elements": [
+    { "id": "photo", "type": "image", "x": 0, "y": 0, "width": 1080, "height": 900, "defaultFit": "cover" },
+    {
+      "id": "caption-text", "type": "text", "content": "{{caption}}",
+      "fontRole": "display", "font": "oswald", "fontSize": 64, "minFontSize": 40,
+      "color": "#FFFFFF", "align": "center", "valign": "middle", "draggable": true,
+      "x": 40, "y": 940, "width": 1000, "height": 300
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1270, "width": 480, "height": 56 }
+  ]
+}

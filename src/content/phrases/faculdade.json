@@ -1,0 +1,22 @@
+[
+  { "id": "fac-top-001", "text": "EU NA VÉSPERA DA PROVA:", "slotTypes": ["top"], "categories": ["faculdade"] },
+  { "id": "fac-bottom-001", "text": "'DÁ TEMPO DE VER TUDO'", "slotTypes": ["bottom"], "categories": ["faculdade"] },
+  { "id": "fac-title-001", "text": "Estudante começa TCC 'amanhã' pela 30ª vez", "slotTypes": ["title"], "categories": ["faculdade"] },
+  { "id": "fac-title-002", "text": "Trabalho em grupo: um faz tudo, quatro colocam o nome", "slotTypes": ["title"], "categories": ["faculdade"] },
+  { "id": "fac-title-003", "text": "Como está o TCC?", "slotTypes": ["title"], "categories": ["faculdade"] },
+  { "id": "fac-desc-001", "text": "O grupo afirma que 'todo mundo ajudou'. A planilha discorda.", "slotTypes": ["description"], "categories": ["faculdade"] },
+  { "id": "fac-pov-001", "text": "o professor diz que a prova é 'só o que foi visto em aula'", "slotTypes": ["pov"], "categories": ["faculdade"] },
+  { "id": "fac-pov-002", "text": "você descobre que a aula era obrigatória", "slotTypes": ["pov"], "categories": ["faculdade"] },
+  { "id": "fac-caption-001", "text": "Eu fingindo que entendi a matéria toda", "slotTypes": ["caption"], "categories": ["faculdade"] },
+  { "id": "fac-caption-002", "text": "Eu apresentando o trabalho que fiz às 4 da manhã", "slotTypes": ["caption"], "categories": ["faculdade"] },
+  { "id": "fac-msg-001", "text": "Alguém tem o resumo?", "slotTypes": ["message"], "categories": ["faculdade"] },
+  { "id": "fac-msg-002", "text": "Eu tenho, mas tá em casa", "slotTypes": ["message"], "categories": ["faculdade"] },
+  { "id": "fac-msg-003", "text": "A prova é hoje?", "slotTypes": ["message"], "categories": ["faculdade"] },
+  { "id": "fac-opt-001", "text": "Começo amanhã", "slotTypes": ["option"], "categories": ["faculdade"] },
+  { "id": "fac-opt-002", "text": "Tem um título", "slotTypes": ["option"], "categories": ["faculdade"] },
+  { "id": "fac-opt-003", "text": "O que é TCC?", "slotTypes": ["option"], "categories": ["faculdade"] },
+  { "id": "fac-name-001", "text": "O TCC", "slotTypes": ["name"], "categories": ["faculdade"] },
+  { "id": "fac-name-002", "text": "Quem fez tudo", "slotTypes": ["name"], "categories": ["faculdade"] },
+  { "id": "fac-free-001", "text": "PODE DEIXAR QUE EU FAÇO A MINHA PARTE", "slotTypes": ["free"], "categories": ["faculdade"] },
+  { "id": "fac-free-002", "text": "TRABALHO EM GRUPO, DIA 1", "slotTypes": ["caption", "free"], "categories": ["faculdade"] }
+]

@@ -1,0 +1,35 @@
+{
+  "id": "alerta",
+  "name": "Alerta",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350, "heightWithoutBrand": 1286 },
+  "background": "#111111",
+  "premium": false,
+  "slots": [
+    { "id": "title", "label": "Aviso", "type": "title", "maxChars": 70, "maxLines": 3, "multiline": true, "placeholder": "PESSOA VISTA ACORDADA ÀS 3H" },
+    { "id": "description", "label": "Detalhes", "type": "description", "maxChars": 100, "maxLines": 3, "multiline": true, "placeholder": "Alegou que ia \"só ver uma coisa\" no celular.", "optional": true }
+  ],
+  "elements": [
+    { "id": "header-bg", "type": "rect", "x": 0, "y": 0, "width": 1080, "height": 140, "fill": "#FFD60A" },
+    {
+      "id": "header-text", "type": "text", "content": "⚠️ ATENÇÃO",
+      "fontRole": "fixed", "font": "anton", "fontSize": 72, "color": "#111111",
+      "align": "center", "valign": "middle", "letterSpacing": 2,
+      "x": 40, "y": 0, "width": 1000, "height": 140
+    },
+    { "id": "photo", "type": "image", "x": 40, "y": 180, "width": 1000, "height": 620, "radius": 12, "defaultFit": "cover" },
+    {
+      "id": "title-text", "type": "text", "content": "{{title}}",
+      "fontRole": "display", "font": "anton", "fontSize": 68, "minFontSize": 40,
+      "color": "#FFD60A", "align": "center", "valign": "top", "uppercase": true,
+      "x": 40, "y": 840, "width": 1000, "height": 220
+    },
+    {
+      "id": "description-text", "type": "text", "content": "{{description}}",
+      "fontRole": "body", "font": "rubik-medium", "fontSize": 36, "minFontSize": 26,
+      "color": "#FFFFFF", "align": "center", "valign": "top", "hideWhenEmpty": true,
+      "x": 40, "y": 1080, "width": 1000, "height": 160
+    },
+    { "id": "brand", "type": "brand", "variant": "footer", "x": 0, "y": 1286, "width": 1080, "height": 64 }
+  ]
+}

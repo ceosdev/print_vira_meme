@@ -1,0 +1,32 @@
+{
+  "id": "classic",
+  "name": "Meme clássico",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1080 },
+  "background": "#000000",
+  "premium": false,
+  "slots": [
+    { "id": "top", "label": "Texto de cima", "type": "top", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "EU: HOJE VOU DORMIR CEDO" },
+    { "id": "bottom", "label": "Texto de baixo", "type": "bottom", "maxChars": 80, "maxLines": 3, "multiline": true, "placeholder": "EU ÀS 3 DA MANHÃ:", "optional": true }
+  ],
+  "elements": [
+    { "id": "photo", "type": "image", "x": 0, "y": 0, "width": 1080, "height": 1080, "defaultFit": "cover" },
+    {
+      "id": "top-text", "type": "text", "content": "{{top}}",
+      "fontRole": "display", "font": "anton", "fontSize": 84, "minFontSize": 48,
+      "color": "#FFFFFF", "align": "center", "valign": "top", "uppercase": true,
+      "outline": { "color": "#000000", "width": 6 }, "shadow": true,
+      "hideWhenEmpty": true, "draggable": true,
+      "x": 40, "y": 40, "width": 1000, "height": 260
+    },
+    {
+      "id": "bottom-text", "type": "text", "content": "{{bottom}}",
+      "fontRole": "display", "font": "anton", "fontSize": 84, "minFontSize": 48,
+      "color": "#FFFFFF", "align": "center", "valign": "bottom", "uppercase": true,
+      "outline": { "color": "#000000", "width": 6 }, "shadow": true,
+      "hideWhenEmpty": true, "draggable": true,
+      "x": 40, "y": 700, "width": 1000, "height": 260
+    },
+    { "id": "brand", "type": "brand", "variant": "pill", "x": 560, "y": 1000, "width": 480, "height": 56 }
+  ]
+}
