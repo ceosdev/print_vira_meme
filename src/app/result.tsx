@@ -14,6 +14,7 @@ import { useShareFlow } from '@/hooks/useShareFlow';
 import { strings } from '@/i18n/strings';
 import { services } from '@/services';
 import { useCreationStore } from '@/store/creationStore';
+import { useUiIntentStore } from '@/store/uiIntentStore';
 import { colors, radius, spacing } from '@/theme/tokens';
 import { typography } from '@/theme/typography';
 
@@ -49,7 +50,8 @@ export default function ResultScreen() {
   const onCreateAnother = useCallback(() => {
     void runGuarded(() => {
       useCreationStore.getState().reset();
-      router.replace({ pathname: '/', params: { pick: '1' } });
+      useUiIntentStore.getState().requestPhoto();
+      router.replace('/');
     });
   }, [router, runGuarded]);
 

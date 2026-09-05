@@ -6,16 +6,14 @@ import { createMockImageService } from '@/services/mock/mockImageService';
 import { useCreationStore } from '@/store/creationStore';
 import { useEntitlementStore } from '@/store/entitlementStore';
 
+import { useUiIntentStore } from '@/store/uiIntentStore';
+
 const mockPush = jest.fn();
-const mockParams: { pick?: string } = {};
-jest.mock('expo-router', () => ({
-  useRouter: () => ({ push: mockPush, replace: jest.fn(), back: jest.fn() }),
-  useLocalSearchParams: () => mockParams,
-}));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush, replace: jest.fn(), back: jest.fn() }) }));
 
 beforeEach(() => {
   mockPush.mockClear();
-  delete mockParams.pick;
+  useUiIntentStore.getState().clearPhoto();
   useCreationStore.getState().reset();
   useEntitlementStore.getState().setEntitlements({ isPro: false, packIds: [] });
   configureServices({ image: createMockImageService(), analytics: createMockAnalyticsService() });
@@ -58,8 +56,8 @@ describe('Home', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('vindo de "Criar outro meme" (?pick=1) já abre a sheet', async () => {
-    mockParams.pick = '1';
+  it('vindo de "Criar outro meme" já abre a sheet', async () => {
+    useUiIntentStore.getState().requestPhoto();
     await render(<HomeScreen />);
     expect(screen.getByText('De onde vem a foto?')).toBeTruthy();
   });

@@ -11,6 +11,7 @@ import { useCountersStore } from '@/store/countersStore';
 import { useCreationStore } from '@/store/creationStore';
 import { useEntitlementStore } from '@/store/entitlementStore';
 import { useProLiteStore } from '@/store/proLiteStore';
+import { useUiIntentStore } from '@/store/uiIntentStore';
 import { useToastStore } from '@/store/toastStore';
 
 const mockReplace = jest.fn();
@@ -24,6 +25,7 @@ beforeEach(async () => {
   useEntitlementStore.getState().setEntitlements({ isPro: false, packIds: [] });
   useCountersStore.setState({ exports: 0, shares: 0, saves: 0, exportsSinceAd: 0, lastAdAt: null, adCloseCount: 0, shareMilestoneShown: false });
   useProLiteStore.getState().hide();
+  useUiIntentStore.getState().clearPhoto();
   useToastStore.getState().hide();
   configureServices({
     analytics: createMockAnalyticsService(),
@@ -54,6 +56,7 @@ describe('Result', () => {
     expect(useProLiteStore.getState().trigger).toBe('share_milestone');
     expect(useCountersStore.getState().shareMilestoneShown).toBe(true);
     useProLiteStore.getState().hide();
+  useUiIntentStore.getState().clearPhoto();
     await fireEvent.press(screen.getByTestId('share'));
     expect(useProLiteStore.getState().trigger).toBeNull();
   });
@@ -82,7 +85,8 @@ describe('Result', () => {
     await fireEvent.press(screen.getByTestId('create-another'));
     expect(useCountersStore.getState().lastAdAt).not.toBeNull();
     expect(useCreationStore.getState().image).toBeUndefined();
-    expect(mockReplace).toHaveBeenCalledWith({ pathname: '/', params: { pick: '1' } });
+    expect(useUiIntentStore.getState().wantsPhoto).toBe(true);
+    expect(mockReplace).toHaveBeenCalledWith('/');
   });
 
   it('PRO mostra HD e não mostra o link da marca', async () => {

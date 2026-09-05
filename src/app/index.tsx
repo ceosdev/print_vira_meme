@@ -1,6 +1,6 @@
 import { Settings as SettingsIcon } from 'lucide-react-native';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'expo-router';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { PhotoSheet } from '@/components/PhotoSheet';
 import { ProPill } from '@/components/ProPill';
@@ -14,36 +14,38 @@ import { catalog } from '@/content';
 import { useEntitlements } from '@/hooks/useEntitlements';
 import { strings } from '@/i18n/strings';
 import { useCreationStore } from '@/store/creationStore';
+import { useUiIntentStore } from '@/store/uiIntentStore';
 import { colors, spacing } from '@/theme/tokens';
 import { typography } from '@/theme/typography';
 import type { CategoryId, Preset } from '@/types/catalog';
 
 export default function HomeScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams<{ pick?: string }>();
   const { isPro, isUnlocked } = useEntitlements();
   const image = useCreationStore((s) => s.image);
   const [sheetOpen, setSheetOpen] = useState(false);
+  // "Criar outro meme" pede o seletor de foto ao voltar para a Home.
+  const wantsPhoto = useUiIntentStore((s) => s.wantsPhoto);
   const [pendingRoute, setPendingRoute] = useState<'/templates' | '/editor'>('/templates');
 
   const popular = useMemo(() => catalog.popularPresets(), []);
   const news = useMemo(() => catalog.newPresets(), []);
   const [wordA, wordB, wordC] = strings.app.wordmark;
 
-  // Vindo de "Criar outro meme": já abre o seletor de foto.
-  useEffect(() => {
-    if (params.pick === '1') setSheetOpen(true);
-  }, [params.pick]);
-
   const openPhoto = useCallback((route: '/templates' | '/editor') => {
     setPendingRoute(route);
     setSheetOpen(true);
   }, []);
 
-  const onPicked = useCallback(() => {
+  const closeSheet = useCallback(() => {
     setSheetOpen(false);
+    useUiIntentStore.getState().clearPhoto();
+  }, []);
+
+  const onPicked = useCallback(() => {
+    closeSheet();
     router.push(pendingRoute);
-  }, [pendingRoute, router]);
+  }, [closeSheet, pendingRoute, router]);
 
   const selectPreset = useCallback(
     (preset: Preset) => {
@@ -108,7 +110,7 @@ export default function HomeScreen() {
         ) : null}
       </ScrollView>
 
-      <PhotoSheet open={sheetOpen} onClose={() => setSheetOpen(false)} onPicked={onPicked} />
+      <PhotoSheet open={sheetOpen || wantsPhoto} onClose={closeSheet} onPicked={onPicked} />
     </Screen>
   );
 }

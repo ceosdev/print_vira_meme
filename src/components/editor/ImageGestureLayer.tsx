@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/immutability -- SharedValue do Reanimated é mutável por design (escrita na UI thread) */
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import Animated, { runOnJS, useSharedValue, type SharedValue } from 'react-native-reanimated';
