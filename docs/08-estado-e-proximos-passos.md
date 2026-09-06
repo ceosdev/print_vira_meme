@@ -10,7 +10,7 @@
 |---|---|
 | Repositório | `git@github.com:ceosdev/print_vira_meme.git` |
 | Branch estável | **`main`** — tudo integrado e pushado (Etapas 1 a 7 + correções do aparelho + segunda leva do catálogo) |
-| Último commit | `1415f5d` |
+| Último commit | ver `git log --oneline -1` |
 | Branch aberta | nenhuma |
 
 O `gh` CLI não está autenticado nesta máquina; o push usa SSH (chave já funciona).
@@ -74,7 +74,7 @@ Planos de implementação executados: `docs/superpowers/plans/` (fundação, nú
 
 ### Verificado no aparelho (Android 16, Expo Go)
 
-- `/dev-doctor` (link 🩺 na Home em `__DEV__`): **10/10 passos OK**, incluindo exportar meme 1080×1080 em 181 ms.
+- `/dev-doctor`: **10/10 passos OK**, incluindo exportar meme 1080×1080 em 181 ms. (O link na Home saiu em `e5ecf56`; ver acima como chegar na rota.)
 - Fluxo completo criando meme: **funciona**.
 - **Pendente de confirmação:** arraste/pinça da foto e "Mover textos · PRO" depois da correção de worklets (commit `e1406a1`).
 
@@ -99,7 +99,7 @@ Depois: `npx eas-cli@latest build --platform android --profile development`.
 4. Play Console: criar o produto não consumível `pvm_pro_lifetime` (R$ 19,90) e o entitlement `pro` no RevenueCat.
 
 ### Etapa 9 — Lançamento
-PostHog (`AnalyticsService`) · Sentry (`CrashService`) · EAS Update · ícone e splash definitivos · política de privacidade hospedada · screenshots e ficha da Play · checklist de release · remover/ocultar `/dev-doctor` e `/dev-canvas`.
+PostHog (`AnalyticsService`) · Sentry (`CrashService`) · EAS Update · ícone e splash definitivos · política de privacidade hospedada · screenshots e ficha da Play · checklist de release. (Ocultar `/dev-doctor` e `/dev-canvas` já foi feito em `e5ecf56`: fora de `__DEV__` as rotas redirecionam para a Home.)
 
 ### v1.1 (decidido na Etapa 1, fora do MVP)
 Packs de templates · rewarded ads · favoritos · **histórico dos memes** · +50 presets · sazonais via OTA.
@@ -112,10 +112,13 @@ Packs de templates · rewarded ads · favoritos · **histórico dos memes** · +
 
 ## 3. Armadilhas já encontradas (não repetir)
 
-1. **Os testes mockam tudo que é nativo.** 150 testes verdes não provam que funciona no aparelho — o `@gorhom/bottom-sheet` passava nos testes e não renderizava no celular. Sempre validar fluxo novo no dispositivo.
+1. **Os testes mockam tudo que é nativo.** 151 testes verdes não provam que funciona no aparelho — o `@gorhom/bottom-sheet` passava nos testes e não renderizava no celular. Sempre validar fluxo novo no dispositivo.
 2. **Sheets:** trocadas por `Modal` do React Native (`src/components/ui/Sheet.tsx`). Não voltar para biblioteca de sheet sem necessidade real.
 3. **Gestos dentro de ScrollView:** usar o `ScrollView` do `react-native-gesture-handler` + `blocksExternalGesture(ref)`, senão a rolagem engole o arraste.
 4. **Worklets:** todos os callbacks de um gesto precisam ser inline e marcados `'worklet'`. Passar referência de função quebra o conjunto.
 5. **Nada de controle por cima da arte:** o preview tem que ser idêntico ao arquivo exportado.
 6. **Edições por script:** sempre `assert` que a substituição aconteceu antes de reportar pronto.
 7. **React Compiler (SDK 57):** proíbe `setState` dentro de efeito — usar store/estado derivado.
+8. **Conteúdo político é risco de produto, não de gosto.** O layout `noticia` gera manchete falsa; manchete falsa + política real = Deturpação na Play Store (derruba o app) e restringe demanda no AdMob. A categoria 🗳️ Politicagem existe justamente para dar essa piada sem o risco: vocabulário político apontado para síndico e churrasco. Ver regra 2 em `06-conteudo.md`.
+9. **`src/content/__tests__/catalog.test.ts` tem contagens fixas.** Todo preset, frase, layout ou categoria nova quebra 5 testes de propósito — é a rede que pega arquivo JSON criado e não registrado em `src/content/index.ts`. Atualize os números, não afrouxe a asserção.
+10. **Ao mexer no canvas, os componentes estão em `src/components/canvas/elements/`**, não em `src/components/canvas/`. Um `grep` no diretório de cima não acha `CanvasRect`/`CanvasText`/`CanvasImage` e dá a impressão errada de que algo não é aplicado.
