@@ -4,6 +4,7 @@ import { Download, RefreshCw, Share2 } from 'lucide-react-native';
 import { useCallback, useEffect } from 'react';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Button } from '@/components/ui/Button';
+import { shareInvite } from '@/config/app';
 import { Header } from '@/components/ui/Header';
 import { Screen } from '@/components/ui/Screen';
 import { useAdGate } from '@/hooks/useAdGate';
@@ -95,6 +96,7 @@ export default function ResultScreen() {
             />
             <Button label={strings.result.anotherTemplate} icon={RefreshCw} variant="secondary" onPress={onAnotherTemplate} style={styles.half} testID="another-template" />
           </View>
+          <Button label={strings.result.invite} variant="ghost" onPress={() => void services.share.shareText(shareInvite())} testID="invite" />
           <Button label={strings.result.createAnother} variant="ghost" onPress={onCreateAnother} testID="create-another" />
         </View>
       </View>

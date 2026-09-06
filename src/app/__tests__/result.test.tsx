@@ -89,6 +89,14 @@ describe('Result', () => {
     expect(mockReplace).toHaveBeenCalledWith('/');
   });
 
+  it('convite compartilha o texto com o link do app', async () => {
+    const spy = jest.spyOn(services.share, 'shareText');
+    await render(<ResultScreen />);
+    await fireEvent.press(screen.getByTestId('invite'));
+    expect(spy).toHaveBeenCalledWith(expect.stringContaining('play.google.com'));
+    expect(spy).toHaveBeenCalledWith(expect.stringContaining('Crie o seu'));
+  });
+
   it('PRO mostra HD e não mostra o link da marca', async () => {
     useEntitlementStore.getState().setEntitlements({ isPro: true, packIds: [] });
     await render(<ResultScreen />);

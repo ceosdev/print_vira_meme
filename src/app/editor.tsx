@@ -2,6 +2,7 @@ import { Sparkles, Lock } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSharedValue } from 'react-native-reanimated';
 import { PhotoSheet } from '@/components/PhotoSheet';
 import { PremiumBadge } from '@/components/PremiumBadge';
@@ -33,6 +34,7 @@ const CANVAS_MAX_HEIGHT = 0.55;
 export default function EditorScreen() {
   const router = useRouter();
   const window = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   const { isPro, isUnlocked } = useEntitlements();
   const { run, exporting } = useExport();
   const paywall = usePaywall();
@@ -187,7 +189,7 @@ export default function EditorScreen() {
         </View>
       </ScrollView>
 
-      <View style={styles.cta}>
+      <View style={[styles.cta, { paddingBottom: spacing.lg + insets.bottom }]}>
         <Button
           label={locked ? strings.editor.generatePro : strings.editor.generate}
           variant={locked ? 'pro' : 'primary'}
@@ -205,7 +207,7 @@ export default function EditorScreen() {
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: spacing.lg, gap: spacing.xl, paddingBottom: 120 },
+  scroll: { padding: spacing.lg, gap: spacing.xl, paddingBottom: 160 },
   block: { gap: spacing.sm },
   sectionLabel: { color: colors.textMuted },
   fonts: { gap: spacing.sm },

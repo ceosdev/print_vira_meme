@@ -56,6 +56,7 @@ export const strings = {
     savedToast: 'Salvo na galeria ✓',
     anotherTemplate: 'Outro template',
     createAnother: 'Criar outro meme',
+    invite: 'Chamar alguém para fazer o seu 🔗',
     removeWatermark: "Tirar a marca d'água · PRO",
     hd: 'HD ✓',
     saveDenied: 'Sem acesso à galeria para salvar. Compartilhar funciona mesmo assim.',
