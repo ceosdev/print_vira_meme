@@ -4,6 +4,43 @@
 
 ---
 
+## Retomando (sessão de 2026-09-06 em diante)
+
+Tudo commitado e pushado. Nada em andamento, nenhuma branch aberta, nenhum arquivo solto.
+
+```bash
+cd ~/projects/cartech/print_vira_meme
+git pull                    # deve dizer "Already up to date"
+npm test && npm run typecheck && npx expo lint && npm run validate:catalog
+```
+Esperado: **151 testes / 29 suítes · tsc limpo · lint exit 0 · 19 layouts · 75 presets · 400 frases · 12 categorias**.
+Se algum número mudou sem ninguém ter mexido, pare e descubra por quê antes de seguir.
+
+**As duas coisas que travam o avanço, e as duas são do Carlos:**
+
+1. **Revisão visual dos 5 layouts novos** (carimbo, procurado, perfil, carteirinha, recibo).
+   Roda em Expo Go, não precisa de dev build:
+   ```bash
+   npx expo start -c
+   ```
+   e abrir `exp://<ip-da-maquina>:8081/--/dev-canvas` no celular. Procurar texto encavalando em
+   `rect`, carimbo torto demais, contraste ruim. Os 25 textos novos estão na seção 7 de
+   `06-conteudo.md` para ler antes, se preferir.
+
+2. **Conta Expo, para o dev build** (`09-dev-build.md`):
+   ```bash
+   npx eas-cli@latest login     # conta grátis em expo.dev
+   npx eas-cli@latest init      # imprime o projectId
+   ```
+   O `app.config.ts` é config **dinâmico**, então a CLI não escreve o `projectId` sozinha —
+   é preciso colar à mão em `extra.eas.projectId`. Depois:
+   `npx eas-cli@latest build --platform android --profile development`.
+
+Sem essas duas, o que dá para fazer sem depender de ninguém: antecipar o **histórico de memes**
+(decisão em aberto nº 1 da seção 2) ou escrever mais presets — as duas rodam em Expo Go.
+
+---
+
 ## 0. Onde está o código
 
 | | |
