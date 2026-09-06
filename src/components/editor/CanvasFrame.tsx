@@ -14,10 +14,12 @@ interface Props {
   onChangePhoto: () => void;
   onToggleFit: () => void;
   busy?: boolean;
+  /** mostra a dica de arrastar/pinçar (some assim que o usuário enquadra) */
+  showDragHint?: boolean;
 }
 
 /** Moldura do preview: canvas + pills de "Trocar foto" e "Preencher/Encaixar" + overlay de exportação. */
-export function CanvasFrame({ children, width, height, fit, onChangePhoto, onToggleFit, busy }: Props) {
+export function CanvasFrame({ children, width, height, fit, onChangePhoto, onToggleFit, busy, showDragHint }: Props) {
   return (
     <View style={[styles.frame, { width, height }]}>
       {children}
@@ -28,6 +30,11 @@ export function CanvasFrame({ children, width, height, fit, onChangePhoto, onTog
         </View>
       ) : (
         <>
+          {showDragHint ? (
+            <View style={styles.hint} pointerEvents="none">
+              <Text style={[typography.caption, { color: colors.text }]}>{strings.editor.dragHint}</Text>
+            </View>
+          ) : null}
           <Pill onPress={onChangePhoto} icon={<RefreshCw size={16} color={colors.text} />} label={strings.editor.changePhoto} style={styles.left} testID="change-photo" />
           <Pill
             onPress={onToggleFit}
@@ -69,6 +76,15 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
+  },
+  hint: {
+    position: 'absolute',
+    top: spacing.md,
+    alignSelf: 'center',
+    backgroundColor: 'rgba(38,38,47,0.9)',
+    borderRadius: radius.pill,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
   },
   left: { left: spacing.md, bottom: spacing.md },
   right: { right: spacing.md, bottom: spacing.md },

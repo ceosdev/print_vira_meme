@@ -83,6 +83,27 @@ describe('Editor', () => {
     expect(screen.queryByTestId('text-input')).toBeNull();
   });
 
+  it('mover textos no Free abre o paywall', async () => {
+    setup('humor-dormir-cedo');
+    await render(<EditorScreen />);
+    await fireEvent.press(screen.getByTestId('move-texts'));
+    expect(usePaywallStore.getState().trigger).toBe('premium_style');
+    expect(screen.queryByText('Movendo textos')).toBeNull();
+  });
+
+  it('mover textos no PRO ativa o modo', async () => {
+    setup('humor-dormir-cedo', true);
+    await render(<EditorScreen />);
+    await fireEvent.press(screen.getByTestId('move-texts'));
+    expect(screen.getByText('Movendo textos')).toBeTruthy();
+  });
+
+  it('a dica de enquadrar aparece antes de mexer na foto', async () => {
+    setup('humor-dormir-cedo');
+    await render(<EditorScreen />);
+    expect(screen.getByText('Arraste ou dê pinça para enquadrar a foto')).toBeTruthy();
+  });
+
   it('PRO exporta sem marca e alterna o enquadramento', async () => {
     setup('humor-dormir-cedo', true);
     await render(<EditorScreen />);

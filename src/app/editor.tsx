@@ -1,4 +1,4 @@
-import { Sparkles, Lock } from 'lucide-react-native';
+import { Lock, Move, Sparkles } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -50,6 +50,7 @@ export default function EditorScreen() {
 
   const [photoSheet, setPhotoSheet] = useState(false);
   const [editingSlot, setEditingSlot] = useState<string | null>(null);
+  const [movingTexts, setMovingTexts] = useState(false);
 
   const gScale = useSharedValue(transform.scale);
   const gX = useSharedValue(transform.offsetX);
@@ -122,6 +123,7 @@ export default function EditorScreen() {
           height={resolved.height * scale}
           fit={transform.fit}
           busy={exporting}
+          showDragHint={transform.fit === 'cover' && transform.scale === 1 && transform.offsetX === 0 && transform.offsetY === 0}
           onChangePhoto={() => setPhotoSheet(true)}
           onToggleFit={() => useCreationStore.getState().setImageTransform(toggleFit(transform))}
         >
@@ -136,6 +138,8 @@ export default function EditorScreen() {
               if (el && el.kind === 'text' && el.slotIds[0]) setEditingSlot(el.slotIds[0]);
             }}
             imageAnimated={{ scale: gScale, offsetX: gX, offsetY: gY }}
+            textDragEnabled={movingTexts}
+            onTextDragEnd={(elementId, pos) => useCreationStore.getState().setPosition(elementId, pos)}
             imageOverlay={
               <ImageGestureLayer
                 slot={{ width: imageEl.width, height: imageEl.height }}
@@ -144,7 +148,7 @@ export default function EditorScreen() {
                 scale={gScale}
                 offsetX={gX}
                 offsetY={gY}
-                enabled={transform.fit === 'cover'}
+                enabled={transform.fit === 'cover' && !movingTexts}
                 onCommit={(t) =>
                   useCreationStore
                     .getState()
@@ -185,6 +189,17 @@ export default function EditorScreen() {
             onToggleCaps={() => useCreationStore.getState().setStyle({ caps: !style.caps })}
             onPickColor={(color) => onStyle({ color })}
             onToggleOutline={() => onStyle({ outline: !style.outline })}
+          />
+          <Button
+            label={movingTexts ? strings.editor.moveTextsOn : strings.editor.moveTexts}
+            variant={movingTexts ? 'primary' : 'secondary'}
+            icon={isPro ? Move : Lock}
+            testID="move-texts"
+            onPress={() => {
+              const apply = () => setMovingTexts((v) => !v);
+              if (isPro) apply();
+              else paywall.require('premium_style', apply);
+            }}
           />
         </View>
       </ScrollView>

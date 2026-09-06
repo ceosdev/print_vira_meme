@@ -1,4 +1,7 @@
+/* eslint-disable react-hooks/immutability -- SharedValue do Reanimated é mutável por design */
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { Pressable, StyleSheet, Text, View, type TextStyle } from 'react-native';
+import Animated, { runOnJS, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import type { ResolvedText } from '@/utils/templateEngine';
 
 const OUTLINE_OFFSETS = [
@@ -13,9 +16,16 @@ interface Props {
   el: ResolvedText;
   scale: number;
   onPress?: (id: string) => void;
+  /** PRO: permite arrastar este texto dentro do canvas */
+  dragEnabled?: boolean;
+  /** limites do canvas em px de canvas, para o texto não sair da arte */
+  bounds?: { width: number; height: number };
+  onDragEnd?: (id: string, pos: { x: number; y: number }) => void;
 }
 
-export function CanvasText({ el, scale, onPress }: Props) {
+export function CanvasText({ el, scale, onPress, dragEnabled, bounds, onDragEnd }: Props) {
+  const dragX = useSharedValue(0);
+  const dragY = useSharedValue(0);
   const fontSize = el.fontSize * scale;
   const base: TextStyle = {
     fontFamily: el.fontFamily,
@@ -66,6 +76,40 @@ export function CanvasText({ el, scale, onPress }: Props) {
     opacity: el.opacity ?? 1,
     transform: el.rotation ? [{ rotate: `${el.rotation}deg` }] : undefined,
   };
+
+  const dragStyle = useAnimatedStyle(() => ({ transform: [{ translateX: dragX.value }, { translateY: dragY.value }] }));
+
+  const commitDrag = (translationX: number, translationY: number) => {
+    if (!onDragEnd) return;
+    const maxX = Math.max(0, (bounds?.width ?? el.width) - el.width);
+    const maxY = Math.max(0, (bounds?.height ?? el.height) - el.height);
+    const x = Math.min(maxX, Math.max(0, el.x + translationX / scale));
+    const y = Math.min(maxY, Math.max(0, el.y + translationY / scale));
+    onDragEnd(el.id, { x: Math.round(x), y: Math.round(y) });
+  };
+
+  if (dragEnabled && el.draggable) {
+    const pan = Gesture.Pan()
+      .onUpdate((e) => {
+        dragX.value = e.translationX;
+        dragY.value = e.translationY;
+      })
+      .onEnd((e) => {
+        runOnJS(commitDrag)(e.translationX, e.translationY);
+        dragX.value = 0;
+        dragY.value = 0;
+      });
+    const tap = Gesture.Tap().onEnd(() => {
+      if (onPress) runOnJS(onPress)(el.id);
+    });
+    return (
+      <GestureDetector gesture={Gesture.Exclusive(pan, tap)}>
+        <Animated.View style={[box, dragStyle]} accessibilityRole="adjustable" accessibilityLabel={`Mover ${el.id}`}>
+          {body}
+        </Animated.View>
+      </GestureDetector>
+    );
+  }
 
   if (onPress) {
     return (

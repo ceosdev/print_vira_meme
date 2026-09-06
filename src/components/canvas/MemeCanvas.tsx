@@ -20,6 +20,9 @@ export interface MemeCanvasProps {
   onTextPress?: (elementId: string) => void;
   /** conteúdo sobreposto ao slot de imagem (camada de gestos do editor) */
   imageOverlay?: ReactNode;
+  /** PRO: liga o arraste dos textos marcados como draggable */
+  textDragEnabled?: boolean;
+  onTextDragEnd?: (elementId: string, pos: { x: number; y: number }) => void;
   /** valores compartilhados dos gestos (editor) */
   imageAnimated?: AnimatedImageTransform;
   testID?: string;
@@ -30,7 +33,7 @@ export interface MemeCanvasProps {
  * só muda `scale`. `ref` aponta para o nó que o view-shot captura.
  */
 export const MemeCanvas = forwardRef<View, MemeCanvasProps>(function MemeCanvas(
-  { resolved, image, imageTransform, scale, onImageLoad, onImageError, onTextPress, imageOverlay, imageAnimated, testID },
+  { resolved, image, imageTransform, scale, onImageLoad, onImageError, onTextPress, imageOverlay, imageAnimated, textDragEnabled, onTextDragEnd, testID },
   ref,
 ) {
   return (
@@ -58,7 +61,17 @@ export const MemeCanvas = forwardRef<View, MemeCanvasProps>(function MemeCanvas(
               />
             );
           case 'text':
-            return <CanvasText key={el.id} el={el} scale={scale} onPress={el.slotIds.length > 0 ? onTextPress : undefined} />;
+            return (
+              <CanvasText
+                key={el.id}
+                el={el}
+                scale={scale}
+                onPress={el.slotIds.length > 0 ? onTextPress : undefined}
+                dragEnabled={textDragEnabled}
+                bounds={{ width: resolved.width, height: resolved.height }}
+                onDragEnd={onTextDragEnd}
+              />
+            );
           case 'rect':
             return <CanvasRect key={el.id} el={el} scale={scale} />;
           case 'brand':
