@@ -1,0 +1,184 @@
+{
+  "id": "procurado",
+  "name": "Procurado",
+  "version": 1,
+  "canvas": {
+    "width": 1080,
+    "height": 1350,
+    "heightWithoutBrand": 1286
+  },
+  "background": "#E8DCC0",
+  "premium": false,
+  "slots": [
+    {
+      "id": "name",
+      "label": "Nome",
+      "type": "name",
+      "maxChars": 24,
+      "maxLines": 2,
+      "multiline": false,
+      "placeholder": "O CUNHADO"
+    },
+    {
+      "id": "reason",
+      "label": "Procurado por",
+      "type": "description",
+      "maxChars": 100,
+      "maxLines": 3,
+      "multiline": true,
+      "placeholder": "sumir na hora de dividir a conta do churrasco"
+    },
+    {
+      "id": "reward",
+      "label": "Recompensa",
+      "type": "label",
+      "maxChars": 28,
+      "maxLines": 1,
+      "multiline": false,
+      "placeholder": "RECOMPENSA: R$ 4,50",
+      "optional": true
+    }
+  ],
+  "elements": [
+    {
+      "id": "frame",
+      "type": "rect",
+      "x": 40,
+      "y": 40,
+      "width": 1000,
+      "height": 1206,
+      "fill": "transparent",
+      "radius": 4,
+      "border": {
+        "color": "#3B2F1E",
+        "width": 8
+      }
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "content": "PROCURA-SE",
+      "fontRole": "fixed",
+      "font": "bebas",
+      "fontSize": 116,
+      "color": "#3B2F1E",
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 12,
+      "x": 70,
+      "y": 80,
+      "width": 940,
+      "height": 130
+    },
+    {
+      "id": "photo",
+      "type": "image",
+      "x": 190,
+      "y": 240,
+      "width": 700,
+      "height": 560,
+      "radius": 4,
+      "defaultFit": "cover"
+    },
+    {
+      "id": "photo-frame",
+      "type": "rect",
+      "x": 178,
+      "y": 228,
+      "width": 724,
+      "height": 584,
+      "fill": "transparent",
+      "radius": 6,
+      "border": {
+        "color": "#3B2F1E",
+        "width": 6
+      }
+    },
+    {
+      "id": "name-text",
+      "type": "text",
+      "content": "{{name}}",
+      "fontRole": "display",
+      "font": "oswald",
+      "fontSize": 72,
+      "minFontSize": 44,
+      "color": "#3B2F1E",
+      "align": "center",
+      "valign": "middle",
+      "uppercase": true,
+      "x": 90,
+      "y": 840,
+      "width": 900,
+      "height": 100
+    },
+    {
+      "id": "reason-label",
+      "type": "text",
+      "content": "PROCURADO POR",
+      "fontRole": "fixed",
+      "font": "rubik",
+      "fontSize": 30,
+      "color": "#6B5B45",
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 4,
+      "x": 90,
+      "y": 950,
+      "width": 900,
+      "height": 44
+    },
+    {
+      "id": "reason-text",
+      "type": "text",
+      "content": "{{reason}}",
+      "fontRole": "body",
+      "font": "rubik-medium",
+      "fontSize": 40,
+      "minFontSize": 28,
+      "color": "#3B2F1E",
+      "align": "center",
+      "valign": "top",
+      "x": 110,
+      "y": 1000,
+      "width": 860,
+      "height": 130
+    },
+    {
+      "id": "reward-bg",
+      "type": "rect",
+      "x": 190,
+      "y": 1140,
+      "width": 700,
+      "height": 90,
+      "fill": "#3B2F1E",
+      "radius": 8,
+      "showIf": "reward"
+    },
+    {
+      "id": "reward-text",
+      "type": "text",
+      "content": "{{reward}}",
+      "fontRole": "fixed",
+      "font": "bebas",
+      "fontSize": 54,
+      "color": "#E8DCC0",
+      "align": "center",
+      "valign": "middle",
+      "letterSpacing": 4,
+      "hideWhenEmpty": true,
+      "x": 190,
+      "y": 1140,
+      "width": 700,
+      "height": 90
+    },
+    {
+      "id": "brand",
+      "type": "brand",
+      "variant": "footer",
+      "x": 0,
+      "y": 1286,
+      "width": 1080,
+      "height": 64
+    }
+  ]
+}

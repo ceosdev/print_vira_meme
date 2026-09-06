@@ -1,0 +1,87 @@
+[
+  {
+    "id": "pol-sindico-some",
+    "layoutId": "noticia",
+    "name": "Síndico some no elevador",
+    "category": "politicagem",
+    "values": {
+      "title": "Síndico é visto no elevador e some antes de ouvir a reclamação",
+      "description": "Moradores dizem que foi a terceira aparição relâmpago só neste mês.",
+      "source": "Fonte: a câmera do hall"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "pol-eleicao-churrasco",
+    "layoutId": "enquete",
+    "name": "Eleição da churrasqueira",
+    "category": "politicagem",
+    "tags": [
+      "familia"
+    ],
+    "values": {
+      "question": "Quem vai cuidar da churrasqueira hoje?",
+      "opt1": "Eu, mas reclamando",
+      "opt2": "Você, óbvio",
+      "opt3": "Ninguém. Vai frio mesmo"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "pol-carimbo-negado",
+    "layoutId": "carimbo",
+    "name": "Proposta negada no grupo",
+    "category": "politicagem",
+    "tags": [
+      "familia"
+    ],
+    "values": {
+      "top": "MINHA PROPOSTA NO GRUPO DA FAMÍLIA",
+      "stamp": "NEGADO",
+      "reason": "por unanimidade e sem ninguém explicar o motivo"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "pol-procurado-audio",
+    "layoutId": "procurado",
+    "name": "Procurado por áudio longo",
+    "category": "politicagem",
+    "tags": [
+      "familia"
+    ],
+    "values": {
+      "name": "O TIO DO GRUPO",
+      "reason": "mandar áudio de 8 minutos para dizer o que cabia em duas linhas",
+      "reward": "RECOMPENSA: SILÊNCIO"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 4
+  },
+  {
+    "id": "pol-carteirinha-fiscal",
+    "layoutId": "carteirinha",
+    "name": "Fiscal do horário do lixo",
+    "category": "politicagem",
+    "values": {
+      "org": "CONSELHO DO PRÉDIO",
+      "name": "EU MESMO",
+      "role": "Fiscal não remunerado do horário do lixo",
+      "code": "Nº 0002/2026",
+      "valid": "Válida até alguém discordar",
+      "caption": "Apresentar na reunião de condomínio"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 5
+  }
+]

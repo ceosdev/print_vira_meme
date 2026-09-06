@@ -8,8 +8,8 @@ Arquivos entregues nesta etapa (já nos caminhos definitivos do app):
 |---|---|
 | [src/types/catalog.ts](../src/types/catalog.ts) | schema TypeScript definitivo + registro de fontes + `tokensOf()` |
 | [src/content/schema.ts](../src/content/schema.ts) | schemas zod + `validateCatalog()` com regras cruzadas e editoriais |
-| [src/content/categories.json](../src/content/categories.json) | as 8 categorias |
-| [src/content/layouts/*.json](../src/content/layouts/) | **14 layouts** (9 free, 5 PRO) |
+| [src/content/categories.json](../src/content/categories.json) | as 12 categorias |
+| [src/content/layouts/*.json](../src/content/layouts/) | **19 layouts** (12 free, 7 PRO) |
 | [src/content/presets/humor.json](../src/content/presets/humor.json) | 3 presets de exemplo (os 50 vêm na Etapa 6) |
 | [src/content/phrases/humor.json](../src/content/phrases/humor.json) | 6 frases de exemplo (~200 na Etapa 6) |
 
@@ -165,6 +165,7 @@ Como tudo é JSON validado por zod, o builder interno (fora do app) é um formul
 | # | Decisão | Rec. |
 |---|---|---|
 | 1 | **14 layouts** no MVP: 9 free (classic, noticia, pov, placar, manchete, legenda, conversa, alerta, enquete) + 5 PRO (podio, grafico, certificado, nota, balao) | sim |
+| 1b | **+5 layouts** na segunda leva (2026-09-05): 3 free (carimbo, procurado, perfil) + 2 PRO (carteirinha, recibo) → **19 no total** | sim |
 | 2 | Tokens `{{slot-id}}` dentro de `content`, misturáveis com texto literal | sim |
 | 3 | `hideWhenEmpty` (texto) + `showIf` (qualquer elemento) como mecanismo de opcionalidade | sim |
 | 4 | Registro de fontes com `selectable`/`premium`; `display` só com fontes selecionáveis; layout free nunca usa fonte PRO (validador) | sim |

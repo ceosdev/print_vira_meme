@@ -1,0 +1,222 @@
+[
+  {
+    "id": "tec-top-001",
+    "text": "EU: ESSA SENHA EU SEI DE COR",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-top-002",
+    "text": "EU DIZENDO QUE SÓ VOU VER UMA COISA",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-bottom-001",
+    "text": "A SENHA:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-bottom-002",
+    "text": "TRÊS HORAS DEPOIS:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-001",
+    "text": "Celular atualiza sozinho e muda tudo de lugar",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-002",
+    "text": "Homem erra a senha e é bloqueado em 5 minutos",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-003",
+    "text": "Wi-fi cai no momento mais importante da chamada",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-description-001",
+    "text": "A atualização levou 47 minutos e mudou apenas a cor de um ícone.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-description-002",
+    "text": "O suporte recomendou desligar e ligar novamente, e funcionou.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-pov-001",
+    "text": "você pede uma coisa pra IA, recebe outra e agradece mesmo assim",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-pov-002",
+    "text": "você tem 847 abas abertas e jura que vai ler todas",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-caption-001",
+    "text": "Eu fingindo que entendi o que o erro quer dizer",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-caption-002",
+    "text": "Eu procurando o celular com o celular na mão",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-message-001",
+    "text": "Tenta desligar e ligar de novo",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-message-002",
+    "text": "Agora foi",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-001",
+    "text": "Aceitar todos os cookies",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-002",
+    "text": "Deixar pra depois",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-003",
+    "text": "Ligar e desligar",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-label-001",
+    "text": "ATUALIZANDO",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-stat-001",
+    "text": "Abas abertas: 847",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-name-001",
+    "text": "O WI-FI",
+    "slotTypes": [
+      "name"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-free-001",
+    "text": "Erro 404: minha paciência não foi encontrada.",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  }
+]

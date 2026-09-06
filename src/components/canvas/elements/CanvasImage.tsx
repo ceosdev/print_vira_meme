@@ -46,6 +46,7 @@ export function CanvasImage({ el, scale, image, transform, onLoad, onError, over
     borderRadius: el.radius * scale,
     overflow: 'hidden' as const,
     opacity: el.opacity ?? 1,
+    transform: el.rotation ? [{ rotate: `${el.rotation}deg` }] : undefined,
   };
 
   if (!image) {

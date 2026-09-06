@@ -1,0 +1,222 @@
+[
+  {
+    "id": "pet-top-001",
+    "text": "EU: HOJE ELE NÃO SOBE NA CAMA",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-top-002",
+    "text": "EU DIZENDO QUE VOU DAR BANHO NELE",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-bottom-001",
+    "text": "ELE ÀS 2 DA MANHÃ:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-bottom-002",
+    "text": "ELE SUMINDO NO QUINTAL:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-title-001",
+    "text": "Cachorro assume posição dramática na porta",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-title-002",
+    "text": "Gato derruba objeto e mantém contato visual",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-title-003",
+    "text": "Cão late para o vento e considera missão cumprida",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-description-001",
+    "text": "O animal permanece no mesmo lugar há seis horas, sem previsão de saída.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-description-002",
+    "text": "Especialistas dizem que o comportamento é normal e que o humano é que se adapta.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-pov-001",
+    "text": "você chega em casa e é recebido como se tivesse voltado da guerra",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-pov-002",
+    "text": "você senta no único lugar do sofá que era dele",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-caption-001",
+    "text": "Eu explicando pro meu cachorro que ele já comeu",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-caption-002",
+    "text": "Ele fingindo que não entende o que eu tô falando",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-message-001",
+    "text": "Você já vai sair de novo?",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-message-002",
+    "text": "Tô com fome",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-option-001",
+    "text": "Dormir mais um pouco",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-option-002",
+    "text": "Latir por nada",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-option-003",
+    "text": "Pedir comida de novo",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-label-001",
+    "text": "APROVADO",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-stat-001",
+    "text": "Horas dormindo: 20",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-name-001",
+    "text": "MEU CACHORRO",
+    "slotTypes": [
+      "name"
+    ],
+    "categories": [
+      "pet"
+    ]
+  },
+  {
+    "id": "pet-free-001",
+    "text": "Ele não fez nada de errado. Olha essa cara.",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "pet"
+    ]
+  }
+]

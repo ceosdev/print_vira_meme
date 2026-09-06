@@ -6,10 +6,10 @@ Arquivos entregues (caminhos definitivos do app):
 
 | Arquivo | Conteúdo |
 |---|---|
-| [src/content/presets/*.json](../src/content/presets/) | **50 presets**, um arquivo por categoria |
-| [src/content/phrases/*.json](../src/content/phrases/) | **311 frases** de sugestão, um arquivo por categoria |
+| [src/content/presets/*.json](../src/content/presets/) | **75 presets**, um arquivo por categoria |
+| [src/content/phrases/*.json](../src/content/phrases/) | **400 frases** de sugestão, um arquivo por categoria |
 
-**Validação:** `validateCatalog(…, { strict: true })` → `ok: true`, 0 erros, 0 avisos (14 layouts · 50 presets · 311 frases · 8 categorias). Toda categoria tem ≥ 3 presets e ≥ 50% free; todo preset respeita `maxChars` de cada slot; nenhuma frase passa de 90 caracteres.
+**Validação:** `validateCatalog(…, { strict: true })` → `ok: true`, 0 erros, 0 avisos (19 layouts · 75 presets · 400 frases · 12 categorias). Toda categoria tem ≥ 3 presets e ≥ 50% free; todo preset respeita `maxChars` de cada slot; nenhuma frase passa de 90 caracteres.
 
 ---
 
@@ -17,24 +17,28 @@ Arquivos entregues (caminhos definitivos do app):
 
 | Categoria | Presets | Free / PRO | Populares | Frases (categoria primária) |
 |---|---|---|---|---|
-| 😂 Humor | 15 | 11 / 4 | 2 | 72 |
+| 😂 Humor | 17 | 12 / 5 | 2 | 72 |
 | 💼 Trabalho | 8 | 5 / 3 | 2 | 52 |
 | ❤️ Relacionamento | 7 | 4 / 3 | 1 | 43 |
 | 💸 Dinheiro | 5 | 3 / 2 | 1 | 37 |
 | ⚽ Futebol | 5 | 3 / 2 | 1 | 39 |
-| 👨‍👩‍👧 Família | 4 | 3 / 1 | 1 | 28 |
-| 🎓 Faculdade | 3 | 2 / 1 | 1 | 20 |
-| 🍺 Rolê | 3 | 2 / 1 | 1 | 20 |
-| **Total** | **50** | **33 / 17** | **10** | **311** |
+| 👨‍👩‍👧 Família | 6 | 5 / 1 | 1 | 28 |
+| 🎓 Faculdade | 5 | 4 / 1 | 1 | 20 |
+| 🍺 Rolê | 5 | 3 / 2 | 1 | 20 |
+| 🗳️ Politicagem | 5 | 4 / 1 | 2 | 23 |
+| 🐶 Pet | 4 | 3 / 1 | 1 | 22 |
+| 🍔 Comida | 4 | 3 / 1 | 1 | 22 |
+| 🤖 Tecnologia | 4 | 3 / 1 | 1 | 22 |
+| **Total** | **75** | **52 / 23** | **15** | **400** |
 
-A distribuição por categoria é exatamente a do briefing (15 / 8 / 7 / 5 / 5 / 4 / 3 / 3). Free/PRO global: **33 / 17** (66% free). Os 10 populares são todos free — "🔥 Populares" é vitrine de compartilhamento, não de conversão.
+A primeira leva seguiu o briefing (15 / 8 / 7 / 5 / 5 / 4 / 3 / 3); a segunda leva (seção 7) somou 25 presets e 4 categorias. Free/PRO global: **52 / 23** (69% free). Os 10 populares são todos free — "🔥 Populares" é vitrine de compartilhamento, não de conversão.
 
-Layouts usados pelos presets: classic ×4, noticia ×4, pov ×5, placar ×3, manchete ×1, legenda ×4, conversa ×5, alerta ×5, enquete ×2 (free) · podio ×3, grafico ×3, certificado ×5, nota ×2, balao ×4 (PRO). Todos os 14 layouts têm pelo menos um preset.
+Layouts usados pelos presets: alerta ×7, carimbo ×3, classic ×5, conversa ×6, enquete ×3, legenda ×4, manchete ×1, noticia ×6, perfil ×3, placar ×4, pov ×7, procurado ×3 (free) · balao ×4, carteirinha ×3, certificado ×5, grafico ×3, nota ×2, podio ×3, recibo ×3 (PRO). Todos os 19 layouts têm pelo menos um preset.
 
 ## 2. Linha editorial (vale para presets, frases e OTAs futuras)
 
 1. **Identificação imediata:** cada preset responde "em qual grupo eu mandaria isso?" (família, trabalho, pelada, casal, rolê). Se não responde, não entra.
-2. **Zoeira leve:** ri *com*, não *de*. Sem política, religião, corpo/aparência, doença, dinheiro alheio de verdade. O alvo da piada é sempre "eu" ou uma situação universal ("o cunhado", "a segunda-feira").
+2. **Zoeira leve:** ri *com*, não *de*. Sem política **partidária**, religião, corpo/aparência, doença, dinheiro alheio de verdade. A categoria 🗳️ Politicagem usa o *vocabulário* político (candidato, urna, mandato, promessa de campanha, ata, reunião) aplicado a síndico, grupo do condomínio e churrasco em família — nunca a partido, governo, eleição real ou pessoa pública. O alvo da piada é sempre "eu" ou uma situação universal ("o cunhado", "a segunda-feira").
 3. **Sem terceiros protegidos:** nenhuma celebridade, time real, marca ou meme de terceiros. Nomes e times são do usuário. (Única menção a produto: "WhatsApp" em um preset e uma frase, como referência nominativa ao lugar onde a piada acontece — ver decisão 4.)
 4. **Português do Brasil falado:** "tô", "pra", "rapidinho", aspas simples para falas. Sem gíria regional forte, sem palavrão.
 5. **Formato manda no texto:** notícia = manchete + descrição em tom jornalístico sério (o contraste é a piada); classic = CAIXA ALTA curta; POV = frase que completa "POV: …"; conversa = 3 balões com virada no terceiro.
@@ -176,3 +180,111 @@ Cobertura mínima garantida: todo tipo de slot tem ≥ 20 frases; toda categoria
 | 7 | Os textos em si (seção 3): revise e marque o que quiser trocar — conteúdo é a parte mais subjetiva do produto | revisar |
 
 **Próxima etapa após aprovação:** Etapa 7 — Implementação (scaffold do projeto, telas, componentes, engine de templates, seleção de imagem, editor, exportação, compartilhamento, persistência, estrutura de monetização). Antes de codar, escrevo o plano de implementação (writing-plans) para você aprovar a ordem das tarefas.
+
+## 7. Segunda leva — 2026-09-05 (+5 layouts, +4 categorias, +25 presets, +89 frases)
+
+Pedido do Carlos: mais formatos visuais, mais categorias e conteúdo viral incluindo "política".
+A política entrou como **política do cotidiano** (regra 2 da linha editorial) — síndico, grupo do
+condomínio, eleição do churrasco. Nada partidário: o layout `noticia` gera manchete falsa, e
+manchete falsa com política real é violação de Deturpação na Play Store, além de restringir a
+demanda de anúncios no AdMob.
+
+### Layouts novos
+
+| id | Nome | Plano | Canvas | Slots |
+|---|---|---|---|---|
+| `carimbo` | Carimbo | Free | 1080×1080 | `top`* · `stamp` · `reason`* |
+| `procurado` | Procurado | Free | 1080×1350 | `name` · `reason` · `reward`* |
+| `perfil` | Perfil | Free | 1080×1350 | `name` · `handle` · `bio` · `stat-1` · `stat-2`* · `stat-3`* · `caption`* |
+| `carteirinha` | Carteirinha | **PRO** | 1080×1080 | `org` · `name` · `role` · `code` · `valid`* · `caption`* |
+| `recibo` | Recibo | **PRO** | 1080×1350 | `store` · `item-1` · `item-2`* · `item-3`* · `total` · `note`* |
+
+`*` = slot opcional. Todos usam só `rect` + `text` + `image` + `brand`, que é o que o `MemeCanvas` desenha.
+
+### Categorias novas
+
+| chip | id | Por quê |
+|---|---|---|
+| 🗳️ Politicagem | `politicagem` | Vocabulário político aplicado a condomínio, grupo da família e churrasco |
+| 🐶 Pet | `pet` | Veio viral grande no Brasil, ausente do catálogo inicial |
+| 🍔 Comida | `comida` | Delivery, geladeira, marmita, dieta que começa na segunda |
+| 🤖 Tecnologia | `tecnologia` | IA, senha, atualização, wi-fi — atual sem depender de manchete datada |
+
+### Os 25 presets novos
+
+#### 🗳️ Politicagem
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `pol-sindico-some` — Síndico some no elevador | Notícia urgente | Free 🔥 | Síndico é visto no elevador e some antes de ouvir a reclamação · Moradores dizem que foi a terceira aparição relâmpago só neste mês. · Fonte: a câmera do hall |
+| `pol-eleicao-churrasco` — Eleição da churrasqueira | Enquete | Free tags: familia | Quem vai cuidar da churrasqueira hoje? · Eu, mas reclamando · Você, óbvio · Ninguém. Vai frio mesmo |
+| `pol-carimbo-negado` — Proposta negada no grupo | Carimbo | Free 🔥 tags: familia | MINHA PROPOSTA NO GRUPO DA FAMÍLIA · NEGADO · por unanimidade e sem ninguém explicar o motivo |
+| `pol-procurado-audio` — Procurado por áudio longo | Procurado | Free tags: familia | O TIO DO GRUPO · mandar áudio de 8 minutos para dizer o que cabia em duas linhas · RECOMPENSA: SILÊNCIO |
+| `pol-carteirinha-fiscal` — Fiscal do horário do lixo | Carteirinha | **PRO** | CONSELHO DO PRÉDIO · EU MESMO · Fiscal não remunerado do horário do lixo · Nº 0002/2026 · Válida até alguém discordar · Apresentar na reunião de condomínio |
+
+#### 🐶 Pet
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `pet-olhar-comida` — O olhar na hora da comida | POV | Free 🔥 | seu cachorro te olha comer como se você nunca tivesse dado comida a ele |
+| `pet-alerta-sofa` — Gato assume o sofá | Alerta | Free | GATO ASSUME O SOFÁ E RECUSA NEGOCIAÇÃO · Humanos foram realocados para o tapete até segunda ordem. |
+| `pet-conversa-fome` — Tô com fome | Conversa | Free | Minha gata · Tô com fome · Acabei de te dar comida agora · Tô com fome |
+| `pet-recibo-petshop` — Recibo do banho e tosa | Recibo | **PRO** | BANHO E TOSA DO BAIRRO · 1x Banho ................... 80,00 · 1x Tosa na tesoura ........ 120,00 · 1x Olhar de mágoa ....... incluso · R$ 200,00 · Ele não falou comigo pelo resto do dia |
+
+#### 🍔 Comida
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `com-pov-cardapio` — A salada que não vinga | POV | Free 🔥 | você jura que vai comer salada e o cardápio abre direto na página do lanche |
+| `com-noticia-marmita` — Marmita não identificada | Notícia urgente | Free tags: trabalho | Marmita é aberta na segunda e ninguém reconhece o conteúdo · A comida foi guardada na quinta anterior com a promessa de 'amanhã eu como'. · Fonte: o cheiro |
+| `com-placar-sobremesa` — Eu × Sobremesa | Placar | Free | EU · 1 · SOBREMESA · 9 · 'Só um pedaço': 6 · 'Amanhã eu começo': 4 · Arrependimento: 10 |
+| `com-carteirinha-madrugada` — Carteirinha da madrugada | Carteirinha | **PRO** | SINDICATO DA FOME · EU MESMO · Come de pé na frente da geladeira às 23h · Nº 0003/2026 · Renovada toda madrugada · Não apresentar para a nutricionista |
+
+#### 🤖 Tecnologia
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `tec-senha-de-cor` — Essa senha eu sei de cor | Meme clássico | Free 🔥 | EU: ESSA SENHA EU SEI DE COR · A SENHA: |
+| `tec-alerta-atualizacao` — Atualização na hora errada | Alerta | Free | CELULAR DECIDE ATUALIZAR NO PIOR MOMENTO POSSÍVEL · Restam 47 minutos. A bateria está em 8%. |
+| `tec-perfil-ia` — Eu usando inteligência artificial | Perfil | Free | Eu usando IA · prompt.errado · Peço uma coisa, recebo outra, agradeço mesmo assim e finjo que era isso mesmo. · 3 / Tentativas · 0 / Ideia do que fiz · 1 / Obrigado por medo · Perfil conferido por ninguém |
+| `tec-recibo-assinaturas` — Assinaturas esquecidas | Recibo | **PRO** tags: dinheiro | ASSINATURAS ESQUECIDAS · 1x Streaming que não uso ... 39,90 · 1x Academia digital ....... 29,90 · 1x Nuvem cheia de print ... 12,90 · R$ 82,70 · Cobrado todo mês desde 2023 sem eu perceber |
+
+#### 😂 Humor
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `humor-perfil-segunda` — Meu perfil na segunda-feira | Perfil | Free tags: trabalho | Eu na segunda-feira · modo.aviao · Acordei, mas ainda não cheguei. Respondo depois do café. Talvez. · 0 / Disposição · 847 / Abas abertas · 1 / Café de vantagem · Perfil atualizado toda segunda |
+| `humor-carteirinha-atraso` — Carteirinha de atrasado | Carteirinha | **PRO** | CONSELHO DOS ATRASADOS · EU MESMO · Sai de casa na hora em que era pra chegar · Nº 0004/2026 · Válida por tempo indeterminado · Já pode ir servindo, eu chego |
+
+#### 👨‍👩‍👧 Família
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `fam-procurado-controle` — Procurado: o controle da TV | Procurado | Free | O CONTROLE DA TV · sumir entre as almofadas na hora exata em que alguém quer trocar de canal · RECOMPENSA: PAZ |
+| `fam-carimbo-dormir-fora` — Pedido negado em casa | Carimbo | Free | EU PEDINDO PRA DORMIR NA CASA DO AMIGO · NEGADO · sem direito a recurso e sem explicação até hoje |
+
+#### 🎓 Faculdade
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `fac-carimbo-falta` — Justificativa recusada | Carimbo | Free | MINHA JUSTIFICATIVA DE FALTA · RECUSADA · por ser a mesma da semana passada, com a mesma vírgula |
+| `fac-procurado-grupo` — Procurado no trabalho em grupo | Procurado | Free | O DO GRUPO · sumir no trabalho em grupo e reaparecer na hora de colocar o nome · RECOMPENSA: NENHUMA |
+
+#### 🍺 Rolê
+
+| Preset | Layout | Plano | Textos |
+|---|---|---|---|
+| `role-perfil-domingo` — Eu no domingo | Perfil | Free | Eu no domingo · nunca.mais.bebo · Prometi parar às 23h. Cheguei em casa às 5h. Hoje só existo em modo economia. · 0 / Energia · 17 / Arrependimentos · 1 / Promessa quebrada · Até sábado que vem |
+| `role-recibo-sabado` — Recibo do sábado | Recibo | **PRO** tags: dinheiro | ROLÊ DE SÁBADO LTDA · 1x 'só uma e vou embora' .... 89,90 · 4x Rodada da firma ......... 210,00 · 1x Carro de app às 4h ....... 78,50 · R$ 378,40 · Parcelado em 12x na dignidade |
+
+### Frases novas
+
+89 frases nas quatro categorias novas (23 politicagem · 22 pet · 22 comida · 22 tecnologia),
+cobrindo `top`, `bottom`, `title`, `description`, `pov`, `caption`, `message`, `option`,
+`label`, `stat`, `name` e `free`. Sem elas o botão "Sugestões" abriria vazio nas categorias novas.
+
+### Pendente
+
+**Revisão visual dos 5 layouts novos no aparelho** (`printvirameme://dev-canvas`). O validador
+garante geometria dentro do canvas, `maxChars` e regra editorial — não garante que ficou bonito
+nem que o texto não encavalou num `rect`.

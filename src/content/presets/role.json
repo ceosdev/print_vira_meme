@@ -1,11 +1,83 @@
 [
-  { "id": "role-pov-so-uma", "layoutId": "pov", "name": "Só uma", "category": "role",
-    "values": { "pov": "você disse que ia tomar 'só uma' e já é 3 da manhã" },
-    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
-  { "id": "role-conversa-vai-hoje", "layoutId": "conversa", "name": "Vai hoje?", "category": "role",
-    "values": { "contact": "Grupo do rolê", "m1": "Vai hoje?", "m2": "Vou não, tô cansado", "m3": "Chegou 22h e ficou até fechar" },
-    "premium": false, "addedAt": "2026-09-05", "order": 2 },
-  { "id": "role-certificado-ultimo", "layoutId": "certificado", "name": "O último a sair", "category": "role",
-    "values": { "name": "Você", "reason": "por dizer 'vou embora cedo hoje' e ser o último a sair pela 27ª vez", "signature": "O bar", "date": "Sábado passado" },
-    "premium": true, "addedAt": "2026-09-05", "order": 3 }
+  {
+    "id": "role-pov-so-uma",
+    "layoutId": "pov",
+    "name": "Só uma",
+    "category": "role",
+    "values": {
+      "pov": "você disse que ia tomar 'só uma' e já é 3 da manhã"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "role-conversa-vai-hoje",
+    "layoutId": "conversa",
+    "name": "Vai hoje?",
+    "category": "role",
+    "values": {
+      "contact": "Grupo do rolê",
+      "m1": "Vai hoje?",
+      "m2": "Vou não, tô cansado",
+      "m3": "Chegou 22h e ficou até fechar"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "role-certificado-ultimo",
+    "layoutId": "certificado",
+    "name": "O último a sair",
+    "category": "role",
+    "values": {
+      "name": "Você",
+      "reason": "por dizer 'vou embora cedo hoje' e ser o último a sair pela 27ª vez",
+      "signature": "O bar",
+      "date": "Sábado passado"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "role-perfil-domingo",
+    "layoutId": "perfil",
+    "name": "Eu no domingo",
+    "category": "role",
+    "values": {
+      "name": "Eu no domingo",
+      "handle": "nunca.mais.bebo",
+      "bio": "Prometi parar às 23h. Cheguei em casa às 5h. Hoje só existo em modo economia.",
+      "stat-1": "0\nEnergia",
+      "stat-2": "17\nArrependimentos",
+      "stat-3": "1\nPromessa quebrada",
+      "caption": "Até sábado que vem"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 4
+  },
+  {
+    "id": "role-recibo-sabado",
+    "layoutId": "recibo",
+    "name": "Recibo do sábado",
+    "category": "role",
+    "tags": [
+      "dinheiro"
+    ],
+    "values": {
+      "store": "ROLÊ DE SÁBADO LTDA",
+      "item-1": "1x 'só uma e vou embora' .... 89,90",
+      "item-2": "4x Rodada da firma ......... 210,00",
+      "item-3": "1x Carro de app às 4h ....... 78,50",
+      "total": "R$ 378,40",
+      "note": "Parcelado em 12x na dignidade"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 5
+  }
 ]

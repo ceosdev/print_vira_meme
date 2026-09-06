@@ -57,7 +57,7 @@ print-vira-meme/
 │   ├── content/               catálogo (dados, não código)
 │   │   ├── categories.json
 │   │   ├── layouts/*.json     ~15 layouts
-│   │   ├── presets/*.json     50 presets, 1 arquivo por categoria
+│   │   ├── presets/*.json     75 presets, 1 arquivo por categoria
 │   │   ├── phrases/*.json     ~200 frases, 1 arquivo por categoria
 │   │   ├── schema.ts          zod schemas (Layout, Preset, Phrase, Category)
 │   │   └── index.ts           carrega, valida (em dev), indexa (por id, por categoria, por slotType)

@@ -1,10 +1,74 @@
 [
-  { "id": "humor", "name": "Humor", "emoji": "😂", "order": 1 },
-  { "id": "trabalho", "name": "Trabalho", "emoji": "💼", "order": 2 },
-  { "id": "relacionamento", "name": "Relacionamento", "emoji": "❤️", "order": 3 },
-  { "id": "dinheiro", "name": "Dinheiro", "emoji": "💸", "order": 4 },
-  { "id": "futebol", "name": "Futebol", "emoji": "⚽", "order": 5 },
-  { "id": "familia", "name": "Família", "emoji": "👨‍👩‍👧", "order": 6 },
-  { "id": "faculdade", "name": "Faculdade", "emoji": "🎓", "order": 7 },
-  { "id": "role", "name": "Rolê", "emoji": "🍺", "order": 8 }
+  {
+    "id": "humor",
+    "name": "Humor",
+    "emoji": "😂",
+    "order": 1
+  },
+  {
+    "id": "trabalho",
+    "name": "Trabalho",
+    "emoji": "💼",
+    "order": 2
+  },
+  {
+    "id": "relacionamento",
+    "name": "Relacionamento",
+    "emoji": "❤️",
+    "order": 3
+  },
+  {
+    "id": "dinheiro",
+    "name": "Dinheiro",
+    "emoji": "💸",
+    "order": 4
+  },
+  {
+    "id": "futebol",
+    "name": "Futebol",
+    "emoji": "⚽",
+    "order": 5
+  },
+  {
+    "id": "familia",
+    "name": "Família",
+    "emoji": "👨‍👩‍👧",
+    "order": 6
+  },
+  {
+    "id": "faculdade",
+    "name": "Faculdade",
+    "emoji": "🎓",
+    "order": 7
+  },
+  {
+    "id": "role",
+    "name": "Rolê",
+    "emoji": "🍺",
+    "order": 8
+  },
+  {
+    "id": "politicagem",
+    "name": "Politicagem",
+    "emoji": "🗳️",
+    "order": 9
+  },
+  {
+    "id": "pet",
+    "name": "Pet",
+    "emoji": "🐶",
+    "order": 10
+  },
+  {
+    "id": "comida",
+    "name": "Comida",
+    "emoji": "🍔",
+    "order": 11
+  },
+  {
+    "id": "tecnologia",
+    "name": "Tecnologia",
+    "emoji": "🤖",
+    "order": 12
+  }
 ]

@@ -1,11 +1,75 @@
 [
-  { "id": "fac-vespera-prova", "layoutId": "classic", "name": "Véspera da prova", "category": "faculdade",
-    "values": { "top": "EU NA VÉSPERA DA PROVA:", "bottom": "'DÁ TEMPO DE VER TUDO'" },
-    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
-  { "id": "fac-enquete-tcc", "layoutId": "enquete", "name": "Como está o TCC", "category": "faculdade",
-    "values": { "question": "Como está o TCC?", "opt1": "Começo amanhã", "opt2": "Tem um título", "opt3": "O que é TCC?" },
-    "premium": false, "addedAt": "2026-09-05", "order": 2 },
-  { "id": "fac-balao-grupo", "layoutId": "balao", "name": "Trabalho em grupo", "category": "faculdade", "tags": ["trabalho"],
-    "values": { "speech": "PODE DEIXAR QUE EU FAÇO A MINHA PARTE", "caption": "TRABALHO EM GRUPO, DIA 1" },
-    "premium": true, "addedAt": "2026-09-05", "order": 3 }
+  {
+    "id": "fac-vespera-prova",
+    "layoutId": "classic",
+    "name": "Véspera da prova",
+    "category": "faculdade",
+    "values": {
+      "top": "EU NA VÉSPERA DA PROVA:",
+      "bottom": "'DÁ TEMPO DE VER TUDO'"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "fac-enquete-tcc",
+    "layoutId": "enquete",
+    "name": "Como está o TCC",
+    "category": "faculdade",
+    "values": {
+      "question": "Como está o TCC?",
+      "opt1": "Começo amanhã",
+      "opt2": "Tem um título",
+      "opt3": "O que é TCC?"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "fac-balao-grupo",
+    "layoutId": "balao",
+    "name": "Trabalho em grupo",
+    "category": "faculdade",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "speech": "PODE DEIXAR QUE EU FAÇO A MINHA PARTE",
+      "caption": "TRABALHO EM GRUPO, DIA 1"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "fac-carimbo-falta",
+    "layoutId": "carimbo",
+    "name": "Justificativa recusada",
+    "category": "faculdade",
+    "values": {
+      "top": "MINHA JUSTIFICATIVA DE FALTA",
+      "stamp": "RECUSADA",
+      "reason": "por ser a mesma da semana passada, com a mesma vírgula"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 4
+  },
+  {
+    "id": "fac-procurado-grupo",
+    "layoutId": "procurado",
+    "name": "Procurado no trabalho em grupo",
+    "category": "faculdade",
+    "values": {
+      "name": "O DO GRUPO",
+      "reason": "sumir no trabalho em grupo e reaparecer na hora de colocar o nome",
+      "reward": "RECOMPENSA: NENHUMA"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 5
+  }
 ]

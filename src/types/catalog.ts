@@ -19,6 +19,10 @@ export const CATEGORY_IDS = [
   'familia',
   'faculdade',
   'role',
+  'politicagem',
+  'pet',
+  'comida',
+  'tecnologia',
 ] as const;
 export type CategoryId = (typeof CATEGORY_IDS)[number];
 

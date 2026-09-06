@@ -1,47 +1,275 @@
 [
-  { "id": "humor-dormir-cedo", "layoutId": "classic", "name": "Hoje vou dormir cedo", "category": "humor", "tags": ["faculdade"],
-    "values": { "top": "EU: HOJE VOU DORMIR CEDO", "bottom": "EU ÀS 3 DA MANHÃ:" },
-    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
-  { "id": "humor-academia-segunda", "layoutId": "noticia", "name": "Academia na segunda", "category": "humor",
-    "values": { "title": "Brasileiro promete começar a academia na segunda-feira", "description": "Segundo fontes, é a 14ª segunda-feira consecutiva com a mesma promessa.", "source": "Fonte: ele mesmo" },
-    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 2 },
-  { "id": "humor-cinco-minutos", "layoutId": "classic", "name": "Só mais cinco minutos", "category": "humor", "tags": ["faculdade", "trabalho"],
-    "values": { "top": "SÓ MAIS CINCO MINUTOS", "bottom": "DUAS HORAS DEPOIS:" },
-    "premium": false, "addedAt": "2026-09-05", "order": 3 },
-  { "id": "humor-geladeira", "layoutId": "pov", "name": "Geladeira pela quinta vez", "category": "humor", "tags": ["familia"],
-    "values": { "pov": "você abre a geladeira pela quinta vez esperando que algo novo tenha aparecido" },
-    "premium": false, "addedAt": "2026-09-05", "order": 4 },
-  { "id": "humor-vou-sair-hoje", "layoutId": "noticia", "name": "Não vai sair hoje", "category": "humor", "tags": ["role"],
-    "values": { "title": "Especialistas confirmam que ele realmente não vai sair hoje", "description": "A decisão foi tomada após 40 minutos deitado no sofá 'só descansando'.", "source": "Fonte: o sofá" },
-    "premium": false, "addedAt": "2026-09-05", "order": 5 },
-  { "id": "humor-whatsapp-cinco-minutos", "layoutId": "alerta", "name": "Entrou por cinco minutos", "category": "humor",
-    "values": { "title": "PESSOA ENTROU NO WHATSAPP 'POR CINCO MINUTOS'", "description": "Desapareceu há três horas. Familiares pedem que retorne." },
-    "premium": false, "addedAt": "2026-09-05", "order": 6 },
-  { "id": "humor-fingindo-ouvindo", "layoutId": "legenda", "name": "Fingindo que estou ouvindo", "category": "humor",
-    "values": { "caption": "Eu fingindo que estou ouvindo enquanto penso no que vou comer" },
-    "premium": false, "addedAt": "2026-09-05", "order": 7 },
-  { "id": "humor-enquete-hoje", "layoutId": "enquete", "name": "O que eu vou fazer hoje", "category": "humor",
-    "values": { "question": "O que eu vou fazer hoje?", "opt1": "Nada", "opt2": "Pensar em fazer algo", "opt3": "Dormir de novo" },
-    "premium": false, "addedAt": "2026-09-05", "order": 8 },
-  { "id": "humor-placar-segunda", "layoutId": "placar", "name": "Eu × Segunda-feira", "category": "humor", "tags": ["trabalho"],
-    "values": { "name-a": "EU", "score-a": "0", "name-b": "SEGUNDA", "score-b": "7", "stat-1": "Sonecas: 5", "stat-2": "Cafés: 8", "stat-3": "Vontade: 0" },
-    "premium": false, "addedAt": "2026-09-05", "order": 9 },
-  { "id": "humor-conversa-ta-chegando", "layoutId": "conversa", "name": "Tô chegando", "category": "humor", "tags": ["role"],
-    "values": { "contact": "Amigo", "m1": "Onde você tá?", "m2": "Tô chegando, 5 min", "m3": "Isso foi há 40 minutos" },
-    "premium": false, "addedAt": "2026-09-05", "order": 10 },
-  { "id": "humor-pov-dieta", "layoutId": "pov", "name": "Começou a dieta", "category": "humor",
-    "values": { "pov": "você começa a dieta e alguém traz bolo" },
-    "premium": false, "addedAt": "2026-09-05", "order": 11 },
-  { "id": "humor-podio-desculpas", "layoutId": "podio", "name": "Ranking de desculpas", "category": "humor",
-    "values": { "title": "RANKING DE DESCULPAS", "name-1": "Tô chegando", "name-2": "Não vi a mensagem", "name-3": "Meu celular morreu" },
-    "premium": true, "addedAt": "2026-09-05", "order": 12 },
-  { "id": "humor-grafico-produtividade", "layoutId": "grafico", "name": "Produtividade do dia", "category": "humor", "tags": ["trabalho"],
-    "values": { "title": "Minha produtividade ao longo do dia", "legend": "Vontade de ir embora", "l-1": "8h", "l-2": "10h", "l-3": "14h", "l-4": "17h58" },
-    "premium": true, "addedAt": "2026-09-05", "order": 13 },
-  { "id": "humor-certificado-atraso", "layoutId": "certificado", "name": "Certificado de atraso", "category": "humor",
-    "values": { "name": "Você", "reason": "por chegar atrasado em 100% dos compromissos de 2026", "signature": "A gerência", "date": "Toda segunda" },
-    "premium": true, "addedAt": "2026-09-05", "order": 14 },
-  { "id": "humor-balao-celular", "layoutId": "balao", "name": "Só vou ver uma coisa", "category": "humor",
-    "values": { "speech": "SÓ VOU VER UMA COISA NO CELULAR", "caption": "3 HORAS DEPOIS" },
-    "premium": true, "addedAt": "2026-09-05", "order": 15 }
+  {
+    "id": "humor-dormir-cedo",
+    "layoutId": "classic",
+    "name": "Hoje vou dormir cedo",
+    "category": "humor",
+    "tags": [
+      "faculdade"
+    ],
+    "values": {
+      "top": "EU: HOJE VOU DORMIR CEDO",
+      "bottom": "EU ÀS 3 DA MANHÃ:"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "humor-academia-segunda",
+    "layoutId": "noticia",
+    "name": "Academia na segunda",
+    "category": "humor",
+    "values": {
+      "title": "Brasileiro promete começar a academia na segunda-feira",
+      "description": "Segundo fontes, é a 14ª segunda-feira consecutiva com a mesma promessa.",
+      "source": "Fonte: ele mesmo"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "humor-cinco-minutos",
+    "layoutId": "classic",
+    "name": "Só mais cinco minutos",
+    "category": "humor",
+    "tags": [
+      "faculdade",
+      "trabalho"
+    ],
+    "values": {
+      "top": "SÓ MAIS CINCO MINUTOS",
+      "bottom": "DUAS HORAS DEPOIS:"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "humor-geladeira",
+    "layoutId": "pov",
+    "name": "Geladeira pela quinta vez",
+    "category": "humor",
+    "tags": [
+      "familia"
+    ],
+    "values": {
+      "pov": "você abre a geladeira pela quinta vez esperando que algo novo tenha aparecido"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 4
+  },
+  {
+    "id": "humor-vou-sair-hoje",
+    "layoutId": "noticia",
+    "name": "Não vai sair hoje",
+    "category": "humor",
+    "tags": [
+      "role"
+    ],
+    "values": {
+      "title": "Especialistas confirmam que ele realmente não vai sair hoje",
+      "description": "A decisão foi tomada após 40 minutos deitado no sofá 'só descansando'.",
+      "source": "Fonte: o sofá"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 5
+  },
+  {
+    "id": "humor-whatsapp-cinco-minutos",
+    "layoutId": "alerta",
+    "name": "Entrou por cinco minutos",
+    "category": "humor",
+    "values": {
+      "title": "PESSOA ENTROU NO WHATSAPP 'POR CINCO MINUTOS'",
+      "description": "Desapareceu há três horas. Familiares pedem que retorne."
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 6
+  },
+  {
+    "id": "humor-fingindo-ouvindo",
+    "layoutId": "legenda",
+    "name": "Fingindo que estou ouvindo",
+    "category": "humor",
+    "values": {
+      "caption": "Eu fingindo que estou ouvindo enquanto penso no que vou comer"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 7
+  },
+  {
+    "id": "humor-enquete-hoje",
+    "layoutId": "enquete",
+    "name": "O que eu vou fazer hoje",
+    "category": "humor",
+    "values": {
+      "question": "O que eu vou fazer hoje?",
+      "opt1": "Nada",
+      "opt2": "Pensar em fazer algo",
+      "opt3": "Dormir de novo"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 8
+  },
+  {
+    "id": "humor-placar-segunda",
+    "layoutId": "placar",
+    "name": "Eu × Segunda-feira",
+    "category": "humor",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "name-a": "EU",
+      "score-a": "0",
+      "name-b": "SEGUNDA",
+      "score-b": "7",
+      "stat-1": "Sonecas: 5",
+      "stat-2": "Cafés: 8",
+      "stat-3": "Vontade: 0"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 9
+  },
+  {
+    "id": "humor-conversa-ta-chegando",
+    "layoutId": "conversa",
+    "name": "Tô chegando",
+    "category": "humor",
+    "tags": [
+      "role"
+    ],
+    "values": {
+      "contact": "Amigo",
+      "m1": "Onde você tá?",
+      "m2": "Tô chegando, 5 min",
+      "m3": "Isso foi há 40 minutos"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 10
+  },
+  {
+    "id": "humor-pov-dieta",
+    "layoutId": "pov",
+    "name": "Começou a dieta",
+    "category": "humor",
+    "values": {
+      "pov": "você começa a dieta e alguém traz bolo"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 11
+  },
+  {
+    "id": "humor-podio-desculpas",
+    "layoutId": "podio",
+    "name": "Ranking de desculpas",
+    "category": "humor",
+    "values": {
+      "title": "RANKING DE DESCULPAS",
+      "name-1": "Tô chegando",
+      "name-2": "Não vi a mensagem",
+      "name-3": "Meu celular morreu"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 12
+  },
+  {
+    "id": "humor-grafico-produtividade",
+    "layoutId": "grafico",
+    "name": "Produtividade do dia",
+    "category": "humor",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "title": "Minha produtividade ao longo do dia",
+      "legend": "Vontade de ir embora",
+      "l-1": "8h",
+      "l-2": "10h",
+      "l-3": "14h",
+      "l-4": "17h58"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 13
+  },
+  {
+    "id": "humor-certificado-atraso",
+    "layoutId": "certificado",
+    "name": "Certificado de atraso",
+    "category": "humor",
+    "values": {
+      "name": "Você",
+      "reason": "por chegar atrasado em 100% dos compromissos de 2026",
+      "signature": "A gerência",
+      "date": "Toda segunda"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 14
+  },
+  {
+    "id": "humor-balao-celular",
+    "layoutId": "balao",
+    "name": "Só vou ver uma coisa",
+    "category": "humor",
+    "values": {
+      "speech": "SÓ VOU VER UMA COISA NO CELULAR",
+      "caption": "3 HORAS DEPOIS"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 15
+  },
+  {
+    "id": "humor-perfil-segunda",
+    "layoutId": "perfil",
+    "name": "Meu perfil na segunda-feira",
+    "category": "humor",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "name": "Eu na segunda-feira",
+      "handle": "modo.aviao",
+      "bio": "Acordei, mas ainda não cheguei. Respondo depois do café. Talvez.",
+      "stat-1": "0\nDisposição",
+      "stat-2": "847\nAbas abertas",
+      "stat-3": "1\nCafé de vantagem",
+      "caption": "Perfil atualizado toda segunda"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 16
+  },
+  {
+    "id": "humor-carteirinha-atraso",
+    "layoutId": "carteirinha",
+    "name": "Carteirinha de atrasado",
+    "category": "humor",
+    "values": {
+      "org": "CONSELHO DOS ATRASADOS",
+      "name": "EU MESMO",
+      "role": "Sai de casa na hora em que era pra chegar",
+      "code": "Nº 0004/2026",
+      "valid": "Válida por tempo indeterminado",
+      "caption": "Já pode ir servindo, eu chego"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 17
+  }
 ]

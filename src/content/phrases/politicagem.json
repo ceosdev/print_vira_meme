@@ -1,0 +1,232 @@
+[
+  {
+    "id": "ptc-top-001",
+    "text": "EU PROPONDO ALGO NO GRUPO",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-top-002",
+    "text": "EU NA REUNIÃO DE CONDOMÍNIO",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-bottom-001",
+    "text": "A RESPOSTA DE TODO MUNDO:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-bottom-002",
+    "text": "O GRUPO EM SILÊNCIO ABSOLUTO:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-title-001",
+    "text": "Proposta recebe 14 polegares e nenhuma ação",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-title-002",
+    "text": "Reunião dura 3 horas e termina sem decisão",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-title-003",
+    "text": "Grupo elege responsável e ninguém aparece no dia",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-description-001",
+    "text": "A proposta segue em análise desde 2023, sem previsão de votação.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-description-002",
+    "text": "Participantes garantem que o assunto será retomado na próxima reunião.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-pov-001",
+    "text": "você é escolhido pra resolver o problema que ninguém quis resolver",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-pov-002",
+    "text": "você entra no grupo do condomínio e sai com três inimigos novos",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-caption-001",
+    "text": "Eu tentando manter a neutralidade no grupo da família",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-caption-002",
+    "text": "Eu fingindo que concordo só pra reunião acabar",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-message-001",
+    "text": "Precisamos conversar sobre o horário do lixo",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-message-002",
+    "text": "Alguém viu quem deixou isso no corredor?",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-option-001",
+    "text": "Adiar pra próxima reunião",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-option-002",
+    "text": "Fingir que não vi",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-option-003",
+    "text": "Criar outro grupo só pra isso",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-label-001",
+    "text": "NEGADO",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-label-002",
+    "text": "EM ANÁLISE",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-stat-001",
+    "text": "Reuniões sem decisão: 7",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-name-001",
+    "text": "O SÍNDICO",
+    "slotTypes": [
+      "name"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  },
+  {
+    "id": "ptc-free-001",
+    "text": "Ata da reunião: nada foi decidido, de novo.",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "politicagem"
+    ]
+  }
+]

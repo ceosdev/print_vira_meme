@@ -1,0 +1,67 @@
+[
+  {
+    "id": "com-pov-cardapio",
+    "layoutId": "pov",
+    "name": "A salada que não vinga",
+    "category": "comida",
+    "values": {
+      "pov": "você jura que vai comer salada e o cardápio abre direto na página do lanche"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "com-noticia-marmita",
+    "layoutId": "noticia",
+    "name": "Marmita não identificada",
+    "category": "comida",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "title": "Marmita é aberta na segunda e ninguém reconhece o conteúdo",
+      "description": "A comida foi guardada na quinta anterior com a promessa de 'amanhã eu como'.",
+      "source": "Fonte: o cheiro"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "com-placar-sobremesa",
+    "layoutId": "placar",
+    "name": "Eu × Sobremesa",
+    "category": "comida",
+    "values": {
+      "name-a": "EU",
+      "score-a": "1",
+      "name-b": "SOBREMESA",
+      "score-b": "9",
+      "stat-1": "'Só um pedaço': 6",
+      "stat-2": "'Amanhã eu começo': 4",
+      "stat-3": "Arrependimento: 10"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "com-carteirinha-madrugada",
+    "layoutId": "carteirinha",
+    "name": "Carteirinha da madrugada",
+    "category": "comida",
+    "values": {
+      "org": "SINDICATO DA FOME",
+      "name": "EU MESMO",
+      "role": "Come de pé na frente da geladeira às 23h",
+      "code": "Nº 0003/2026",
+      "valid": "Renovada toda madrugada",
+      "caption": "Não apresentar para a nutricionista"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 4
+  }
+]

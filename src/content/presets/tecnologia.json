@@ -1,0 +1,67 @@
+[
+  {
+    "id": "tec-senha-de-cor",
+    "layoutId": "classic",
+    "name": "Essa senha eu sei de cor",
+    "category": "tecnologia",
+    "values": {
+      "top": "EU: ESSA SENHA EU SEI DE COR",
+      "bottom": "A SENHA:"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "tec-alerta-atualizacao",
+    "layoutId": "alerta",
+    "name": "Atualização na hora errada",
+    "category": "tecnologia",
+    "values": {
+      "title": "CELULAR DECIDE ATUALIZAR NO PIOR MOMENTO POSSÍVEL",
+      "description": "Restam 47 minutos. A bateria está em 8%."
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "tec-perfil-ia",
+    "layoutId": "perfil",
+    "name": "Eu usando inteligência artificial",
+    "category": "tecnologia",
+    "values": {
+      "name": "Eu usando IA",
+      "handle": "prompt.errado",
+      "bio": "Peço uma coisa, recebo outra, agradeço mesmo assim e finjo que era isso mesmo.",
+      "stat-1": "3\nTentativas",
+      "stat-2": "0\nIdeia do que fiz",
+      "stat-3": "1\nObrigado por medo",
+      "caption": "Perfil conferido por ninguém"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "tec-recibo-assinaturas",
+    "layoutId": "recibo",
+    "name": "Assinaturas esquecidas",
+    "category": "tecnologia",
+    "tags": [
+      "dinheiro"
+    ],
+    "values": {
+      "store": "ASSINATURAS ESQUECIDAS",
+      "item-1": "1x Streaming que não uso ... 39,90",
+      "item-2": "1x Academia digital ....... 29,90",
+      "item-3": "1x Nuvem cheia de print ... 12,90",
+      "total": "R$ 82,70",
+      "note": "Cobrado todo mês desde 2023 sem eu perceber"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 4
+  }
+]

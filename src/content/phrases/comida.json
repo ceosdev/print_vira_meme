@@ -1,0 +1,222 @@
+[
+  {
+    "id": "cmd-top-001",
+    "text": "EU: HOJE EU COMO SALADA",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-top-002",
+    "text": "EU DIZENDO QUE VOU COZINHAR EM CASA",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-bottom-001",
+    "text": "EU ABRINDO O APP DE DELIVERY:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-bottom-002",
+    "text": "EU ÀS 23H NA GELADEIRA:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-title-001",
+    "text": "Pessoa promete cozinhar e pede delivery de novo",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-title-002",
+    "text": "Marmita é esquecida na geladeira do trabalho",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-title-003",
+    "text": "Homem come de pé e afirma que não conta",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-description-001",
+    "text": "A dieta começa oficialmente na segunda-feira, pela décima vez este ano.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-description-002",
+    "text": "O prato foi fotografado antes de esfriar e comido 40 minutos depois.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-pov-001",
+    "text": "você pede uma sobremesa 'pra dividir' e não divide nada",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-pov-002",
+    "text": "você abre o app só pra olhar e o pedido já está a caminho",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-caption-001",
+    "text": "Eu decidindo o que pedir por 45 minutos e escolhendo o de sempre",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-caption-002",
+    "text": "Eu prometendo que amanhã eu começo a dieta",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-message-001",
+    "text": "Vamos pedir alguma coisa?",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-message-002",
+    "text": "Já pedi. Chega em 40 minutos.",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-option-001",
+    "text": "Pedir o mesmo de sempre",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-option-002",
+    "text": "Comer o que tem em casa",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-option-003",
+    "text": "Só um docinho",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-label-001",
+    "text": "R$ 89,90",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-stat-001",
+    "text": "Idas à geladeira: 9",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-name-001",
+    "text": "A SOBREMESA",
+    "slotTypes": [
+      "name"
+    ],
+    "categories": [
+      "comida"
+    ]
+  },
+  {
+    "id": "cmd-free-001",
+    "text": "Comi de pé, então não conta.",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "comida"
+    ]
+  }
+]

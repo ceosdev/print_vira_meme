@@ -28,10 +28,10 @@ Sem cabo: `npx expo start --tunnel` (o ngrok cai com frequência).
 ### Verificações
 
 ```bash
-npm test           # 150 testes / 29 suítes
+npm test           # 151 testes / 29 suítes
 npm run typecheck  # tsc --noEmit
 npx expo lint
-npm run validate:catalog   # 14 layouts · 50 presets · 311 frases · 8 categorias
+npm run validate:catalog   # 19 layouts · 75 presets · 400 frases · 12 categorias
 ```
 
 ---
@@ -46,8 +46,8 @@ Todas as etapas de planejamento estão aprovadas e documentadas em `docs/`:
 | 2 | `02-ux.md` | todas as telas, estados, AdGate, gatilhos de paywall, permissões |
 | 3 | `03-ui.md` | tema escuro, amarelo = ação, gradiente = PRO, Rubik, 8 fontes de meme |
 | 4 | `04-arquitetura.md` | stack, serviços por contrato, escala `1080/PixelRatio`, decisões técnicas |
-| 5 | `05-modelo-template.md` | schema de layout + zod + 14 layouts |
-| 6 | `06-conteudo.md` | 50 presets e 311 frases, linha editorial |
+| 5 | `05-modelo-template.md` | schema de layout + zod + 19 layouts |
+| 6 | `06-conteudo.md` | 75 presets e 400 frases, linha editorial (seção 7 = segunda leva) |
 | 7 | `07-pendencias-deploy.md` | **placeholders a trocar antes de publicar** |
 
 Planos de implementação executados: `docs/superpowers/plans/` (fundação, núcleo visual, telas).

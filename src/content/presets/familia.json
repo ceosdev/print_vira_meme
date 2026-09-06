@@ -1,14 +1,85 @@
 [
-  { "id": "fam-conversa-almoco", "layoutId": "conversa", "name": "Almoço de domingo", "category": "familia",
-    "values": { "contact": "Mãe", "m1": "Você vem almoçar domingo?", "m2": "Vou sim, tô chegando", "m3": "Isso foi às 11h. Já são 15h." },
-    "premium": false, "popular": true, "addedAt": "2026-09-05", "order": 1 },
-  { "id": "fam-bom-dia-grupo", "layoutId": "alerta", "name": "Bom dia no grupo", "category": "familia",
-    "values": { "title": "BOM DIA ENVIADO NO GRUPO DA FAMÍLIA", "description": "Mensagem tinha 14 flores, 3 corações e um áudio de 6 minutos." },
-    "premium": false, "addedAt": "2026-09-05", "order": 2 },
-  { "id": "fam-manchete-tia", "layoutId": "manchete", "name": "A tia e o namoro", "category": "familia",
-    "values": { "kicker": "PLANTÃO FAMILIAR", "title": "TIA PERGUNTA SOBRE NAMORO PELA 9ª VEZ NO MESMO ALMOÇO", "description": "Na foto, o suspeito momentos antes de mudar de assunto." },
-    "premium": false, "addedAt": "2026-09-05", "order": 3 },
-  { "id": "fam-nota-rapidinho", "layoutId": "nota", "name": "Só vou ali rapidinho", "category": "familia",
-    "values": { "note": "Mãe: 'só vou ali rapidinho'. Rapidinho: 3 horas e 4 lojas." },
-    "premium": true, "addedAt": "2026-09-05", "order": 4 }
+  {
+    "id": "fam-conversa-almoco",
+    "layoutId": "conversa",
+    "name": "Almoço de domingo",
+    "category": "familia",
+    "values": {
+      "contact": "Mãe",
+      "m1": "Você vem almoçar domingo?",
+      "m2": "Vou sim, tô chegando",
+      "m3": "Isso foi às 11h. Já são 15h."
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "fam-bom-dia-grupo",
+    "layoutId": "alerta",
+    "name": "Bom dia no grupo",
+    "category": "familia",
+    "values": {
+      "title": "BOM DIA ENVIADO NO GRUPO DA FAMÍLIA",
+      "description": "Mensagem tinha 14 flores, 3 corações e um áudio de 6 minutos."
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "fam-manchete-tia",
+    "layoutId": "manchete",
+    "name": "A tia e o namoro",
+    "category": "familia",
+    "values": {
+      "kicker": "PLANTÃO FAMILIAR",
+      "title": "TIA PERGUNTA SOBRE NAMORO PELA 9ª VEZ NO MESMO ALMOÇO",
+      "description": "Na foto, o suspeito momentos antes de mudar de assunto."
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "fam-nota-rapidinho",
+    "layoutId": "nota",
+    "name": "Só vou ali rapidinho",
+    "category": "familia",
+    "values": {
+      "note": "Mãe: 'só vou ali rapidinho'. Rapidinho: 3 horas e 4 lojas."
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 4
+  },
+  {
+    "id": "fam-procurado-controle",
+    "layoutId": "procurado",
+    "name": "Procurado: o controle da TV",
+    "category": "familia",
+    "values": {
+      "name": "O CONTROLE DA TV",
+      "reason": "sumir entre as almofadas na hora exata em que alguém quer trocar de canal",
+      "reward": "RECOMPENSA: PAZ"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 5
+  },
+  {
+    "id": "fam-carimbo-dormir-fora",
+    "layoutId": "carimbo",
+    "name": "Pedido negado em casa",
+    "category": "familia",
+    "values": {
+      "top": "EU PEDINDO PRA DORMIR NA CASA DO AMIGO",
+      "stamp": "NEGADO",
+      "reason": "sem direito a recurso e sem explicação até hoje"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 6
+  }
 ]

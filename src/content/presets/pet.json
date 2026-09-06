@@ -1,0 +1,60 @@
+[
+  {
+    "id": "pet-olhar-comida",
+    "layoutId": "pov",
+    "name": "O olhar na hora da comida",
+    "category": "pet",
+    "values": {
+      "pov": "seu cachorro te olha comer como se você nunca tivesse dado comida a ele"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-05",
+    "order": 1
+  },
+  {
+    "id": "pet-alerta-sofa",
+    "layoutId": "alerta",
+    "name": "Gato assume o sofá",
+    "category": "pet",
+    "values": {
+      "title": "GATO ASSUME O SOFÁ E RECUSA NEGOCIAÇÃO",
+      "description": "Humanos foram realocados para o tapete até segunda ordem."
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 2
+  },
+  {
+    "id": "pet-conversa-fome",
+    "layoutId": "conversa",
+    "name": "Tô com fome",
+    "category": "pet",
+    "values": {
+      "contact": "Minha gata",
+      "m1": "Tô com fome",
+      "m2": "Acabei de te dar comida agora",
+      "m3": "Tô com fome"
+    },
+    "premium": false,
+    "addedAt": "2026-09-05",
+    "order": 3
+  },
+  {
+    "id": "pet-recibo-petshop",
+    "layoutId": "recibo",
+    "name": "Recibo do banho e tosa",
+    "category": "pet",
+    "values": {
+      "store": "BANHO E TOSA DO BAIRRO",
+      "item-1": "1x Banho ................... 80,00",
+      "item-2": "1x Tosa na tesoura ........ 120,00",
+      "item-3": "1x Olhar de mágoa ....... incluso",
+      "total": "R$ 200,00",
+      "note": "Ele não falou comigo pelo resto do dia"
+    },
+    "premium": true,
+    "addedAt": "2026-09-05",
+    "order": 4
+  }
+]

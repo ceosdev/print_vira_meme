@@ -5,6 +5,8 @@ import categoriesJson from './categories.json';
 
 import alerta from './layouts/alerta.json';
 import balao from './layouts/balao.json';
+import carimbo from './layouts/carimbo.json';
+import carteirinha from './layouts/carteirinha.json';
 import certificado from './layouts/certificado.json';
 import classic from './layouts/classic.json';
 import conversa from './layouts/conversa.json';
@@ -14,40 +16,54 @@ import legenda from './layouts/legenda.json';
 import manchete from './layouts/manchete.json';
 import nota from './layouts/nota.json';
 import noticia from './layouts/noticia.json';
+import perfil from './layouts/perfil.json';
 import placar from './layouts/placar.json';
 import podio from './layouts/podio.json';
 import pov from './layouts/pov.json';
+import procurado from './layouts/procurado.json';
+import recibo from './layouts/recibo.json';
 
+import presetsComida from './presets/comida.json';
 import presetsDinheiro from './presets/dinheiro.json';
 import presetsFaculdade from './presets/faculdade.json';
 import presetsFamilia from './presets/familia.json';
 import presetsFutebol from './presets/futebol.json';
 import presetsHumor from './presets/humor.json';
+import presetsPet from './presets/pet.json';
+import presetsPoliticagem from './presets/politicagem.json';
 import presetsRelacionamento from './presets/relacionamento.json';
 import presetsRole from './presets/role.json';
+import presetsTecnologia from './presets/tecnologia.json';
 import presetsTrabalho from './presets/trabalho.json';
 
+import phrasesComida from './phrases/comida.json';
 import phrasesDinheiro from './phrases/dinheiro.json';
 import phrasesFaculdade from './phrases/faculdade.json';
 import phrasesFamilia from './phrases/familia.json';
 import phrasesFutebol from './phrases/futebol.json';
 import phrasesHumor from './phrases/humor.json';
+import phrasesPet from './phrases/pet.json';
+import phrasesPoliticagem from './phrases/politicagem.json';
 import phrasesRelacionamento from './phrases/relacionamento.json';
 import phrasesRole from './phrases/role.json';
+import phrasesTecnologia from './phrases/tecnologia.json';
 import phrasesTrabalho from './phrases/trabalho.json';
 
 // Os JSONs são validados por zod (em dev e no CI); o cast abaixo só estreita os tipos inferidos do JSON.
 const layoutsRaw = [
   classic, noticia, pov, placar, manchete, legenda, conversa, alerta, enquete,
-  podio, grafico, certificado, nota, balao,
+  carimbo, procurado, perfil,
+  podio, grafico, certificado, nota, balao, carteirinha, recibo,
 ] as unknown as Layout[];
 const presetsRaw = [
   ...presetsHumor, ...presetsTrabalho, ...presetsRelacionamento, ...presetsDinheiro,
   ...presetsFutebol, ...presetsFamilia, ...presetsFaculdade, ...presetsRole,
+  ...presetsPoliticagem, ...presetsPet, ...presetsComida, ...presetsTecnologia,
 ] as unknown as Preset[];
 const phrasesRaw = [
   ...phrasesHumor, ...phrasesTrabalho, ...phrasesRelacionamento, ...phrasesDinheiro,
   ...phrasesFutebol, ...phrasesFamilia, ...phrasesFaculdade, ...phrasesRole,
+  ...phrasesPoliticagem, ...phrasesPet, ...phrasesComida, ...phrasesTecnologia,
 ] as unknown as Phrase[];
 const categoriesRaw = categoriesJson as unknown as Category[];
 
