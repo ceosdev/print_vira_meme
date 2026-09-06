@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { Linking } from 'react-native';
 import SettingsScreen from '@/app/settings';
-import { configureServices, services } from '@/services';
+import { configureServices } from '@/services';
 import { createMockAnalyticsService } from '@/services/mock/mockAnalyticsService';
 import { createMockImageService } from '@/services/mock/mockImageService';
 import { createMockPurchaseService } from '@/services/mock/mockPurchaseService';
