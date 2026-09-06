@@ -1,7 +1,8 @@
-import { Lock, Move, Sparkles } from 'lucide-react-native';
+import { Lock, Maximize2, Move, RefreshCw, Sparkles } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSharedValue } from 'react-native-reanimated';
 import { PhotoSheet } from '@/components/PhotoSheet';
@@ -51,6 +52,7 @@ export default function EditorScreen() {
   const [photoSheet, setPhotoSheet] = useState(false);
   const [editingSlot, setEditingSlot] = useState<string | null>(null);
   const [movingTexts, setMovingTexts] = useState(false);
+  const scrollRef = useRef<React.ComponentRef<typeof ScrollView>>(null);
 
   const gScale = useSharedValue(transform.scale);
   const gX = useSharedValue(transform.offsetX);
@@ -117,16 +119,8 @@ export default function EditorScreen() {
         right={locked ? <PremiumBadge /> : undefined}
       />
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-        <CanvasFrame
-          width={resolved.width * scale}
-          height={resolved.height * scale}
-          fit={transform.fit}
-          busy={exporting}
-          showDragHint={transform.fit === 'cover' && transform.scale === 1 && transform.offsetX === 0 && transform.offsetY === 0}
-          onChangePhoto={() => setPhotoSheet(true)}
-          onToggleFit={() => useCreationStore.getState().setImageTransform(toggleFit(transform))}
-        >
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+        <CanvasFrame width={resolved.width * scale} height={resolved.height * scale} busy={exporting}>
           <MemeCanvas
             testID="editor-canvas"
             resolved={resolved}
@@ -149,6 +143,7 @@ export default function EditorScreen() {
                 offsetX={gX}
                 offsetY={gY}
                 enabled={transform.fit === 'cover' && !movingTexts}
+                scrollRef={scrollRef}
                 onCommit={(t) =>
                   useCreationStore
                     .getState()
@@ -158,6 +153,29 @@ export default function EditorScreen() {
             }
           />
         </CanvasFrame>
+
+        <View style={styles.canvasControls}>
+          <Button
+            label={strings.editor.changePhoto}
+            icon={RefreshCw}
+            variant="secondary"
+            style={styles.canvasControl}
+            onPress={() => setPhotoSheet(true)}
+            testID="change-photo"
+          />
+          <Button
+            label={transform.fit === 'cover' ? strings.editor.fitContain : strings.editor.fitCover}
+            icon={Maximize2}
+            variant="secondary"
+            style={styles.canvasControl}
+            onPress={() => useCreationStore.getState().setImageTransform(toggleFit(transform))}
+            testID="toggle-fit"
+          />
+        </View>
+
+        {transform.fit === 'cover' && !movingTexts ? (
+          <Text style={[typography.caption, styles.hint]}>{strings.editor.dragHint}</Text>
+        ) : null}
 
         <View style={styles.block}>
           <Text style={[typography.label, styles.sectionLabel]}>{strings.editor.texts}</Text>
@@ -224,6 +242,9 @@ export default function EditorScreen() {
 const styles = StyleSheet.create({
   scroll: { padding: spacing.lg, gap: spacing.xl, paddingBottom: 160 },
   block: { gap: spacing.sm },
+  hint: { color: colors.textMuted, textAlign: 'center', marginTop: -spacing.md },
+  canvasControls: { flexDirection: 'row', gap: spacing.md, marginTop: -spacing.sm },
+  canvasControl: { flex: 1 },
   sectionLabel: { color: colors.textMuted },
   fonts: { gap: spacing.sm },
   cta: { position: 'absolute', left: 0, right: 0, bottom: 0, padding: spacing.lg, backgroundColor: colors.bg },

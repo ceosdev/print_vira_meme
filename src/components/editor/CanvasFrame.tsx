@@ -1,25 +1,21 @@
-import { Maximize2, RefreshCw } from 'lucide-react-native';
 import type { ReactNode } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { strings } from '@/i18n/strings';
 import { colors, radius, spacing } from '@/theme/tokens';
 import { typography } from '@/theme/typography';
-import type { ImageFit } from '@/types/creation';
 
 interface Props {
   children: ReactNode;
   width: number;
   height: number;
-  fit: ImageFit;
-  onChangePhoto: () => void;
-  onToggleFit: () => void;
   busy?: boolean;
-  /** mostra a dica de arrastar/pinçar (some assim que o usuário enquadra) */
-  showDragHint?: boolean;
 }
 
-/** Moldura do preview: canvas + pills de "Trocar foto" e "Preencher/Encaixar" + overlay de exportação. */
-export function CanvasFrame({ children, width, height, fit, onChangePhoto, onToggleFit, busy, showDragHint }: Props) {
+/**
+ * Moldura do preview. Nada de controles por cima: o que aparece aqui é exatamente o que
+ * vai para o arquivo exportado (os botões ficam abaixo do canvas).
+ */
+export function CanvasFrame({ children, width, height, busy }: Props) {
   return (
     <View style={[styles.frame, { width, height }]}>
       {children}
@@ -28,33 +24,8 @@ export function CanvasFrame({ children, width, height, fit, onChangePhoto, onTog
           <ActivityIndicator color={colors.primary} />
           <Text style={[typography.label, { color: colors.text }]}>{strings.editor.generating}</Text>
         </View>
-      ) : (
-        <>
-          {showDragHint ? (
-            <View style={styles.hint} pointerEvents="none">
-              <Text style={[typography.caption, { color: colors.text }]}>{strings.editor.dragHint}</Text>
-            </View>
-          ) : null}
-          <Pill onPress={onChangePhoto} icon={<RefreshCw size={16} color={colors.text} />} label={strings.editor.changePhoto} style={styles.left} testID="change-photo" />
-          <Pill
-            onPress={onToggleFit}
-            icon={<Maximize2 size={16} color={colors.text} />}
-            label={fit === 'cover' ? strings.editor.fitContain : strings.editor.fitCover}
-            style={styles.right}
-            testID="toggle-fit"
-          />
-        </>
-      )}
+      ) : null}
     </View>
-  );
-}
-
-function Pill({ onPress, icon, label, style, testID }: { onPress: () => void; icon: ReactNode; label: string; style: object; testID: string }) {
-  return (
-    <Pressable onPress={onPress} testID={testID} accessibilityRole="button" style={[styles.pill, style]}>
-      {icon}
-      <Text style={[typography.caption, { color: colors.text }]}>{label}</Text>
-    </Pressable>
   );
 }
 
@@ -67,27 +38,6 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     alignSelf: 'center',
   },
-  pill: {
-    position: 'absolute',
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.xs,
-    backgroundColor: 'rgba(38,38,47,0.9)',
-    borderRadius: radius.pill,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-  },
-  hint: {
-    position: 'absolute',
-    top: spacing.md,
-    alignSelf: 'center',
-    backgroundColor: 'rgba(38,38,47,0.9)',
-    borderRadius: radius.pill,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
-  },
-  left: { left: spacing.md, bottom: spacing.md },
-  right: { right: spacing.md, bottom: spacing.md },
   busy: {
     position: 'absolute',
     left: 0,

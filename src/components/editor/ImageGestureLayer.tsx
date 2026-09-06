@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/immutability -- SharedValue do Reanimated é mutável por design (escrita na UI thread) */
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import Animated, { runOnJS, useSharedValue, type SharedValue } from 'react-native-reanimated';
 import { MAX_ZOOM, MIN_ZOOM } from '@/utils/imageTransform';
@@ -21,13 +21,15 @@ interface Props {
   /** chamado no fim do gesto, com os valores já limitados */
   onCommit: (t: { scale: number; offsetX: number; offsetY: number }) => void;
   enabled?: boolean;
+  /** ref do ScrollView da tela: o gesto da foto tem prioridade sobre a rolagem */
+  scrollRef?: React.RefObject<React.ComponentRef<typeof ScrollView> | null>;
 }
 
 /**
  * Pinça + arraste sobre o slot da foto, na UI thread. O clamp roda em worklet a cada quadro,
  * então a foto nunca deixa área vazia; no fim do gesto o valor final vai para o store.
  */
-export function ImageGestureLayer({ slot, image, canvasScale, scale, offsetX, offsetY, onCommit, enabled = true }: Props) {
+export function ImageGestureLayer({ slot, image, canvasScale, scale, offsetX, offsetY, onCommit, enabled = true, scrollRef }: Props) {
   const startX = useSharedValue(0);
   const startY = useSharedValue(0);
   const startScale = useSharedValue(1);
@@ -50,7 +52,11 @@ export function ImageGestureLayer({ slot, image, canvasScale, scale, offsetX, of
     runOnJS(onCommit)({ scale: scale.value, offsetX: offsetX.value, offsetY: offsetY.value });
   };
 
-  const pan = Gesture.Pan()
+  // Sem isto o ScrollView da tela vence o arraste vertical e a foto nunca se move.
+  const withScrollPriority = <T extends { blocksExternalGesture: (ref: never) => T }>(gesture: T): T =>
+    scrollRef ? gesture.blocksExternalGesture(scrollRef as never) : gesture;
+
+  const pan = withScrollPriority(Gesture.Pan())
     .enabled(enabled)
     .onStart(() => {
       startX.value = offsetX.value;
@@ -61,7 +67,7 @@ export function ImageGestureLayer({ slot, image, canvasScale, scale, offsetX, of
     })
     .onEnd(commit);
 
-  const pinch = Gesture.Pinch()
+  const pinch = withScrollPriority(Gesture.Pinch())
     .enabled(enabled)
     .onStart(() => {
       startScale.value = scale.value;
