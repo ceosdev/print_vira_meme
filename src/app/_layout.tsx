@@ -1,4 +1,3 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -59,7 +58,6 @@ function AppShell() {
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: colors.bg }}>
       <SafeAreaProvider>
-        <BottomSheetModalProvider>
           <StatusBar style="light" />
           <Stack
             screenOptions={{
@@ -80,7 +78,6 @@ function AppShell() {
           <ExportHost />
           <ProLiteSheet />
           <ToastHost />
-        </BottomSheetModalProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

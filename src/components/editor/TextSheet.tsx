@@ -1,7 +1,6 @@
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { Shuffle } from 'lucide-react-native';
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Button } from '@/components/ui/Button';
 import { Sheet } from '@/components/ui/Sheet';
 import { catalog } from '@/content';
@@ -43,7 +42,7 @@ export function TextSheet({ open, slot, onClose }: Props) {
   const near = value.length >= slot.maxChars * 0.8;
 
   return (
-    <Sheet open={open} onClose={onClose} snapPoints={['60%']}>
+    <Sheet open={open} onClose={onClose} maxHeightRatio={0.7}>
       <View style={styles.headerRow}>
         <Text style={[typography.label, { color: colors.textMuted }]}>{slot.label}</Text>
         {near ? (
@@ -53,7 +52,7 @@ export function TextSheet({ open, slot, onClose }: Props) {
         ) : null}
       </View>
 
-      <BottomSheetTextInput
+      <TextInput
         testID="text-input"
         value={value}
         onChangeText={(text) => {
