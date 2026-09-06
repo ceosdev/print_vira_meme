@@ -1,7 +1,7 @@
 import Constants from 'expo-constants';
 import * as FileSystem from 'expo-file-system/legacy';
 import * as Font from 'expo-font';
-import { useRouter } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import * as ImagePicker from 'expo-image-picker';
 import * as MediaLibrary from 'expo-media-library/legacy';
@@ -46,7 +46,7 @@ const describe = (e: unknown): string => {
  * Diagnóstico de ambiente (__DEV__): roda cada passo nativo do fluxo em ordem e mostra o erro
  * cru de cada um. Serve para descobrir onde o aparelho difere dos testes.
  */
-export default function DevDoctorScreen() {
+function DevDoctorContent() {
   const router = useRouter();
   const [steps, setSteps] = useState<Step[]>([]);
   const [running, setRunning] = useState(false);
@@ -248,3 +248,9 @@ const styles = StyleSheet.create({
   body: { padding: spacing.lg, gap: spacing.md, paddingBottom: spacing.xxxl },
   step: { backgroundColor: colors.surface, borderRadius: 12, padding: spacing.md, gap: 4 },
 });
+
+/** Fora de __DEV__ a rota não existe para o usuário: manda de volta para a Home. */
+export default function DevDoctorScreen() {
+  if (!__DEV__) return <Redirect href="/" />;
+  return <DevDoctorContent />;
+}

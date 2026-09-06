@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import { useMemo } from 'react';
 import { FlatList, Text, View, useWindowDimensions } from 'react-native';
 import { MemeCanvas, fitScale } from '@/components/canvas/MemeCanvas';
@@ -12,7 +12,7 @@ import { identityTransform } from '@/utils/imageTransform';
 import { defaultValues, imageElementOf, resolveLayout } from '@/utils/templateEngine';
 
 /** Rota de QA (__DEV__): todos os layouts com o primeiro preset de cada um e a foto-exemplo. */
-export default function DevCanvasScreen() {
+function DevCanvasContent() {
   const router = useRouter();
   const { width } = useWindowDimensions();
   const scale = fitScale(width - spacing.lg * 2);
@@ -48,4 +48,10 @@ export default function DevCanvasScreen() {
       />
     </Screen>
   );
+}
+
+/** Fora de __DEV__ a rota não existe para o usuário: manda de volta para a Home. */
+export default function DevCanvasScreen() {
+  if (!__DEV__) return <Redirect href="/" />;
+  return <DevCanvasContent />;
 }
