@@ -11,7 +11,7 @@ Cada item aponta para o arquivo onde mora a constante.
 | 4 | **RevenueCat / AdMob** (chaves e IDs de unidade) | Etapa 8 (Plano 2) | serviços ainda são mocks |
 | 5 | **PostHog / Sentry** (chaves) | Etapa 9 (Plano 3) | idem |
 | 6 | **Ícone e splash definitivos** | `assets/` | ainda são os do template do Expo |
-| 7 | ~~Telas de diagnóstico~~ (`/dev-doctor`, `/dev-canvas`) | `src/app/` | ✅ **resolvido** — sem link na Home; fora de `__DEV__` a rota redireciona para a Home. Em desenvolvimento continuam acessíveis por deep link (`printvirameme://dev-doctor`) |
+| 7 | ~~Telas de diagnóstico~~ (`/dev-doctor`, `/dev-canvas`) | `src/app/` | ✅ **resolvido** — sem link na Home; fora de `__DEV__` a rota redireciona para a Home. Em desenvolvimento continuam acessíveis por deep link (`printvirameme://dev-doctor` no dev build; `exp://<ip>:8081/--/dev-doctor` no Expo Go) |
 
 ## Mecanismo de convite
 

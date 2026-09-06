@@ -69,9 +69,16 @@ Coisas que nunca foram validadas ou que o Expo Go não permitia:
       em vez de pedir permissão.
 - [ ] **Receber imagem** — "Compartilhar → Print Vira Meme" a partir da galeria do Android
       (plugin `expo-sharing` com `singleShareMimeTypes: ['image/*']`).
-- [ ] **Diagnóstico** — os links de QA saíram da Home; abra por deep link:
-      `adb shell am start -a android.intent.action.VIEW -d "printvirameme://dev-doctor"`
-      ou digite o link em qualquer app de mensagem e toque. Esperado: 10/10.
+- [ ] **Diagnóstico** — os links de QA saíram da Home. Como chegar nas rotas de QA:
+      - **dev build:** `printvirameme://dev-doctor` e `printvirameme://dev-canvas`
+        (`adb shell am start -a android.intent.action.VIEW -d "printvirameme://dev-doctor"`,
+        ou digite o link em qualquer app de mensagem e toque)
+      - **Expo Go:** o scheme do app não vale; use `exp://<ip-da-maquina>:8081/--/dev-doctor`
+        e `exp://<ip-da-maquina>:8081/--/dev-canvas`
+      Esperado no diagnóstico: 10/10.
 - [ ] **Home limpa** — confirmar que "QA dos layouts" e "🩺 Diagnóstico" não aparecem mais.
+- [ ] **5 layouts novos** — em `/dev-canvas`, conferir Carimbo, Procurado, Perfil, Carteirinha e
+      Recibo. O validador garante geometria e limite de caracteres, não estética: procure texto
+      encavalando em `rect`, carimbo torto demais e contraste ruim.
 
 Só depois desse checklist faz sentido entrar em RevenueCat e AdMob (Etapa 8b).
