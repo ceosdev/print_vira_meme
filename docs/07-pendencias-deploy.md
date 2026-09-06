@@ -13,6 +13,14 @@ Cada item aponta para o arquivo onde mora a constante.
 | 6 | **Ícone e splash definitivos** | `assets/` | ainda são os do template do Expo |
 | 7 | **Telas de diagnóstico** (`/dev-doctor`, `/dev-canvas`) | `src/app/` | só aparecem em `__DEV__`; conferir que não vão para produção |
 
+## Mecanismo de convite
+
+Como não dá para mandar imagem e texto juntos, o convite é uma **ação própria** (`src/hooks/useInvite.ts`):
+abre direto a conversa do WhatsApp com o texto pronto (`whatsapp://send?text=…`) e, se o WhatsApp
+não estiver instalado, cai na share sheet do sistema. Aparece em dois lugares: no Resultado
+("Convidar pelo WhatsApp", logo abaixo de compartilhar/salvar) e em Configurações
+("Convidar amigos para o app"). O texto e o link saem de `shareInvite()` / `APP_SHARE_URL`.
+
 ## Sobre compartilhar meme + link junto
 
 No Android não dá para enviar **imagem e texto na mesma ação** com as APIs do Expo:

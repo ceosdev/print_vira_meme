@@ -59,7 +59,7 @@ export const strings = {
     savedToast: 'Salvo na galeria ✓',
     anotherTemplate: 'Outro template',
     createAnother: 'Criar outro meme',
-    invite: 'Chamar alguém para fazer o seu 🔗',
+    invite: 'Convidar pelo WhatsApp',
     removeWatermark: "Tirar a marca d'água · PRO",
     hd: 'HD ✓',
     saveDenied: 'Sem acesso à galeria para salvar. Compartilhar funciona mesmo assim.',
@@ -111,7 +111,7 @@ export const strings = {
     knowPro: 'Conheça o PRO',
     youArePro: '✓ Você é PRO',
     restore: 'Restaurar compra',
-    shareApp: 'Compartilhar o app',
+    shareApp: 'Convidar amigos para o app',
     rate: 'Avaliar na Play',
     photos: 'Como suas fotos são tratadas',
     photosBody:

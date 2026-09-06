@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import { Linking } from 'react-native';
 import SettingsScreen from '@/app/settings';
 import { configureServices, services } from '@/services';
 import { createMockAnalyticsService } from '@/services/mock/mockAnalyticsService';
@@ -50,12 +51,13 @@ describe('Configurações', () => {
     expect(analytics.events).toHaveLength(0);
   });
 
-  it('limpar cache avisa; compartilhar o app usa o share', async () => {
+  it('limpar cache avisa; convidar abre o WhatsApp', async () => {
     await render(<SettingsScreen />);
     await fireEvent.press(screen.getByTestId('clear-cache'));
     expect(useToastStore.getState().message).toBe('Cache limpo ✓');
-    const spy = jest.spyOn(services.share, 'shareText');
+    const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     await fireEvent.press(screen.getByTestId('share-app'));
-    expect(spy).toHaveBeenCalledWith(expect.stringContaining('play.google.com'));
+    expect(openURL).toHaveBeenCalledWith(expect.stringContaining('whatsapp://send?text='));
+    openURL.mockRestore();
   });
 });

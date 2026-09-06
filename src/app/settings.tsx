@@ -7,6 +7,7 @@ import { ListItem } from '@/components/ui/ListItem';
 import { Header } from '@/components/ui/Header';
 import { Screen } from '@/components/ui/Screen';
 import { CACHE_MAX_AGE_MS, PLAY_URL, PRIVACY_URL } from '@/config/app';
+import { useInvite } from '@/hooks/useInvite';
 import { useEntitlements } from '@/hooks/useEntitlements';
 import { strings } from '@/i18n/strings';
 import { services } from '@/services';
@@ -21,6 +22,7 @@ export default function SettingsScreen() {
   const { isPro } = useEntitlements();
   const analyticsEnabled = usePrefsStore((s) => s.analyticsEnabled);
   const [restoring, setRestoring] = useState(false);
+  const { invite } = useInvite();
 
   const restore = async () => {
     setRestoring(true);
@@ -53,7 +55,7 @@ export default function SettingsScreen() {
         </View>
 
         <ListItem title={strings.settings.restore} icon={RefreshCw} onPress={() => void restore()} right={restoring ? <Text style={typography.caption}>…</Text> : undefined} testID="restore" />
-        <ListItem title={strings.settings.shareApp} icon={Share2} onPress={() => void services.share.shareText(`${strings.app.name} — ${PLAY_URL}`)} testID="share-app" />
+        <ListItem title={strings.settings.shareApp} icon={Share2} onPress={() => void invite()} testID="share-app" />
         <ListItem title={strings.settings.rate} icon={Star} onPress={() => void Linking.openURL(PLAY_URL)} testID="rate" />
 
         <View style={styles.privacyBlock}>

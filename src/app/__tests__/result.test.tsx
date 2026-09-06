@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import { Linking } from 'react-native';
 import ResultScreen from '@/app/result';
 import { configureServices, services } from '@/services';
 import { createMockAdsService } from '@/services/mock/mockAdsService';
@@ -89,12 +90,12 @@ describe('Result', () => {
     expect(mockReplace).toHaveBeenCalledWith('/');
   });
 
-  it('convite compartilha o texto com o link do app', async () => {
-    const spy = jest.spyOn(services.share, 'shareText');
+  it('convite abre o WhatsApp com o link do app', async () => {
+    const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     await render(<ResultScreen />);
     await fireEvent.press(screen.getByTestId('invite'));
-    expect(spy).toHaveBeenCalledWith(expect.stringContaining('play.google.com'));
-    expect(spy).toHaveBeenCalledWith(expect.stringContaining('Crie o seu'));
+    expect(openURL).toHaveBeenCalledWith(expect.stringContaining('whatsapp://send?text='));
+    openURL.mockRestore();
   });
 
   it('PRO mostra HD e não mostra o link da marca', async () => {
