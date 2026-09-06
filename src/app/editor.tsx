@@ -52,7 +52,8 @@ export default function EditorScreen() {
   const [photoSheet, setPhotoSheet] = useState(false);
   const [editingSlot, setEditingSlot] = useState<string | null>(null);
   const [movingTexts, setMovingTexts] = useState(false);
-  const scrollRef = useRef<React.ComponentRef<typeof ScrollView>>(null);
+  // tipo pedido por blocksExternalGesture do gesture-handler
+  const scrollRef = useRef<React.ComponentType<object> | null>(null);
 
   const gScale = useSharedValue(transform.scale);
   const gX = useSharedValue(transform.offsetX);
@@ -119,7 +120,7 @@ export default function EditorScreen() {
         right={locked ? <PremiumBadge /> : undefined}
       />
 
-      <ScrollView ref={scrollRef} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+      <ScrollView ref={scrollRef as never} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         <CanvasFrame width={resolved.width * scale} height={resolved.height * scale} busy={exporting}>
           <MemeCanvas
             testID="editor-canvas"

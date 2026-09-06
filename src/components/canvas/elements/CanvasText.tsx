@@ -91,15 +91,18 @@ export function CanvasText({ el, scale, onPress, dragEnabled, bounds, onDragEnd 
   if (dragEnabled && el.draggable) {
     const pan = Gesture.Pan()
       .onUpdate((e) => {
+        'worklet';
         dragX.value = e.translationX;
         dragY.value = e.translationY;
       })
       .onEnd((e) => {
+        'worklet';
         runOnJS(commitDrag)(e.translationX, e.translationY);
         dragX.value = 0;
         dragY.value = 0;
       });
     const tap = Gesture.Tap().onEnd(() => {
+      'worklet';
       if (onPress) runOnJS(onPress)(el.id);
     });
     return (
