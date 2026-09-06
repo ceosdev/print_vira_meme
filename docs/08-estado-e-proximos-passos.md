@@ -92,6 +92,7 @@ Todas as etapas de planejamento estão aprovadas e documentadas em `docs/`:
 | 5 | `05-modelo-template.md` | schema de layout + zod + 19 layouts |
 | 6 | `06-conteudo.md` | 75 presets e 400 frases, linha editorial (seção 7 = segunda leva) |
 | 7 | `07-pendencias-deploy.md` | **placeholders a trocar antes de publicar** |
+| — | `11-conta-play-e-distribuicao.md` | **conta Play (pessoal vs organização), trilhas de teste, distribuição do APK e cronogramas** |
 
 Planos de implementação executados: `docs/superpowers/plans/` (fundação, núcleo visual, telas).
 
@@ -136,6 +137,11 @@ Depois: `npx eas-cli@latest build --platform android --profile development`.
 4. Play Console: criar o produto não consumível `pvm_pro_lifetime` (R$ 19,90) e o entitlement `pro` no RevenueCat.
 
 ### Etapa 9 — Lançamento
+
+⚠️ A conta de desenvolvedor antiga foi encerrada por inatividade (03/2024) — precisa de conta nova.
+A rota escolhida muda a ordem desta etapa: na conta **pessoal**, ícone/splash/política/ficha viram
+caminho crítico (sem ficha completa o relógio de 12 testadores × 14 dias não começa).
+Ver `11-conta-play-e-distribuicao.md`. **Decisão pendente.**
 PostHog (`AnalyticsService`) · Sentry (`CrashService`) · EAS Update · ícone e splash definitivos · política de privacidade hospedada · screenshots e ficha da Play · checklist de release. (Ocultar `/dev-doctor` e `/dev-canvas` já foi feito em `e5ecf56`: fora de `__DEV__` as rotas redirecionam para a Home.)
 
 ### v1.1 (decidido na Etapa 1, fora do MVP)
