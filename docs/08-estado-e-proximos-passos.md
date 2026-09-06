@@ -9,9 +9,9 @@
 | | |
 |---|---|
 | Repositório | `git@github.com:ceosdev/print_vira_meme.git` |
-| Branch estável | `main` — Etapas 1 a 7 (MVP completo) |
-| **Branch atual** | **`fix/diagnostico`** — correções pós-teste no aparelho, **ainda não mergeada** |
-| Para integrar | `git checkout main && git merge --ff-only fix/diagnostico && git push origin main` |
+| Branch estável | **`main`** — tudo integrado e pushado (Etapas 1 a 7 + correções do aparelho + segunda leva do catálogo) |
+| Último commit | `1415f5d` |
+| Branch aberta | nenhuma |
 
 O `gh` CLI não está autenticado nesta máquina; o push usa SSH (chave já funciona).
 
@@ -19,11 +19,17 @@ O `gh` CLI não está autenticado nesta máquina; o push usa SSH (chave já func
 
 ```bash
 cd ~/projects/cartech/print_vira_meme
-# celular no cabo, depuração USB ligada (mais estável que --tunnel no WSL2):
-adb devices && adb reverse tcp:8081 tcp:8081
 npx expo start -c
 ```
+
+⚠️ **Esta máquina (WSL2) não tem toolchain Android**: sem JDK 17, sem Android SDK e sem `adb`
+(o único Java no lado Windows é um JDK 1.7). Então `adb reverse` e `npx expo run:android` **não
+funcionam aqui** — por isso o dev build vai por EAS Build na nuvem (ver `09-dev-build.md`).
 Sem cabo: `npx expo start --tunnel` (o ngrok cai com frequência).
+
+Rotas de QA (sem link na Home desde `e5ecf56`): no Expo Go use
+`exp://<ip-da-maquina>:8081/--/dev-canvas` e `/--/dev-doctor`; no dev build,
+`printvirameme://dev-canvas`.
 
 ### Verificações
 
@@ -59,6 +65,12 @@ Planos de implementação executados: `docs/superpowers/plans/` (fundação, nú
 - **Canvas:** um único `MemeCanvas` serve card, editor e exportação — muda só a escala. Exporta em 1080 px (2160 no PRO) com o mesmo layout do preview.
 - **Serviços reais:** imagem (picker + resize 1600/480 + cache), exportação (view-shot off-screen), compartilhamento, galeria. **Mocks ainda:** compras, anúncios, analytics, crash.
 - **Regras de negócio testadas:** AdGate, paywall com continuação após a compra, entitlements, contadores.
+- **Catálogo (segunda leva, `3a956f2`):** 19 layouts · 75 presets · 400 frases · 12 categorias.
+  Layouts novos: carimbo, procurado, perfil (free) · carteirinha, recibo (PRO). Categorias novas:
+  🗳️ Politicagem (política do cotidiano — síndico, condomínio, churrasco; **nada partidário**,
+  ver regra 2 da linha editorial em `06-conteudo.md`), 🐶 Pet, 🍔 Comida, 🤖 Tecnologia.
+  **Pendente: revisão visual dos 5 layouts novos em `/dev-canvas`** — o validador garante
+  geometria e `maxChars`, não estética.
 
 ### Verificado no aparelho (Android 16, Expo Go)
 
@@ -74,8 +86,14 @@ Salvar na galeria · compras · anúncios · receber imagem por "Compartilhar �
 
 ## 2. O que falta
 
-### Etapa 8 — Monetização (próximo passo)
-1. Gerar dev build: `npx expo run:android` ou EAS Build (perfil `development`).
+### Etapa 8a — Dev build (próximo passo) — ver `09-dev-build.md`
+`eas.json` já está no repo com os perfis development/preview/production. Falta o que só o Carlos
+pode fazer: criar a conta grátis em expo.dev, `npx eas-cli@latest login`, `npx eas-cli@latest init`
+e colar o `projectId` no `app.config.ts` (config dinâmico — a CLI não escreve sozinha).
+Depois: `npx eas-cli@latest build --platform android --profile development`.
+
+### Etapa 8b — Monetização
+1. (feito) ~~Gerar dev build~~ → passou a ser a Etapa 8a.
 2. RevenueCat (`react-native-purchases`) implementando `PurchaseService` — o contrato já existe em `src/types/services.ts`; hoje o registro usa `createMockPurchaseService`.
 3. AdMob (`react-native-google-mobile-ads`) implementando `AdsService` (interstitial com as regras já testadas em `src/utils/adRules.ts`).
 4. Play Console: criar o produto não consumível `pvm_pro_lifetime` (R$ 19,90) e o entitlement `pro` no RevenueCat.
