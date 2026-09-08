@@ -7,9 +7,12 @@ import { catalog } from '@/content';
 import { strings } from '@/i18n/strings';
 import { services } from '@/services';
 import { selectPreset, useCreationStore } from '@/store/creationStore';
-import { colors, radius, spacing } from '@/theme/tokens';
+import { colors, radius, sizes, spacing } from '@/theme/tokens';
 import { typography } from '@/theme/typography';
 import type { Slot } from '@/types/catalog';
+
+/** Quantas sugestões a lista mostra por vez — o resto vem no "Sortear". */
+export const SUGGESTION_COUNT = 12;
 
 interface Props {
   open: boolean;
@@ -32,9 +35,9 @@ export function TextSheet({ open, slot, onClose }: Props) {
       tags: preset.tags,
       exclude: value,
     });
-    if (shuffleSeed === 0) return list.slice(0, 8);
+    if (shuffleSeed === 0) return list.slice(0, SUGGESTION_COUNT);
     const start = shuffleSeed % Math.max(1, list.length);
-    return [...list.slice(start), ...list.slice(0, start)].slice(0, 8);
+    return [...list.slice(start), ...list.slice(0, start)].slice(0, SUGGESTION_COUNT);
   }, [slot, preset, value, shuffleSeed]);
 
   if (!slot) return <Sheet open={false} onClose={onClose}>{null}</Sheet>;
@@ -42,7 +45,7 @@ export function TextSheet({ open, slot, onClose }: Props) {
   const near = value.length >= slot.maxChars * 0.8;
 
   return (
-    <Sheet open={open} onClose={onClose} maxHeightRatio={0.7}>
+    <Sheet open={open} onClose={onClose} maxHeightRatio={0.88}>
       <View style={styles.headerRow}>
         <Text style={[typography.label, { color: colors.textMuted }]}>{slot.label}</Text>
         {near ? (
@@ -75,7 +78,7 @@ export function TextSheet({ open, slot, onClose }: Props) {
       </View>
 
       <ScrollView style={styles.suggestions} keyboardShouldPersistTaps="handled">
-        <View style={{ gap: spacing.sm }}>
+        <View style={{ gap: spacing.sm, paddingBottom: spacing.xs }}>
           {suggestions.map((phrase) => (
             <Pressable
               key={phrase.id}
@@ -110,6 +113,18 @@ const styles = StyleSheet.create({
     color: colors.text,
     textAlignVertical: 'top',
   },
-  suggestions: { maxHeight: 240 },
-  suggestion: { backgroundColor: colors.surface2, borderRadius: radius.field, padding: spacing.md },
+  /**
+   * `flexShrink` é o que faz a sheet caber: sem ele a lista mantém a altura inteira, empurra o
+   * campo e o "Pronto" para fora da tela quando o teclado está aberto — e é o que fazia a área
+   * de sugestões parecer minúscula. Agora a lista é a única coisa que cede.
+   */
+  suggestions: { maxHeight: 380, flexShrink: 1 },
+  suggestion: {
+    backgroundColor: colors.surface2,
+    borderRadius: radius.field,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    minHeight: sizes.touchTarget,
+    justifyContent: 'center',
+  },
 });
