@@ -14,7 +14,9 @@ import { Header } from '@/components/ui/Header';
 import { Screen } from '@/components/ui/Screen';
 import { catalog } from '@/content';
 import { services } from '@/services';
+import { canForceEntitlements, forceEntitlements } from '@/services/devEntitlements';
 import { useCreationStore } from '@/store/creationStore';
+import { useEntitlements } from '@/hooks/useEntitlements';
 import { EXPORTS_DIR } from '@/services/exportService';
 import { IMAGES_DIR } from '@/services/imageService';
 import { FONTS, FONT_FACES } from '@/types/catalog';
@@ -48,6 +50,7 @@ const describe = (e: unknown): string => {
  */
 function DevDoctorContent() {
   const router = useRouter();
+  const { isPro } = useEntitlements();
   const [steps, setSteps] = useState<Step[]>([]);
   const [running, setRunning] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -198,6 +201,21 @@ function DevDoctorContent() {
       <Header title="Diagnóstico" onBack={() => router.back()} />
       <ScrollView contentContainerStyle={styles.body}>
         <Button label={running ? 'Rodando…' : 'Rodar diagnóstico'} loading={running} onPress={() => void runAll()} testID="run-doctor" />
+        {canForceEntitlements() ? (
+          <View style={styles.step}>
+            <Text style={[typography.label, { color: colors.text }]}>Entitlement · PRO {isPro ? 'ligado' : 'desligado'}</Text>
+            <Text style={[typography.caption, { color: colors.textMuted }]}>
+              Vira o PRO na mão para testar sem passar pelo paywall. Mexe nos dois lados (loja e store); só existe
+              enquanto a compra for o mock.
+            </Text>
+            <Button
+              label={isPro ? 'Voltar para free' : 'Virar PRO'}
+              variant="secondary"
+              testID="toggle-pro"
+              onPress={() => forceEntitlements({ isPro: !isPro, packIds: [] })}
+            />
+          </View>
+        ) : null}
         <Button
           label="Teste: abrir sheet de foto"
           variant="secondary"

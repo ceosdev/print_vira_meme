@@ -11,8 +11,11 @@ import { createShareService } from './shareService';
 /**
  * Registro único de serviços. image/export/share/media são reais; purchase/ads/analytics/crash
  * ainda são mocks (Planos 2 e 3). Testes de tela trocam o que precisam com configureServices().
+ *
+ * `satisfies` em vez de `: Services` de propósito: mantém o tipo concreto de cada serviço, para
+ * `devEntitlements.ts` parar de compilar no dia em que a compra deixar de ser o mock.
  */
-export const services: Services = {
+export const services = {
   image: createImageService(),
   export: createExportService(),
   share: createShareService(),
@@ -21,7 +24,7 @@ export const services: Services = {
   ads: createMockAdsService(),
   analytics: createMockAnalyticsService(),
   crash: createMockCrashService(),
-};
+} satisfies Services;
 
 export function configureServices(patch: Partial<Services>): void {
   Object.assign(services, patch);

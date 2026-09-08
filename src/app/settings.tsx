@@ -1,6 +1,6 @@
 import * as Application from 'expo-application';
 import { useRouter } from 'expo-router';
-import { ExternalLink, Image as ImageIcon, RefreshCw, Share2, Star, Trash2 } from 'lucide-react-native';
+import { ExternalLink, FlaskConical, Image as ImageIcon, RefreshCw, Share2, Star, Trash2 } from 'lucide-react-native';
 import { useState } from 'react';
 import { Linking, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { ListItem } from '@/components/ui/ListItem';
@@ -11,6 +11,7 @@ import { useInvite } from '@/hooks/useInvite';
 import { useEntitlements } from '@/hooks/useEntitlements';
 import { strings } from '@/i18n/strings';
 import { services } from '@/services';
+import { canForceEntitlements, forceEntitlements } from '@/services/devEntitlements';
 import { useEntitlementStore } from '@/store/entitlementStore';
 import { usePrefsStore } from '@/store/prefsStore';
 import { useToastStore } from '@/store/toastStore';
@@ -53,6 +54,16 @@ export default function SettingsScreen() {
             testID="pro-status"
           />
         </View>
+
+        {canForceEntitlements() ? (
+          <ListItem
+            title={isPro ? 'DEV · Voltar para free' : 'DEV · Virar PRO'}
+            icon={FlaskConical}
+            chevron={false}
+            onPress={() => forceEntitlements({ isPro: !isPro, packIds: [] })}
+            testID="dev-toggle-pro"
+          />
+        ) : null}
 
         <ListItem title={strings.settings.restore} icon={RefreshCw} onPress={() => void restore()} right={restoring ? <Text style={typography.caption}>…</Text> : undefined} testID="restore" />
         <ListItem title={strings.settings.shareApp} icon={Share2} onPress={() => void invite()} testID="share-app" />
