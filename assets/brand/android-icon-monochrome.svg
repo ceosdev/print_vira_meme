@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><g transform="translate(80.70284237726099 90.81136950904391) scale(0.8423772609819121)"><defs>
+      <mask id="knockout" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+        <rect width="1024" height="1024" fill="black"/>
+        <g transform="rotate(-8 512 500)"><rect x="182" y="150" width="660" height="700" rx="46" fill="white"/></g>
+        
+        <g transform="rotate(-8 512 500)"><text x="509.60176991150445" y="779.1238938053098" font-family="Anton" font-weight="400" font-size="239.82300884955754" letter-spacing="0" text-anchor="middle" fill="black">MEME</text></g>
+      </mask>
+    </defs>
+    <rect width="1024" height="1024" fill="#FFFFFF" mask="url(#knockout)"/></g></svg>

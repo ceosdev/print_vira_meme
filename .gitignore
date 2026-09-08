@@ -39,3 +39,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# preview local dos assets de marca
+.brand-preview/

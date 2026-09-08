@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@expo/ngrok": "^4.1.3",
+    "@resvg/resvg-js": "^2.6.2",
     "@testing-library/react-native": "^14.0.1",
     "@types/jest": "29.5.14",
     "@types/node": "^26.4.1",
@@ -59,7 +60,8 @@
     "lint": "expo lint",
     "validate:catalog": "tsx tools/validate-catalog.ts",
     "fonts": "bash tools/download-fonts.sh",
-    "sample-photo": "node tools/make-sample-photo.js"
+    "sample-photo": "node tools/make-sample-photo.js",
+    "assets:brand": "node tools/make-brand-assets.mjs"
   },
   "private": true
 }
