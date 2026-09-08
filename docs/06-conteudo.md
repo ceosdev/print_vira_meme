@@ -9,7 +9,7 @@ Arquivos entregues (caminhos definitivos do app):
 | [src/content/presets/*.json](../src/content/presets/) | **75 presets**, um arquivo por categoria |
 | [src/content/phrases/*.json](../src/content/phrases/) | **400 frases** de sugestão, um arquivo por categoria |
 
-**Validação:** `validateCatalog(…, { strict: true })` → `ok: true`, 0 erros, 0 avisos (19 layouts · 75 presets · 400 frases · 12 categorias). Toda categoria tem ≥ 3 presets e ≥ 50% free; todo preset respeita `maxChars` de cada slot; nenhuma frase passa de 90 caracteres.
+**Validação:** `validateCatalog(…, { strict: true })` → `ok: true`, 0 erros, 0 avisos (19 layouts · 87 presets · 437 frases · 12 categorias). Toda categoria tem ≥ 3 presets e ≥ 50% free; todo preset respeita `maxChars` de cada slot; nenhuma frase passa de 90 caracteres.
 
 ---
 
@@ -28,12 +28,12 @@ Arquivos entregues (caminhos definitivos do app):
 | 🗳️ Politicagem | 5 | 4 / 1 | 2 | 23 |
 | 🐶 Pet | 4 | 3 / 1 | 1 | 22 |
 | 🍔 Comida | 4 | 3 / 1 | 1 | 22 |
-| 🤖 Tecnologia | 4 | 3 / 1 | 1 | 22 |
-| **Total** | **75** | **52 / 23** | **15** | **400** |
+| 🤖 Tecnologia | 16 | 12 / 4 | 4 | 59 |
+| **Total** | **87** | **61 / 26** | **18** | **437** |
 
-A primeira leva seguiu o briefing (15 / 8 / 7 / 5 / 5 / 4 / 3 / 3); a segunda leva (seção 7) somou 25 presets e 4 categorias. Free/PRO global: **52 / 23** (69% free). Os 10 populares são todos free — "🔥 Populares" é vitrine de compartilhamento, não de conversão.
+A primeira leva seguiu o briefing (15 / 8 / 7 / 5 / 5 / 4 / 3 / 3); a segunda leva (seção 7) somou 25 presets e 4 categorias; a terceira (seção 8) somou 12 presets de tecnologia. Free/PRO global: **61 / 26** (70% free). Os 18 populares são todos free — "🔥 Populares" é vitrine de compartilhamento, não de conversão.
 
-Layouts usados pelos presets: alerta ×7, carimbo ×3, classic ×5, conversa ×6, enquete ×3, legenda ×4, manchete ×1, noticia ×6, perfil ×3, placar ×4, pov ×7, procurado ×3 (free) · balao ×4, carteirinha ×3, certificado ×5, grafico ×3, nota ×2, podio ×3, recibo ×3 (PRO). Todos os 19 layouts têm pelo menos um preset.
+Layouts usados pelos presets: alerta ×7, carimbo ×3, classic ×6, conversa ×7, enquete ×4, legenda ×5, manchete ×2, noticia ×7, perfil ×3, placar ×5, pov ×8, procurado ×4 (free) · balao ×4, carteirinha ×3, certificado ×6, grafico ×4, nota ×3, podio ×3, recibo ×3 (PRO). Todos os 19 layouts têm pelo menos um preset.
 
 ## 2. Linha editorial (vale para presets, frases e OTAs futuras)
 
@@ -288,3 +288,82 @@ cobrindo `top`, `bottom`, `title`, `description`, `pov`, `caption`, `message`, `
 **Revisão visual dos 5 layouts novos no aparelho** (`printvirameme://dev-canvas`). O validador
 garante geometria dentro do canvas, `maxChars` e regra editorial — não garante que ficou bonito
 nem que o texto não encavalou num `rect`.
+
+---
+
+## 8. Terceira leva — 2026-09-07 (tecnologia: +12 presets, +37 frases)
+
+Pedido do Carlos: buscar memes da atualidade na internet e engordar as categorias, começando por
+🤖 Tecnologia, que estava a mais pobre do catálogo (4 presets). Escopo aprovado: **só tecnologia
+nesta leva**; as outras 11 categorias ficam para a próxima, com o mesmo padrão.
+
+### O que a pesquisa achou — e por que quase nada entrou como veio
+
+Os virais de 2026 são presos a pessoa real, reality, filme ou marca (Gigachad, Drake, o drone do
+Ryan Gosling, a risada da Sarah Andrade, "Casa do Patrão", Copa 2026, "nervosismo surreal"). A
+regra 3 da linha editorial barra todos. E o app não distribui imagem de meme nenhuma — a foto é o
+print do usuário. Então importamos duas coisas, não a terceira:
+
+1. **A gramática da piada** — calma no meio do desastre → `alerta`/`manchete`; escolha impossível →
+   `enquete`; escalada de números → `grafico`; "ninguém: / eu:" → `classic`; consequência chegando
+   na pior hora → `nota`; derrota mansa e autodepreciativa → `legenda`.
+2. **Os temas de tecnologia de 2026** — IA que erra com confiança e reporta sucesso, pedir à IA e
+   não entender a resposta, "isso é foto real?", assinatura que sobe de preço sozinha, algoritmo
+   que sequestra a feed, curtida sem querer em post antigo, verificação em duas etapas, chatbot de
+   suporte, armazenamento cheio, termos aceitos sem ler, bateria em 1%.
+3. **A imagem do meme** — não importamos. Nunca.
+
+Fontes consultadas: [Memebuilder — trending templates 2026](https://www.memebuilder.ai/blog/trending-meme-templates-2026) ·
+[CanIPhish — 35 IT memes](https://caniphish.com/blog/technology-memes) ·
+[I Can't Compute — tech humor 2026](https://icantcompute.com/blogs/news/tech-humor-trends-whats-making-developers-laugh-in-2026) ·
+[Tediado — virais de 2026](https://www.tediado.com.br/08/memes-2026-os-virais/) ·
+[Tediado — 35 memes da vida real](https://www.tediado.com.br/11/35-memes-da-vida-real-que-todo-brasileiro-vai-entender/) ·
+[ProgrammerHumor 2026](https://programmerhumor.io/memes/2026).
+
+### Os 12 presets novos
+
+| # | Preset | Layout | Plano | Textos |
+|---|---|---|---|---|
+| 5 | `tec-ia-seis-pastas` — IA organizou tudo | Notícia urgente | Free 🔥 tags: trabalho | IA cria seis pastas, renomeia o arquivo errado e avisa que deu tudo certo · O usuário pediu apenas para organizar a área de trabalho. O contrato segue desaparecido. · Fonte: a lixeira do computador |
+| 6 | `tec-conversa-ia` — Excelente pergunta | Conversa | Free 🔥 tags: trabalho | Assistente de IA · Pronto! Organizei todos os seus arquivos · Perfeito. E onde ficou o meu contrato? · Excelente pergunta! Também não sei |
+| 7 | `tec-enquete-real-ou-ia` — Real ou feito por IA | Enquete | Free | Essa foto aí é real ou foi feita por IA? · Sei lá mais o que é real · Real · Feita por IA |
+| 8 | `tec-pov-algoritmo` — O algoritmo decidiu | POV | Free | você vê um vídeo por educação e o aplicativo decide que agora isso é a sua personalidade |
+| 9 | `tec-nota-curtida` — Curtida sem querer | Bilhete | **PRO** tags: relacionamento | Se chegou notificação minha às 2 da manhã numa foto de 2019: foi sem querer, eu já me arrependi e não pretendo mais sair de casa. |
+| 10 | `tec-procurado-prints` — Os prints que ninguém abre | Procurado | Free | OS 4.812 PRINTS · Ocupam a memória inteira do celular e nunca mais foram abertos por ninguém. · Recompensa: 2 GB livres |
+| 11 | `tec-duas-etapas` — Verificação em duas etapas | Meme clássico | Free 🔥 | EU: SÓ VOU ENTRAR RAPIDINHO · A VERIFICAÇÃO EM DUAS ETAPAS: |
+| 12 | `tec-placar-chatbot` — Eu × O chatbot | Placar | Free | EU · 0 · O CHATBOT · 9 · Digitei 'atendente': 7 · Respostas úteis: 0 · Links de ajuda: 14 |
+| 13 | `tec-legenda-termos` — Li e concordo | Legenda | Free | Eu aceitando 84 páginas de termos de uso em dois segundos para ver um vídeo de 15 |
+| 14 | `tec-manchete-bateria` — 1% de bateria | Manchete | Free | TECNOLOGIA · Celular fica 40 minutos em 1% e desliga na hora exata da foto · O dono jura que estava com o carregador na mão. Ninguém acredita. |
+| 15 | `tec-grafico-assinatura` — O preço da assinatura | Gráfico | **PRO** tags: dinheiro | O preço da assinatura ao longo dos anos · Valor mensal · 2023 · 2024 · 2025 · hoje |
+| 16 | `tec-certificado-prompt` — Certificado de prompt | Certificado | **PRO** | Você · por explicar para uma inteligência artificial, em catorze tentativas, exatamente o que você já sabia desde a primeira · A IA, exausta · Hoje, de novo |
+
+Tecnologia sai de 4 presets em 3 layouts para **16 presets em 13 layouts** (12 free / 4 PRO), com
+3 novos 🔥 populares. Todos com `addedAt: 2026-09-07`, então também aparecem na vitrine "✨ Novos".
+
+### As 37 frases novas
+
+Tecnologia sai de 22 para **59 frases**: 4 `top` · 4 `bottom` · 5 `title` · 3 `description` ·
+3 `pov` · 3 `caption` · 4 `message` · 3 `option` · 2 `label` · 3 `stat` · 1 `name` · 2 `free`.
+Onze delas levam categoria secundária (`trabalho`, `dinheiro`, `relacionamento`), então também
+sobem no ranking de sugestões dessas categorias.
+
+### Distribuição depois desta leva
+
+| | antes | depois |
+|---|---|---|
+| Presets | 75 (52 free / 23 PRO) | **87** (61 free / 26 PRO) |
+| Frases | 400 | **437** |
+| 🔥 Populares | 15 | **18** |
+| 🤖 Tecnologia | 4 presets / 22 frases | **16 presets / 59 frases** |
+
+`validateCatalog(…, { strict: true })` → `ok: true`, 0 erros, 0 avisos · `npm test` todo verde ·
+`tsc --noEmit` limpo. Os 12 presets novos também passam pelo `resolveLayout` real (com e sem
+faixa de marca) sem nenhum texto saindo do canvas.
+
+### Pendente
+
+1. **As outras 11 categorias** — mesma leva, mesmo método (~28 presets e ~110 frases).
+2. **Três formatos de 2026 sem layout que os comporte:** comparação em dois painéis
+   ("❌ isso / ✅ aquilo"), barra de carregamento ("Carregando minha vontade de trabalhar… 3%") e
+   tela de termos de uso. Cada um é layout novo — JSON de coordenadas, validador e conferência no
+   `MemeCanvas`. Etapa à parte.

@@ -63,5 +63,191 @@
     "premium": true,
     "addedAt": "2026-09-05",
     "order": 4
+  },
+  {
+    "id": "tec-ia-seis-pastas",
+    "layoutId": "noticia",
+    "name": "IA organizou tudo",
+    "category": "tecnologia",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "title": "IA cria seis pastas, renomeia o arquivo errado e avisa que deu tudo certo",
+      "description": "O usuário pediu apenas para organizar a área de trabalho. O contrato segue desaparecido.",
+      "source": "Fonte: a lixeira do computador"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-07",
+    "order": 5
+  },
+  {
+    "id": "tec-conversa-ia",
+    "layoutId": "conversa",
+    "name": "Excelente pergunta",
+    "category": "tecnologia",
+    "tags": [
+      "trabalho"
+    ],
+    "values": {
+      "contact": "Assistente de IA",
+      "m1": "Pronto! Organizei todos os seus arquivos",
+      "m2": "Perfeito. E onde ficou o meu contrato?",
+      "m3": "Excelente pergunta! Também não sei"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-07",
+    "order": 6
+  },
+  {
+    "id": "tec-enquete-real-ou-ia",
+    "layoutId": "enquete",
+    "name": "Real ou feito por IA",
+    "category": "tecnologia",
+    "values": {
+      "question": "Essa foto aí é real ou foi feita por IA?",
+      "opt1": "Sei lá mais o que é real",
+      "opt2": "Real",
+      "opt3": "Feita por IA"
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 7
+  },
+  {
+    "id": "tec-pov-algoritmo",
+    "layoutId": "pov",
+    "name": "O algoritmo decidiu",
+    "category": "tecnologia",
+    "values": {
+      "pov": "você vê um vídeo por educação e o aplicativo decide que agora isso é a sua personalidade"
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 8
+  },
+  {
+    "id": "tec-nota-curtida",
+    "layoutId": "nota",
+    "name": "Curtida sem querer",
+    "category": "tecnologia",
+    "tags": [
+      "relacionamento"
+    ],
+    "values": {
+      "note": "Se chegou notificação minha às 2 da manhã numa foto de 2019: foi sem querer, eu já me arrependi e não pretendo mais sair de casa."
+    },
+    "premium": true,
+    "addedAt": "2026-09-07",
+    "order": 9
+  },
+  {
+    "id": "tec-procurado-prints",
+    "layoutId": "procurado",
+    "name": "Os prints que ninguém abre",
+    "category": "tecnologia",
+    "values": {
+      "name": "OS 4.812 PRINTS",
+      "reason": "Ocupam a memória inteira do celular e nunca mais foram abertos por ninguém.",
+      "reward": "Recompensa: 2 GB livres"
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 10
+  },
+  {
+    "id": "tec-duas-etapas",
+    "layoutId": "classic",
+    "name": "Verificação em duas etapas",
+    "category": "tecnologia",
+    "values": {
+      "top": "EU: SÓ VOU ENTRAR RAPIDINHO",
+      "bottom": "A VERIFICAÇÃO EM DUAS ETAPAS:"
+    },
+    "premium": false,
+    "popular": true,
+    "addedAt": "2026-09-07",
+    "order": 11
+  },
+  {
+    "id": "tec-placar-chatbot",
+    "layoutId": "placar",
+    "name": "Eu × O chatbot",
+    "category": "tecnologia",
+    "values": {
+      "name-a": "EU",
+      "score-a": "0",
+      "name-b": "O CHATBOT",
+      "score-b": "9",
+      "stat-1": "Digitei 'atendente': 7",
+      "stat-2": "Respostas úteis: 0",
+      "stat-3": "Links de ajuda: 14"
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 12
+  },
+  {
+    "id": "tec-legenda-termos",
+    "layoutId": "legenda",
+    "name": "Li e concordo",
+    "category": "tecnologia",
+    "values": {
+      "caption": "Eu aceitando 84 páginas de termos de uso em dois segundos para ver um vídeo de 15"
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 13
+  },
+  {
+    "id": "tec-manchete-bateria",
+    "layoutId": "manchete",
+    "name": "1% de bateria",
+    "category": "tecnologia",
+    "values": {
+      "kicker": "TECNOLOGIA",
+      "title": "Celular fica 40 minutos em 1% e desliga na hora exata da foto",
+      "description": "O dono jura que estava com o carregador na mão. Ninguém acredita."
+    },
+    "premium": false,
+    "addedAt": "2026-09-07",
+    "order": 14
+  },
+  {
+    "id": "tec-grafico-assinatura",
+    "layoutId": "grafico",
+    "name": "O preço da assinatura",
+    "category": "tecnologia",
+    "tags": [
+      "dinheiro"
+    ],
+    "values": {
+      "title": "O preço da assinatura ao longo dos anos",
+      "legend": "Valor mensal",
+      "l-1": "2023",
+      "l-2": "2024",
+      "l-3": "2025",
+      "l-4": "hoje"
+    },
+    "premium": true,
+    "addedAt": "2026-09-07",
+    "order": 15
+  },
+  {
+    "id": "tec-certificado-prompt",
+    "layoutId": "certificado",
+    "name": "Certificado de prompt",
+    "category": "tecnologia",
+    "values": {
+      "name": "Você",
+      "reason": "por explicar para uma inteligência artificial, em catorze tentativas, exatamente o que você já sabia desde a primeira",
+      "signature": "A IA, exausta",
+      "date": "Hoje, de novo"
+    },
+    "premium": true,
+    "addedAt": "2026-09-07",
+    "order": 16
   }
 ]

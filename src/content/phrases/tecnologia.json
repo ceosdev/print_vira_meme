@@ -218,5 +218,385 @@
     "categories": [
       "tecnologia"
     ]
+  },
+  {
+    "id": "tec-top-003",
+    "text": "EU: SÓ VOU ENTRAR RAPIDINHO",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-top-004",
+    "text": "EU PEDINDO UMA COISA SIMPLES PRA IA",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-top-005",
+    "text": "EU: DEPOIS EU ORGANIZO ESSAS FOTOS",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-top-006",
+    "text": "EU VENDO UM VÍDEO POR EDUCAÇÃO",
+    "slotTypes": [
+      "top"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-bottom-003",
+    "text": "A VERIFICAÇÃO EM DUAS ETAPAS:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-bottom-004",
+    "text": "A IA ENTREGANDO OUTRA COISA:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-bottom-005",
+    "text": "O ARMAZENAMENTO CHEIO:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-bottom-006",
+    "text": "O APLICATIVO INTEIRO SÓ DISSO:",
+    "slotTypes": [
+      "bottom"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-004",
+    "text": "IA organiza tudo, avisa que deu certo e some com o arquivo principal",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-title-005",
+    "text": "Homem aceita 84 páginas de termos de uso em dois segundos",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-006",
+    "text": "Celular fica 40 minutos em 1% e desliga na hora exata da foto",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-title-007",
+    "text": "Assinatura sobe de preço sozinha pelo terceiro ano seguido",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia",
+      "dinheiro"
+    ]
+  },
+  {
+    "id": "tec-title-008",
+    "text": "Pessoa curte foto de 2019 sem querer e considera mudar de cidade",
+    "slotTypes": [
+      "title"
+    ],
+    "categories": [
+      "tecnologia",
+      "relacionamento"
+    ]
+  },
+  {
+    "id": "tec-description-003",
+    "text": "O usuário pediu apenas para organizar a área de trabalho. O contrato segue desaparecido.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-description-004",
+    "text": "Foram sete tentativas de digitar 'atendente' antes de qualquer resposta humana.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-description-005",
+    "text": "O dono jura que estava com o carregador na mão. Ninguém acredita.",
+    "slotTypes": [
+      "description"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-pov-003",
+    "text": "você vê um vídeo por educação e o aplicativo decide que agora isso é a sua personalidade",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-pov-004",
+    "text": "você olha uma foto e passa dez minutos decidindo se ela é real",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-pov-005",
+    "text": "você tira print de tudo e nunca mais abre nenhum deles",
+    "slotTypes": [
+      "pov"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-caption-003",
+    "text": "Eu aceitando todos os termos de uso em dois segundos para ver um vídeo de 15",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-caption-004",
+    "text": "Eu explicando pela quarta vez a mesma coisa para a inteligência artificial",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-caption-005",
+    "text": "Eu procurando o arquivo que a IA organizou muito bem",
+    "slotTypes": [
+      "caption"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-message-003",
+    "text": "Pronto! Organizei todos os seus arquivos",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-message-004",
+    "text": "E onde ficou o meu contrato?",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia",
+      "trabalho"
+    ]
+  },
+  {
+    "id": "tec-message-005",
+    "text": "Excelente pergunta! Também não sei",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-message-006",
+    "text": "Só confirmar o código que mandei no SMS",
+    "slotTypes": [
+      "message"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-004",
+    "text": "Sei lá mais o que é real",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-005",
+    "text": "Rejeitar e aceitar mesmo assim",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-option-006",
+    "text": "Perguntar pra IA",
+    "slotTypes": [
+      "option"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-label-002",
+    "text": "SEM SINAL",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-label-003",
+    "text": "1% DE BATERIA",
+    "slotTypes": [
+      "label"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-stat-002",
+    "text": "Respostas úteis: 0",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-stat-003",
+    "text": "Senhas esquecidas: 12",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-stat-004",
+    "text": "Prints guardados: 4.812",
+    "slotTypes": [
+      "stat"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-name-002",
+    "text": "O CHATBOT",
+    "slotTypes": [
+      "name"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-free-002",
+    "text": "SÓ VOU VER UMA NOTIFICAÇÃO",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
+  },
+  {
+    "id": "tec-free-003",
+    "text": "Eu não li os termos, mas concordo com todos eles.",
+    "slotTypes": [
+      "free"
+    ],
+    "categories": [
+      "tecnologia"
+    ]
   }
 ]

@@ -1,11 +1,11 @@
 import { catalog } from '@/content';
 
 describe('catalog', () => {
-  it('carrega 12 categorias, 19 layouts, 75 presets e 400 frases', () => {
+  it('carrega 12 categorias, 19 layouts, 87 presets e 437 frases', () => {
     expect(catalog.categories).toHaveLength(12);
     expect(catalog.layouts).toHaveLength(19);
-    expect(catalog.presets).toHaveLength(75);
-    expect(catalog.phrases).toHaveLength(400);
+    expect(catalog.presets).toHaveLength(87);
+    expect(catalog.phrases).toHaveLength(437);
   });
 
   it('categorias vêm ordenadas por order', () => {
@@ -28,14 +28,14 @@ describe('catalog', () => {
     expect(list.slice(5).every((p) => p.tags?.includes('faculdade'))).toBe(true);
   });
 
-  it('popularPresets são todos free e são 15', () => {
+  it('popularPresets são todos free e são 18', () => {
     const pop = catalog.popularPresets();
-    expect(pop).toHaveLength(15);
+    expect(pop).toHaveLength(18);
     expect(pop.every((p) => !p.premium)).toBe(true);
   });
 
   it('newPresets respeita a janela de dias', () => {
-    expect(catalog.newPresets(new Date('2026-09-10T12:00:00Z'))).toHaveLength(75);
+    expect(catalog.newPresets(new Date('2026-09-10T12:00:00Z'))).toHaveLength(87);
     expect(catalog.newPresets(new Date('2026-12-01T12:00:00Z'))).toHaveLength(0);
   });
 
