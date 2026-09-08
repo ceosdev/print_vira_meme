@@ -13,7 +13,7 @@ cd ~/projects/cartech/print_vira_meme
 git pull                    # deve dizer "Already up to date"
 npm test && npm run typecheck && npx expo lint && npm run validate:catalog
 ```
-Esperado: **151 testes / 29 suítes · tsc limpo · lint exit 0 · 19 layouts · 75 presets · 400 frases · 12 categorias**.
+Esperado: **158 testes / 30 suítes · tsc limpo · lint exit 0 · 19 layouts · 75 presets · 400 frases · 12 categorias**.
 Se algum número mudou sem ninguém ter mexido, pare e descubra por quê antes de seguir.
 
 **As duas coisas que travam o avanço, e as duas são do Carlos:**
@@ -21,9 +21,9 @@ Se algum número mudou sem ninguém ter mexido, pare e descubra por quê antes d
 1. **Revisão visual dos 5 layouts novos** (carimbo, procurado, perfil, carteirinha, recibo).
    Roda em Expo Go, não precisa de dev build:
    ```bash
-   npx expo start -c
+   npm run start
    ```
-   e abrir `exp://<ip-da-maquina>:8081/--/dev-canvas` no celular. Procurar texto encavalando em
+   e abrir `exp://192.168.0.59:8081/--/dev-canvas` no celular (ver armadilha 11 antes). Procurar texto encavalando em
    `rect`, carimbo torto demais, contraste ruim. Os 25 textos novos estão na seção 7 de
    `06-conteudo.md` para ler antes, se preferir.
 
@@ -56,13 +56,22 @@ O `gh` CLI não está autenticado nesta máquina; o push usa SSH (chave já func
 
 ```bash
 cd ~/projects/cartech/print_vira_meme
-npx expo start -c
+npm run start          # exige o WSL em modo mirrored — ver armadilha 11
 ```
 
 ⚠️ **Esta máquina (WSL2) não tem toolchain Android**: sem JDK 17, sem Android SDK e sem `adb`
 (o único Java no lado Windows é um JDK 1.7). Então `adb reverse` e `npx expo run:android` **não
 funcionam aqui** — por isso o dev build vai por EAS Build na nuvem (ver `09-dev-build.md`).
-Sem cabo: `npx expo start --tunnel` (o ngrok cai com frequência).
+
+⚠️ **`--tunnel` não é mais alternativa:** o ngrok desligou as sessões anônimas
+(`ERR_NGROK_4018`). O Expo mascara isso como
+`TypeError: Cannot read properties of undefined (reading 'body')`. Ou se cria conta no ngrok e
+se configura um authtoken, ou se usa a LAN (que é o caminho adotado). Ver armadilha 11.
+
+O IP da máquina na LAN é o da **Ethernet, `192.168.0.59`** (o Wi-Fi está desconectado; `192.168.0.58`
+é IP dele e não responde). Se o QR sair com o IP errado — no modo mirrored o WSL enxerga também
+`10.0.8.10` e `54.232.189.113`, de VPN/proxy — force:
+`REACT_NATIVE_PACKAGER_HOSTNAME=192.168.0.59 npm run start`.
 
 Rotas de QA (sem link na Home desde `e5ecf56`): no Expo Go use
 `exp://<ip-da-maquina>:8081/--/dev-canvas` e `/--/dev-doctor`; no dev build,
@@ -165,3 +174,36 @@ Packs de templates · rewarded ads · favoritos · **histórico dos memes** · +
 8. **Conteúdo político é risco de produto, não de gosto.** O layout `noticia` gera manchete falsa; manchete falsa + política real = Deturpação na Play Store (derruba o app) e restringe demanda no AdMob. A categoria 🗳️ Politicagem existe justamente para dar essa piada sem o risco: vocabulário político apontado para síndico e churrasco. Ver regra 2 em `06-conteudo.md`.
 9. **`src/content/__tests__/catalog.test.ts` tem contagens fixas.** Todo preset, frase, layout ou categoria nova quebra 5 testes de propósito — é a rede que pega arquivo JSON criado e não registrado em `src/content/index.ts`. Atualize os números, não afrouxe a asserção.
 10. **Ao mexer no canvas, os componentes estão em `src/components/canvas/elements/`**, não em `src/components/canvas/`. Um `grep` no diretório de cima não acha `CanvasRect`/`CanvasText`/`CanvasImage` e dá a impressão errada de que algo não é aplicado.
+
+11. **Rede: o celular não alcança o Metro sem o WSL em modo mirrored.** Diagnosticado em
+    2026-09-07, depois de um dia inteiro achando que era o app. Duas portas fecharam ao mesmo tempo:
+    - **LAN:** em modo NAT (padrão), o WSL2 fica em `172.30.240.0/20` e o `expo start` anuncia
+      esse IP no QR. O celular está em `192.168.0.x` e não tem rota. Comprovado: nem o próprio
+      Windows alcança (`Test-NetConnection 172.30.247.209 -Port 8081` → `False`, firewall do
+      Hyper-V). O Expo Go abre `http://172.30.x.x:8081/_expo/loading` e fica em branco para sempre —
+      **não é erro de bundle, é o pacote nunca chegando**.
+    - **Tunnel:** o ngrok passou a exigir conta (`ERR_NGROK_4018`). Antes rodava anônimo.
+
+    **Correção aplicada:** `C:\Users\carlo\.wslconfig` com `networkingMode=mirrored`,
+    `firewall=false`, `dnsTunneling=true` e `[experimental] hostAddressLoopback=true`;
+    mais a regra de entrada TCP 8081 no firewall do Windows (as redes desta máquina estão todas
+    com perfil **Public**, que bloqueia entrada por padrão):
+    ```powershell
+    New-NetFirewallRule -DisplayName "Expo Metro 8081" -Direction Inbound -Protocol TCP `
+      -LocalPort 8081 -Action Allow -Profile Any
+    wsl --shutdown
+    ```
+    **Reverter,** se o mirrored brigar com a VPN (há um "Topaz Loopback"/`Ethernet 2` nesta
+    máquina): apagar o `.wslconfig` e `wsl --shutdown`.
+
+12. **O mock de compras guarda a própria cópia dos entitlements.** `createMockPurchaseService`
+    (`src/services/mock/mockPurchaseService.ts`) mantém `entitlements` num closure, **separado** do
+    `useEntitlementStore` (persistido em `pvm.entitlements`). Quem virar o entitlement na mão
+    mexendo só no store dessincroniza os dois: o mock continua achando que é PRO, e o
+    "Restaurar compra" de Configurações ressuscita o PRO sozinho — `restore()` chama `notify()`
+    e empurra o valor antigo de volta pelo `useEntitlementSync`. Zerar **os dois lados**; o mock
+    expõe `setEntitlements` justamente para isso. Mesma atenção quando o RevenueCat entrar no lugar.
+    **Já resolvido na prática:** em desenvolvimento, **Configurações** tem "DEV · Virar PRO /
+    Voltar para free" (e o `/dev-doctor` também), que mexe nos dois lados
+    (`src/services/devEntitlements.ts`) — é assim que se testa o PRO sem paywall.
+    Ver `07-pendencias-deploy.md`.
